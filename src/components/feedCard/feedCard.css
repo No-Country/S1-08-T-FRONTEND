@@ -1,0 +1,194 @@
+*{
+    font-family: 'Karma';
+};
+
+.social{
+    width: 100%;    
+    background: #EC5853;
+    border: 1px solid #EC5853;
+    box-sizing: border-box;
+    margin-top: 2.5rem;   
+}
+
+.socialButton{
+    display: flex;
+
+}
+.socialIcon{
+    display: flex;
+    height: 2.7rem;
+    background-color: #fbf9f7;
+    width: 9rem;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-left: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.socialIcon img{
+    background-color: #FBF9F7;
+
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 4rem;
+    height: 15px;
+}
+
+.socialIcon svg{
+    background-color: #FBF9F7;
+    margin-right: 1rem;
+}
+
+.mainImg{
+    border: 1px solid #EC5853;
+}
+
+.descriptionFeed{
+    border: 1px solid #EC5853;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Social and ranking 
+
+position: absolute;
+width: 903px;
+height: 85px;
+
+
+
+/* Rectangle 5 
+
+position: absolute;
+width: 903px;
+height: 85px;
+
+background: #EC5853;
+border: 1px solid #EC5853;
+box-sizing: border-box;
+
+
+/* Rectangle 7 
+
+position: absolute;
+width: 134px;
+height: 43px;
+
+background: #FBF9F7;
+box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+
+
+/* GUARDAR 
+
+position: absolute;
+width: 80px;
+height: 27px;
+
+font-family: 'Karma';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #EC5853;
+
+
+
+/* estrellas 1 
+
+position: absolute;
+width: 150px;
+height: 35px;
+
+background: url(estrellas.png);
+
+
+/* Rectangle 7 
+
+position: absolute;
+width: 134px;
+height: 43px;
+
+background: #FBF9F7;
+box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+
+
+/* COMPARTIR 
+
+position: absolute;
+width: 80.6px;
+height: 21px;
+
+font-family: 'Karma';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #EC5853;
+
+
+
+/* cucharon 1 
+
+position: absolute;
+width: 30.23px;
+height: 30px;
+
+background: url(cucharon.png);
+
+
+/* Group 8 
+
+position: absolute;
+width: 134px;
+height: 43px;
+
+
+
+/* Rectangle 6 
+
+position: absolute;
+width: 134px;
+height: 43px;
+
+background: #FBF9F7;
+box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+
+
+/* VER EL POST 
+
+position: absolute;
+width: 90px;
+height: 15px;
+
+font-family: 'Karma';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #EC5853;
+
+
+
+/* window 1 
+
+position: absolute;
+width: 36px;
+height: 36px;
+
+background: url(window.png);
+*/
