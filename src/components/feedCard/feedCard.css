@@ -2,6 +2,17 @@
     font-family: 'Karma';
 };
 
+.feedSection{
+   
+}
+
+.feedCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 .social{
     width: 100%;    
     background: #EC5853;
@@ -48,147 +59,3 @@
     border: 1px solid #EC5853;
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
 }
-
-/* Social and ranking 
-
-position: absolute;
-width: 903px;
-height: 85px;
-
-
-
-/* Rectangle 5 
-
-position: absolute;
-width: 903px;
-height: 85px;
-
-background: #EC5853;
-border: 1px solid #EC5853;
-box-sizing: border-box;
-
-
-/* Rectangle 7 
-
-position: absolute;
-width: 134px;
-height: 43px;
-
-background: #FBF9F7;
-box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-border-radius: 5px;
-
-
-/* GUARDAR 
-
-position: absolute;
-width: 80px;
-height: 27px;
-
-font-family: 'Karma';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 22px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #EC5853;
-
-
-
-/* estrellas 1 
-
-position: absolute;
-width: 150px;
-height: 35px;
-
-background: url(estrellas.png);
-
-
-/* Rectangle 7 
-
-position: absolute;
-width: 134px;
-height: 43px;
-
-background: #FBF9F7;
-box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-border-radius: 5px;
-
-
-/* COMPARTIR 
-
-position: absolute;
-width: 80.6px;
-height: 21px;
-
-font-family: 'Karma';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 22px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #EC5853;
-
-
-
-/* cucharon 1 
-
-position: absolute;
-width: 30.23px;
-height: 30px;
-
-background: url(cucharon.png);
-
-
-/* Group 8 
-
-position: absolute;
-width: 134px;
-height: 43px;
-
-
-
-/* Rectangle 6 
-
-position: absolute;
-width: 134px;
-height: 43px;
-
-background: #FBF9F7;
-box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-border-radius: 5px;
-
-
-/* VER EL POST 
-
-position: absolute;
-width: 90px;
-height: 15px;
-
-font-family: 'Karma';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 22px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #EC5853;
-
-
-
-/* window 1 
-
-position: absolute;
-width: 36px;
-height: 36px;
-
-background: url(window.png);
-*/

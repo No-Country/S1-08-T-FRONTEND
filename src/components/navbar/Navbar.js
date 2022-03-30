@@ -9,6 +9,8 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
+import Logo from './LogoGout.png';
+
 import { purple, lightBlue } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
@@ -106,8 +108,8 @@ const handleAuth = ()=>{
           </IconButton>
           
           <Link  to='/' >
-              <IconButton>
-                  Logo
+              <IconButton >
+                 <img  className='logo' src={Logo} />
               </IconButton>
             </Link>
           </div>

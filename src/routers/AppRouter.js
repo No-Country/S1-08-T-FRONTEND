@@ -1,4 +1,5 @@
 //Se divide entre rutas publicas y las privadas
+/*
 import React from "react";
 
 import FeedCard from './components/feedCard/FeedCard';
@@ -13,7 +14,7 @@ import { BrowserRouter as Router, BrowserRouter, Route, Routes } from "react-rou
 /*import { Provider } from 'react-redux';
 import store from './store';
 */
-
+/*
 import Navbar from './components/navbar/Navbar';
 
 const theme = createTheme({
@@ -52,3 +53,4 @@ export const AppRouter = () => {
     </div>
   </ThemeProvider>
 }
+*/

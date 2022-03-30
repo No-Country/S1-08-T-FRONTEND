@@ -2,6 +2,11 @@
     display: flex;
 }
 
+.logo{
+    height: 4rem;
+    width: auto;
+}
+
 .toolBar{
     background: #EC5853;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FF6961, #EC5853);  /* Chrome 10-25, Safari 5.1-6 */
