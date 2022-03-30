@@ -1,17 +1,13 @@
-import FeedCard from './components/feedCard/FeedCard';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 
 import { purple, lightBlue, red } from '@mui/material/colors';
+import { Navbar } from "../components/navbar/Navbar";
+import Home from "../components/Home";
 
-import { BrowserRouter as Router, BrowserRouter, Route, Routes } from "react-router-dom";
-
-//redux
-/*import { Provider } from 'react-redux';
-import store from './store';
-*/
-
-import Navbar from './components/navbar/Navbar';
 
 const theme = createTheme({
   typography: {
@@ -35,21 +31,16 @@ const theme = createTheme({
 
 });
 
-function App() {
+export const DashboardRouters = () => {
 
-  // va abajo de return <Provider store={store}>
   return <ThemeProvider theme={theme}>
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
+    <>
+        <Navbar/>
         <Routes>
-          <Route path="/" element={<FeedCard />} />
+          <Route path="/" element={<Home />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+    </>
   </ThemeProvider>
-   // </Provider>
   
 }
 
-export default App;

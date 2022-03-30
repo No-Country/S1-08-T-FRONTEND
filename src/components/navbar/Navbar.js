@@ -69,7 +69,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar() {
+export const Navbar = () => {
   
 /*  const navigate = useNavigate();
 const handleAuth = ()=>{

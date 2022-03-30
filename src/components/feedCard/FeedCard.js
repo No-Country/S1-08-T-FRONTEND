@@ -39,7 +39,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function FeedCard() {
+export const FeedCard = () => {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
