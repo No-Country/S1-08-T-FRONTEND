@@ -7,6 +7,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { purple, lightBlue, red } from '@mui/material/colors';
 import { Navbar } from "../components/navbar/Navbar";
 import Home from "../components/Home";
+import Feed from "../components/feed/Feed";
 
 
 const theme = createTheme({
@@ -37,7 +38,7 @@ export const DashboardRouters = () => {
     <>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Feed />} />
         </Routes>
     </>
   </ThemeProvider>

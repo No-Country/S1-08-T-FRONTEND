@@ -7,7 +7,11 @@ import Grid from '@mui/material/Grid';
 import FeedCard from '../feedCard/FeedCard';
 //importar la data
 
+
 export default function Feed(){
+    const posts =[/*data*/]
+
+
     return(
         <Grid className='containePosts' container spacing={3}>
             {
