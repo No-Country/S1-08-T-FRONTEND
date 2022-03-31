@@ -10,6 +10,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 import Logo from './LogoGout.png';
+import Logo2 from './logo2.png';
+import Logo3 from './logo3.png';
 
 import { purple, lightBlue } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
@@ -109,7 +111,7 @@ const handleAuth = ()=>{
           
           <Link  to='/' >
               <IconButton >
-                 <img  className='logo' src={Logo} />
+                 <img  className='logo' src={Logo2} />
               </IconButton>
             </Link>
           </div>
