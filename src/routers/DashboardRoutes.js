@@ -5,9 +5,8 @@ import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 
 import { purple, lightBlue, red } from '@mui/material/colors';
-import { Navbar } from "../components/navbar/Navbar";
-import Home from "../components/Home";
-import Feed from "../components/feed/Feed";
+import { Navbar } from "../components/Navbar/Navbar";
+import Feed from "../components/Feed/Feed";
 
 
 const theme = createTheme({
