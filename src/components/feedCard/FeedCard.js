@@ -39,7 +39,17 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export const FeedCard = () => {
+export default function FeedCard({post}) {
+  const {
+    userid,
+    username,
+    description,
+    avatar,
+    image,
+    created_at,
+    category,
+    likes} = post;
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -51,18 +61,18 @@ export const FeedCard = () => {
       <CardHeader  className="userIntro"
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            JP
+            {avatar?<img src={avatar} alt={description} />: "Av" }
           </Avatar>
         }
      
         titleTypographyProps={{variant:'h5', marginBottom: -1 }}
-        title="Juan Perez"
+        title={username}
         subheaderTypographyProps={{variant:'subtitle2' }}
         subheader="Amante de los platos regionales"
       />
       <CardMedia
         component="img" 
-        image={locro}
+        image={image}
         alt="Locro"
         className="mainImg"
         sx={{ maxWidth: 720, maxHeight: 480, marginLeft: 2, borderRadius: 1}}
@@ -117,7 +127,7 @@ export const FeedCard = () => {
         backgroundColor: '#fff' 
         }}>
         <Typography variant="body2" color="text.secondary">
-          Les comparto esta receta de locro que explica muy bien los pasos a seguir. Ideal para principiantes.
+          {description}
         </Typography>
       </CardContent >
 
