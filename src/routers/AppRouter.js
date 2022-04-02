@@ -7,9 +7,9 @@ import Login from "../components/login/Login";
 
 export const AppRouter = () => {
   return (
-    <Routes>
-      <Route path="/*" element={<DashboardRouters/>}/>
-       <Route path="/signin" element={<Login/>}/>
-    </Routes>
-  );
+      <Routes>
+        <Route path="/*" element={<DashboardRouters/>}/>
+         <Route path="/signin" element={<Login/>}/>
+      </Routes>
+    );
 };
