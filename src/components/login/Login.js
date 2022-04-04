@@ -1,8 +1,7 @@
 import React from 'react';
 import "./Login.css";
-import { Navbar } from '../navbar/Navbar';
 import { useState } from 'react';
-import { useLoginMutation } from "./../../app/services/users";
+import { useLoginMutation } from "../../app/services/users";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -54,7 +53,6 @@ const Login = () => {
   
   return (
     <>
-      <Navbar />
       <div className="login-container">
         <p className="login-title">Iniciar sesión</p>
         <form className="login-form">
