@@ -9,21 +9,13 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
-import { purple, lightBlue } from '@mui/material/colors';
-import { createTheme } from '@mui/material/styles';
-
 import './Navbar.css';
-import { Badge, Button } from '@mui/material';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 
+import { Link } from "react-router-dom";
+import { logout } from '../../app/slices/users/authUsersSlice';
 
-let theme = createTheme();
-
-const deepPurple = purple[500];
-const deepBlue = lightBlue[500];
-const softBlue = lightBlue[200];
-const lightPurple = purple[150];
 
 
 
@@ -70,79 +62,80 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export const Navbar = () => {
-  
-/*  const navigate = useNavigate();
-const handleAuth = ()=>{
-  if (user){
-    auth.signOut();
-    dispatch({
-      type: actionTypes.EMPTY_BASKET,
-      basket: [],
-    });
-    dispatch({
-      type: actionTypes.SET_USER,
-      user: null,
-    });
-    navigate("/")
-  }
-}*/
-   /* const classes = useStyles;*/
-  return (
-    <div className='navbar'> 
-    <Box sx={{ flexGrow: 1, 
-                }}
-                >
-      <AppBar position="fixed">
-        <Toolbar className='toolBar'>
-          <div className='menuLeft'>
-          <IconButton className='buttonBurguer'
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          
-          <Link  to='/' >
-              <IconButton>
-                  Logo
-              </IconButton>
-            </Link>
-          </div>
 
-          <div className='menuRight'>
-          <Typography
-            variant="h6" 
-            color= "#000"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            Bienvenid@  {/* {user ? user.email : ""}! */}
-          </Typography>
-          <Link to='/signin'>
-          <div>
-              <button className='loginButton'>Login</button> {/* aca va: onClick={handleAuth} y { {/* user ? "Desconectate" : "Logueate"}*/  } 
-          </div>
-          </Link>
-        <Link to="/checkout-page">
-         
-        </Link>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </Box>
+  const { user, isAuthenticated } = useSelector((state) => state.authUsers);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
+  return (
+    <div className='navbar'>
+      <Box sx={{
+        flexGrow: 1,
+      }}
+      >
+        <AppBar position="fixed">
+          <Toolbar className='toolBar'>
+            <div className='menuLeft'>
+              <IconButton className='buttonBurguer'
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="open drawer"
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
+
+              <Link to='/' >
+                <IconButton>
+                  Logo
+                </IconButton>
+              </Link>
+            </div>
+
+            <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </Search>
+
+            <div className='menuRight'>
+              <Typography
+                variant="h6"
+                color="#000"
+                noWrap
+                component="div"
+                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+              >
+                {user?.username}
+              </Typography>
+              {!isAuthenticated ?
+                <Link to='/signin'>
+                  <div>
+                    <button className='loginButton'>Login</button> {/* aca va: onClick={handleAuth} y { {/* user ? "Desconectate" : "Logueate"}*/}
+                  </div>
+                </Link>
+                :
+                <Link to='/'>
+                  <div>
+                    <button onClick={() => handleLogout()} className='loginButton'>Logout</button>
+                  </div>
+                </Link>
+
+              }
+
+
+            </div>
+          </Toolbar>
+        </AppBar>
+      </Box>
     </div>
   );
 }

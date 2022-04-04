@@ -34,6 +34,8 @@ export default function Feed() {
 
 
     return (
+
+        <>
         <Grid className='containePosts' container spacing={3}>
 
             {isLoading && "cargando..."}
@@ -48,6 +50,7 @@ export default function Feed() {
                 ))
             }
         </Grid>
+        </>
 
         //aca iria el navbar, que en desktop va al costado, incluir chef sugeridos copyright y algo mas
     )
