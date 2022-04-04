@@ -31,7 +31,7 @@ const authUserSlice = createSlice({
         const user = {
           id: action.payload.id,
           username: action.payload.username,
-          email: action.payload.emial,
+          email: action.payload.email,
         };
         localStorage.setItem("token", action.payload.token);
         localStorage.setItem("user", JSON.stringify(user));
@@ -49,7 +49,7 @@ const authUserSlice = createSlice({
         const user = {
           id: action.payload.id,
           username: action.payload.username,
-          email: action.payload.emial,
+          email: action.payload.email,
         };
         localStorage.setItem("token", action.payload.token);
         localStorage.setItem("user", JSON.stringify(user));
