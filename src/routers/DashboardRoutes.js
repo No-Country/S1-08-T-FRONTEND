@@ -1,4 +1,3 @@
-import FeedCard from './components/feedCard/FeedCard';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -11,7 +10,9 @@ import { BrowserRouter as Router, BrowserRouter, Route, Routes } from "react-rou
 import store from './store';
 */
 
-import Navbar from './components/navbar/Navbar';
+import Feed from '../components/Feed/Feed'
+import Navbar from '../components/Navbar/Navbar';
+import FeedCard from '../components/FeedCard/FeedCard';
 
 const theme = createTheme({
   typography: {
@@ -35,21 +36,21 @@ const theme = createTheme({
 
 });
 
-function App() {
+function DashboardRouters() {
 
   // va abajo de return <Provider store={store}>
   return <ThemeProvider theme={theme}>
-    <div className="App">
-      <BrowserRouter>
+  
+
         <Navbar />
         <Routes>
-          <Route path="/" element={<FeedCard />} />
+          <Route path="/" element={<Feed />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+   
+
   </ThemeProvider>
    // </Provider>
   
 }
 
-export default App;
+export default DashboardRouters;

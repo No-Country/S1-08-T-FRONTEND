@@ -4,25 +4,35 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
-import FeedCard from '../feedCard/FeedCard';
-import Footer from '../footer/Footer';
+import Footer from '../Footer/Footer';
+import FeedCard from '../FeedCard/FeedCard';
+import { useGetPostsQuery } from '../../app/services/posts';
 
-//importar la data
+import './Feed.css';
+import posts from '../postsData';
+
 
 export default function Feed(){
+
+    //const {data, isLoading} = useGetPostsQuery();
+    //const [posts, setPosts] = useState(data);
+    
+
     return(
-        <>
-            <Grid className='containePosts' container spacing={3}>
+        <div className='feedContainer'>
+            <Grid className='containerPosts' container spacing={3}>
+               {/* {isLoading && 'cargando'} */}
                 {
-                posts.map(post => (
+                posts ? 
+                posts?.map(post => (
                     <Grid item xs={12} sm={6} md={4} xl={3} >
-                        <FeedCard key={post.id} product={post} />
+                        <FeedCard key={post.id} post={post} />
                     </Grid>
-                ))
+                )) : <p>searching</p>
             }
             </Grid>
            <Footer />
             
-        </>
+        </div>
     )
 }

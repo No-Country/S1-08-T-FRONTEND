@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 49.0625rem;
+    margin: 6.5rem 0 -5rem 0;
 }
 
 
@@ -37,9 +39,32 @@
     align-items: center;
 }
 
+.socialRatingA{
+    display: flex;
+    height: 2.7rem;
+    background-color: #fbf9f7;
+    width: 4.5rem;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialRatingB{
+    display: flex;
+    height: 2.7rem;
+    background-color: #fbf9f7;
+    width: 4.5rem;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
 .socialIcon img{
     background-color: #FBF9F7;
-
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     width: 4rem;

@@ -1,27 +1,29 @@
-import React from 'react'
+import React from 'react';
+import posts from '../postsData';
 
 
 import OtherUsersCard from '../OtherUsersCard/OtherUsersCard';
 import  chefs from './chefs.jpg';
 
-import './footer.css';
+import './Footer.css';
 
 export default function Footer(){
     return(
         <section className='footerSection'>
             <div className='sugestedUsers'>
                 <h2>Usuarios recomendados para ti</h2>  
-                <OtherUsersCard />
+               {/* <OtherUsersCard /> */}
               
-               {/* <div>
-                {
-                posts.map(user => (
-                    <div>
-                        <OtherUsersCard key={user.id} user={user} />
+               <div>
+               {
+                posts ? 
+                posts?.map(post => (
+                    <div item xs={12} sm={6} md={4} xl={3} >
+                        <OtherUsersCard key={post.id} post={post} />
                     </div>
-                ))
+                )) : <p>searching</p>
             }
-        </div> */}
+        </div>
 
             </div>
             <img className='footerImg' src={chefs} alt="Cooking cartoon vector created by katemangostar - www.freepik.com" />
