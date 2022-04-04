@@ -15,7 +15,7 @@
     color: black;
     background-color: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: roboto;
     cursor: pointer;
     transition: all 0.3s;
@@ -52,5 +52,6 @@
 .menuRight{
     display: flex;
     align-items: center;
+    font-size:1rem
    
 }
