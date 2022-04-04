@@ -16,7 +16,6 @@ const Login = () => {
     const response = await login({
       email,
       password,
-      repassword,
     }) 
 
     const regexEmail =
