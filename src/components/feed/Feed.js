@@ -4,10 +4,14 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
-import FeedCard from '../feedCard/FeedCard';
+import FeedCard from '../FeedCard/FeedCard';
 //importar la data
 
+
 export default function Feed(){
+    const posts =[/*data*/]
+
+
     return(
         <Grid className='containePosts' container spacing={3}>
             {

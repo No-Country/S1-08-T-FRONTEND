@@ -12,7 +12,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { purple, lightBlue } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
-import './navbar.css';
+import './Navbar.css';
 import { Badge, Button } from '@mui/material';
 
 import { Link, useNavigate } from 'react-router-dom';

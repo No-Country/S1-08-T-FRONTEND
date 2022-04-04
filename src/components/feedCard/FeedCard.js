@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-import './feedCard.css';
+import './FeedCard.css';
 
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
