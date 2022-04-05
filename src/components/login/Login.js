@@ -2,6 +2,7 @@ import React from 'react';
 import "./Login.css";
 import { useState } from 'react';
 import { useLoginMutation } from "../../app/services/users";
+import fontbg from "../../Assets/images/font-bg.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -53,20 +54,25 @@ const Login = () => {
   
   return (
     <>
-      <div className="login-container">
-        <p className="login-title">Iniciar sesión</p>
-        <form className="login-form">
-          <div className="login-form-control">
-            <input type="text" placeholder="Email" name="email" onChange={handleChange}/>
-          </div>
-          <div className="login-form-control">
-            <input type="password" placeholder="Contraseña" name="password" onChange={handleChange}/>
-          </div>
-          <div className="login-form-control">
-            <input type="password" placeholder="Confirmar contraseña" name="repassword" onChange={handleChange} />
-          </div>
-          <button className="login-button" type="submit" onClick={handleSubmit}>Entrar</button>
-        </form>      
+    <div className="login-container">
+    <div className="login-img">
+        <img src={fontbg}/>
+      </div>     
+        <div className="login-div">
+          <p className="login-title">Iniciar sesión</p>
+          <form className="login-form">
+            <div className="login-form-control">
+              <input type="text" placeholder="Email" name="email" onChange={handleChange} />
+            </div>
+            <div className="login-form-control">
+              <input type="password" placeholder="Contraseña" name="password" onChange={handleChange} />
+            </div>
+            <div className="login-form-control">
+              <input type="password" placeholder="Confirmar contraseña" name="repassword" onChange={handleChange} />
+            </div>
+            <button className="login-button" type="submit" onClick={handleSubmit}>Entrar</button>
+          </form>
+        </div>
       </div>
     </>
   );
