@@ -20,7 +20,7 @@
     color: black;
     background-color: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: roboto;
     cursor: pointer;
     transition: all 0.3s;
@@ -39,15 +39,27 @@
     border-radius: 5px;
 }
 
-.cartButton{
-    margin-right: 0.2rem;
-    color: black;
+.addPost{
+    color: white;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 7rem;
+    cursor: pointer;
+    padding: 0.2rem 0.8rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
 }
 
-.badgeCart{
-    margin-right: 2rem;
-    color: white;
+
+.addIcon{
+    padding: 0.1rem 0;
+    margin-right: 0.3rem;
 }
+
 
 .menuLeft{
     display: flex;
@@ -57,5 +69,6 @@
 .menuRight{
     display: flex;
     align-items: center;
+    font-size:1rem
    
 }
