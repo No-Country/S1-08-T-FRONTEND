@@ -24,6 +24,7 @@ export default function Feed(){
             });
         }
     }, [data]); // eslint-disable-line
+
     useEffect(() => {
         refetch();
     }, []); // eslint-disable-line
