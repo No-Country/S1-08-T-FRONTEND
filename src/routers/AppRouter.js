@@ -1,4 +1,5 @@
 //Se divide entre rutas publicas y las privadas
+
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles'
