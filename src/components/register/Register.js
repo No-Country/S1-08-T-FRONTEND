@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './register.module.css'
+import { useRegisterMutation } from '../../app/services/users'
 
 export default function Register () {
   const emailRef = useRef()
@@ -8,6 +9,7 @@ export default function Register () {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const history = useNavigate()
+  const [register] = useRegisterMutation()
 
   async function handleSubmit (e) {
     e.preventDefault()

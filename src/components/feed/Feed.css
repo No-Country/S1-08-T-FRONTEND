@@ -1,0 +1,14 @@
+.feedContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerPosts{
+    display: flex;
+    flex-direction: column !important;
+    max-width: 50rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: -8rem !important;
+ 
+}
