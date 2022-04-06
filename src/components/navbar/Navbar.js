@@ -9,7 +9,7 @@ import InputBase from '@mui/material/InputBase'
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 
-import './navbar.css'
+import './Navbar.css'
 
 import { useDispatch, useSelector } from 'react-redux'
 

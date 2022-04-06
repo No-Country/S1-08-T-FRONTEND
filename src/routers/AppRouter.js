@@ -5,8 +5,8 @@ import { Route, Routes } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material/styles'
 import { purple, lightBlue, red } from '@mui/material/colors'
-import { Navbar } from '../components/navbar/Navbar'
-import Feed from '../components/feed/Feed'
+import { Navbar } from '../components/Navbar/Navbar'
+import Feed from '../components/Feed/Feed'
 import TestAuth from '../app/slices/users/TestAuth'
 import Login from '../components/login/Login'
 import Register from '../components/register/Register'
@@ -36,7 +36,7 @@ export const AppRouter = () => {
         <Routes>
           <Route path="/signin" element={<TestAuth />}/>
            <Route path="/login" element={<Login/>}/>
-          <Route path="/register" />
+          <Route path="/register" element={<Register/>}/>
           <Route path="/" element={<Feed />} />
         </Routes>
       </>
