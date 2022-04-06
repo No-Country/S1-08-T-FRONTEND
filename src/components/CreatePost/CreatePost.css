@@ -1,0 +1,118 @@
+.MuiModal-root{
+    display: flex;
+}
+
+.creatPostContainer{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 80vh;
+    background-color: #fbf9f7;
+    font-family: 'Karma';
+    margin: auto;
+    border-radius: 0.25rem;
+    align-items: center;
+}
+
+.createPostTitle h2{
+    text-align: center;
+    margin: 1rem;
+
+    font-size: 2.5rem !important;
+}
+
+.descriptions{
+    width: 70%;
+}
+
+.createTitle{
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    width: 100%;
+}
+
+.createMiniDescription{
+    padding: 0.8rem;
+}
+
+.createDescription{
+    padding: 0.8rem;
+    width: 100%;
+    height: 10rem;
+    margin: 0.5rem 0 1rem 0;
+    font-size: 1.125rem;
+    background: #e8e8e8;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+select{
+    font-family: 'karma';
+    border: none;
+    border-radius: 0.25rem;
+    background: #e8e8e8;
+    margin: 0.5rem 0 1rem 0.8rem;
+    font-size: 1rem;
+}
+
+.uploadButton{
+    padding: 0.8rem;
+    width: 13.5rem;
+    height: 2.5rem;
+    margin: 0.5rem 0 1rem 0.8rem;
+    font-size: 1.125rem;
+    background: #EC5853;
+    color: #fbf9f7;
+    border: none;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadButton svg{
+    padding: 0.1rem 0;
+    margin-left: 0.4rem;
+}
+
+.createPostButton{
+    padding: 0.8rem;
+    width: 13.5rem;
+    height: 2.5rem;
+    margin: 0.5rem 0 1rem 0.8rem;
+    font-size: 1.125rem;
+    background: #EC5853;
+    color: #fbf9f7;
+    border: none;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.createPostButton svg{
+    padding: 0.1rem 0;
+    margin-left: 0.4rem;
+}
+
+.addPost{
+    display: flex;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: roboto;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 8rem;
+    padding: 0.2rem 0.8rem;
+    margin: 0rem 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.addIcon{
+    padding: 0.1rem 0;
+    margin-left: 0.4rem;
+}

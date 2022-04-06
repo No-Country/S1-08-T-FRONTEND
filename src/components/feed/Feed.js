@@ -9,7 +9,6 @@ import FeedCard from '../FeedCard/FeedCard';
 import { useGetPostsQuery } from '../../app/services/posts';
 
 import './Feed.css';
-import posts from '../postsData';
 
 export default function Feed(){
 //importar la data
@@ -54,23 +53,3 @@ export default function Feed(){
 }
 
 
-{/* era mi return
-return(
-        <div className='feedContainer'>
-            <Grid className='containerPosts' container spacing={3}>
-                {isLoading && 'cargando'} */}
-              {/*  {
-                posts ? 
-                posts?.map(post => (
-                    <Grid item xs={12} sm={6} md={4} xl={3} >
-                        <FeedCard key={post.id} post={post} />
-                    </Grid>
-                )) : <p>searching</p>
-            }
-            </Grid>
-           <Footer />
-            
-        </div>
-        ) 
-
-*/}
