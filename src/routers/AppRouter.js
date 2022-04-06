@@ -9,7 +9,7 @@ import { purple, lightBlue, red } from '@mui/material/colors';
 import Navbar from "../components/Navbar/Navbar";
 import Feed from "../components/Feed/Feed";
 import TestAuth from "../app/slices/users/TestAuth";
-import Login from "../components/login/Login";
+import Login from "../components/Login/Login";
 
 const theme = createTheme({
   typography: {
@@ -33,20 +33,16 @@ const theme = createTheme({
 
 });
 
-
 export const AppRouter = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
         <Navbar />
         <Routes>
-
           <Route path="/signin" element={<TestAuth />}/>
-          <Route path="/login" element={<Login/>}/>
+           <Route path="/login" element={<Login/>}/>
           <Route path="/register" />
           <Route path="/" element={<Feed />} />
-
-
         </Routes>
       </>
     </ThemeProvider>
