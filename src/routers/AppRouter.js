@@ -37,17 +37,8 @@ export const AppRouter = () => {
           <Route path='/signin' element={<TestAuth />} />
           <Route path='/login' element={<Login />} />
 
-<<<<<<< HEAD
           <Route path='/register' element={<Register />} />
           <Route path='/' element={<Feed />} />
-=======
-          <Route path="/signin" element={<TestAuth />}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" />
-          <Route path="/" element={<Feed />} />
-
-
->>>>>>> 1054ce9fa827bb32775660ee67caa67f14e118ea
         </Routes>
       </>
     </ThemeProvider>
