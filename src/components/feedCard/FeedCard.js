@@ -61,12 +61,12 @@ export default function FeedCard({ post }) {
                     titleTypographyProps={{ variant: 'h5', marginBottom: -1 }}
                     title={username}
                     subheaderTypographyProps={{ variant: 'subtitle2' }}
-                    subheader={"title"}
+                    subheader={description}
                 />
                 <CardMedia
                     component="img"
                     image={image}
-                    alt="Locro"
+                    alt={description}
                     className="mainImg"
                     sx={{ maxWidth: 720, maxHeight: 480, marginLeft: 2, marginRight: 2, borderRadius: 1 }}
 

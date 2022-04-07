@@ -11,9 +11,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: 49.0625rem;
-    margin: 5rem 0 -5rem 0;
+    margin: 2.2rem 0 0rem 0;
 }
-
 
 .social{
     width: 100%;    
@@ -25,8 +24,8 @@
 
 .socialButton{
     display: flex;
-
 }
+
 .socialIcon{
     display: flex;
     height: 2.7rem;
