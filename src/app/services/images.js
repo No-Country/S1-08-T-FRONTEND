@@ -5,7 +5,7 @@ export const imageApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api-gout.herokuapp.com/api/uploads/",
     prepareHeaders: (headers, { getState }) => {
-      const token = getState().auth.token;
+      const token = getState().authUsers.token;
       headers.set("Authorization", `Bearer ${token}`);
       headers.set("Content-Type", "multipart/form-data");
       return headers;
