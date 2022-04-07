@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Modal from '@mui/material/Modal';
-/*import { Uploader } from "uploader";
-import { UploadButton } from "react-uploader";*/
+
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
-import { useUploadPostsImageMutation } from "../../../app/services/posts";
-import { useUploadPostsVideoMutation } from "../../../app/services/images";
+import { useCreatePostMutation } from "../../app/services/posts";
+import { useUploadPostsImageMutation } from "../../app/services/images";
+import { useUploadPostsVideoMutation } from "../../app/services/images"; 
 
 import './CreatePost.css'
 
@@ -21,11 +21,6 @@ const style = {
   p: 4,
 };
 
-/*const uploader = new Uploader({
-    // Get production API keys from Upload.io
-    apiKey: "free"
-  });*/
-
 export default function CreatePost() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -35,38 +30,72 @@ export default function CreatePost() {
   const [miniDescription, setMiniDescription] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [images, setImages] = useState(""); //para que sea una array, deberia tener[]
-  const [imageUrls, setImagesUrls] = useState("");
-  
+  const [image, setImage] = useState(""); //para que sea una array, deberia tener[]
+  const [imageUrl, setImageUrl] = useState("");
+  const [video, setVideo] = useState(""); //para que sea una array, deberia tener[]
+  const [videoUrl, setVideoUrl] = useState("");
+   
+  const { user, isAuthenticated } = useSelector((state) => state.authUsers); //solo puede postear un usuario logueado
+  const [createPost] = useCreatePostMutation();
+  const [createImage] = useCreatePostMutation();
+  const [createVideo] = useCreatePostMutation();
+ 
+  useEffect(() => {
+    async function getImageUrl() {
+      if (image) {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(image);
+        fileReader.onload = () => {
+          setImageUrl(fileReader.result);
+        };
+      }
+    }
+    getImageUrl();
+  }, [image]);
 
+  useEffect(() => {
+    async function getVideoUrl() {
+      if (video) {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(video);
+        fileReader.onload = () => {
+          setVideoUrl(fileReader.result);
+        };
+      }
+    }
+    getVideoUrl();
+  }, [image]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  }
-  
-  useEffect(() => { //detecta cambios en la array y si hay cambios mira que sean images para convertir en string
-    if (images.length < 1 || images.length > 6) return; //puse como limite que puedan ser hasta 6 imagenes
-    const newImageUrls = [];
-    images.forEach(image => newImageUrls.push(URL.createObjectURL(image))); //createObjectURL toma un objeto de imagen y devuelve una string de una fuente local temporal para esa imagen
-    setImagesUrls(newImageUrls);
-  }, [images]);
-  
-  function onImageChange(e) {
-    setImages([...e.target.files]);
-  }
   
   const handleChange = (e) => {
       const { name, value } = e.target;
       if (name === "title") {
           setTitle(value);
-      } else if (name === "miniDescription") {
-          setMiniDescription(value);
       } else if (name === "description"){
           setDescription(value);
       } else if (name === "category"){
           setCategory(value)
       }
   };
+
+  const handleImage = (e) => setImage(...e.target.files);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!title || !description || !image) return;
+    const imageUrl = await createImage(image);
+    const videoUrl = await createVideo(video);
+    const post = {
+      userid: user.id,
+      title: title,
+      description: description,
+      image: imageUrl,
+      video: videoUrl,
+      category: category
+    };
+    const res = await createPost(post);
+  }
+
 
     return (
     <div>
@@ -82,8 +111,8 @@ export default function CreatePost() {
                 <h2>Crea tu post</h2>
             </div>
             <div className='descriptions'>
-               {/* <input className='createTitle' type="text" placeholder="Escribe el título de tu post" name="title" onChange={handleChange}></input> */}
-                <input className='createMiniDescription' type="text" placeholder="Escribe una descripción breve" name="miniDescription" onChange={handleChange}></input>
+               <input className='createTitle' type="text" placeholder="Escribe el título de tu post" name="title" onChange={handleChange}></input>
+
                 <textarea className='createDescription' type="text" placeholder="Escribe tu post" name="description" onChange={handleChange}></textarea>
             </div>
             <div className='selectCategory'>
@@ -101,8 +130,40 @@ export default function CreatePost() {
             </div>
           
             <div className='uploadMedia'>
-              <input type='file' multiple accept='image/*' onChange={onImageChange} />
-              { imageUrls.map(imageSrc => <img src={imageSrc} />)}
+              <div className='uploadImg'>
+                <input
+                  className="imageInput"
+                  id="fileid"
+                  placeholder='Selecciona tus imagenes'
+                  name="image"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImage}
+                  required
+                />
+                <div className='confirmImg'>
+                {imageUrl && (
+                  <img src={imageUrl} />
+                )}
+                </div>
+              </div>
+              <div className='uploadVideo'>
+                <input
+                  className="videoInput"
+                  id="fileid"
+                  placeholder='Puedes sumar videos'
+                  name="video"
+                  type="file"
+                  accept="video/*"
+                  onChange={handleImage}
+                  required
+              />
+              <div className='confirmVideo'>
+                {videoUrl && (
+                  <img src={videoUrl} />
+                )}
+                </div>
+              </div>
             </div>
 
             <button className="createPostButton" type="submit" onClick={handleSubmit}>
@@ -112,16 +173,3 @@ export default function CreatePost() {
     </div>
   );
 }
-
-
-  {/*} <div className='uploadMedia'>
-                <UploadButton uploader={uploader}
-                    options={{multi: true}}
-                    onComplete={files => console.log(files)}>
-                        {({onClick}) =>
-                            <button className='uploadButton' onClick={onClick}>
-                            Sube tus archivos <svg height='25' width='25' fill='#fff' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M465 134.2c21.46-38.38 19.87-87.17-5.65-123.1c-7.541-10.83-22.31-13.53-33.2-5.938c-10.77 7.578-13.44 22.55-5.896 33.41c14.41 20.76 15.13 47.69 4.098 69.77C407.1 100.1 388 95.1 368 95.1c-36.23 0-68.93 13.83-94.24 35.92L352 165.5V256h90.56l33.53 78.23C498.2 308.9 512 276.2 512 239.1C512 198 493.7 160.6 465 134.2zM320 288V186.6l-52.95-22.69C216.2 241.3 188.5 400 56 400C25.13 400 0 425.1 0 456S25.13 512 56 512c180.3 0 320.1-88.27 389.3-168.5L421.5 288H320z"/></svg>
-                            </button>
-                    }
-                </UploadButton>
-                  </div>*/}

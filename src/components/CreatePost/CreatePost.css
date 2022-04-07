@@ -37,7 +37,9 @@
 
 .createDescription{
     padding: 0.8rem;
+    max-width: 100%;
     width: 100%;
+    max-height: 40vh;
     height: 10rem;
     margin: 0.5rem 0 1rem 0;
     font-size: 1.125rem;
@@ -115,4 +117,10 @@ select{
 .addIcon{
     padding: 0.1rem 0;
     margin-left: 0.4rem;
+}
+
+
+.confirmImg img{
+    width: 15rem;
+    height: 10rem;
 }
