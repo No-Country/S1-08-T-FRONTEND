@@ -3,7 +3,13 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const usersApi = createApi({
   reducerPath: "usersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api-gout.herokuapp.com/api/users/"
+    baseUrl: "https://api-gout.herokuapp.com/api/users/",
+    prepareHeaders: (headers, { getState }) => {
+      const token = getState().authUsers.token;
+      headers.set("Authorization", `Bearer ${token}`);
+      headers.set("Content-Type", "application/json");
+      return headers;
+    },
   }),
   endpoints: (builder) => ({
     getUsers: builder.query({
