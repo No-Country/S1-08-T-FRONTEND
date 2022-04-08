@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Grid from '@mui/material/Grid';
-
-import Footer from '../Footer/Footer';
 import FeedCard from '../FeedCard/FeedCard';
 import { useGetPostsQuery } from '../../app/services/posts';
-
 import './Feed.css';
 
 export default function Feed(){
@@ -44,7 +40,7 @@ export default function Feed(){
                     ))
                 }
             </div>
-            <Footer />
+          
         </div>
     )
 }

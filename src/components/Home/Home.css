@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'karma';
+}
+
+.home{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rightSection{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+}
