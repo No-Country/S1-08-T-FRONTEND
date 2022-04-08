@@ -1,13 +1,13 @@
 import React from 'react'
-import './register.module.css'
+import './Register.module.css'
 import { useState } from 'react'
 import { useRegisterMutation } from '../../app/services/users'
-import fontbg from '../../Assets/images/cena.jpg'
+import fontbg from '../../Assets/images/pizza.jpg'
 
 const Register = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  //const [repassword, setRepassword] = useState('')
+  const [repassword, setRepassword] = useState('')
   const [username, setUsername] = useState('')
   const [nickname, setNickname] = useState('')
   const [register] = useRegisterMutation()
@@ -29,7 +29,7 @@ const Register = () => {
       console.log('Debes escribir un correo electrónico válido')
     }
 
-    if (email === '' || password === '') {
+    if (email === '' || password === '' || repassword === '') {
       console.log('Los campos no pueden estar vacios')
     }
 
@@ -54,9 +54,8 @@ const Register = () => {
       setEmail(value)
     } else if (name === 'password') {
       setPassword(value)
-      // } else if (name === 'repassword') {
-      //   setRepassword(value)
-      // }
+    } else if (name === 'repassword') {
+      setRepassword(value)
     } else if (name === 'username') {
       setUsername(value)
     } else if (name === 'nickname') {
@@ -71,7 +70,7 @@ const Register = () => {
           <img src={fontbg} />
         </div>
         <div className='login-div'>
-          <p className='login-title'>Sign up</p>
+          <p className='login-title'>Sobre vos</p>
           <form className='login-form'>
             <div className='login-form-control'>
               <input
@@ -84,7 +83,7 @@ const Register = () => {
             <div className='login-form-control'>
               <input
                 type='text'
-                placeholder='Username'
+                placeholder='Nombre'
                 name='username'
                 onChange={handleChange}
               />
@@ -92,7 +91,7 @@ const Register = () => {
             <div className='login-form-control'>
               <input
                 type='text'
-                placeholder='Nickname'
+                placeholder='Apellido'
                 name='nickname'
                 onChange={handleChange}
               />
@@ -100,25 +99,25 @@ const Register = () => {
             <div className='login-form-control'>
               <input
                 type='password'
-                placeholder='Password'
+                placeholder='Contraseña'
                 name='password'
                 onChange={handleChange}
               />
             </div>
-            {/* <div className='login-form-control'>
+            <div className='login-form-control'>
               <input
                 type='password'
                 placeholder='Confirmar contraseña'
                 name='repassword'
                 onChange={handleChange}
               />
-            </div> */}
+            </div>
             <button
               className='login-button'
               type='submit'
               onClick={handleSubmit}
             >
-              Start
+              Registrarse
             </button>
           </form>
         </div>

@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material/styles'
 import { purple, lightBlue, red } from '@mui/material/colors'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from '../components/navbar/Navbar'
 import TestAuth from '../app/slices/users/TestAuth'
 import Login from '../components/login/Login'
 import Register from '../components/register/Register'
@@ -34,10 +34,10 @@ export const AppRouter = () => {
       <>
         <Navbar />
         <Routes>
-          <Route path="/signin" element={<TestAuth />}/>
-           <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/" element={<Home />} />
+          <Route path='/signin' element={<TestAuth />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/' element={<Home />} />
         </Routes>
       </>
     </ThemeProvider>
