@@ -51,4 +51,48 @@ export const {
   useUploadPostsVideoMutation,
 } = imageApi;
 
+export const uploadVideo = async (video) => {
+  const data = new FormData();
+  data.append("file", video);
+  data.append("upload_preset", "goutst08t");
+
+  const res = await fetch(
+    "https://api.cloudinary.com/v1_1/goutst08t/video/upload",
+    {
+      method: "POST",
+      body: data,
+    }
+  );
+  const file = await res.json();
+  return new Promise((resolve, reject) => {
+    if (file.secure_url) {
+      resolve(file.secure_url);
+    } else {
+      reject(file.error);
+    }
+  });
+};
+
+export const uploadImage = async (image) => {
+  const data = new FormData();
+  data.append("file", image);
+  data.append("upload_preset", "goutst08t");
+
+  const res = await fetch(
+    "https://api.cloudinary.com/v1_1/goutst08t/image/upload",
+    {
+      method: "POST",
+      body: data,
+    }
+  );
+  const file = await res.json();
+  return new Promise((resolve, reject) => {
+    if (file.secure_url) {
+      resolve(file.secure_url);
+    } else {
+      reject(file.error);
+    }
+  });
+};
+
 
