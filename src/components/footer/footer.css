@@ -1,0 +1,23 @@
+.footerSection{
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    margin: 6rem 1.5rem;   
+    text-align: center;
+}
+
+.footerImg{
+    width: 20rem;
+    height: auto;
+}
+
+small{
+    font-size: 1rem;
+    font-family: 'karma';
+    margin-top: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+h2{
+    font-size: 1.3rem;
+}

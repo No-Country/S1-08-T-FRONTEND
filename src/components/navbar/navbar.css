@@ -2,6 +2,11 @@
     display: flex;
 }
 
+.logo{
+    height: 4.2rem;
+    width: auto;
+}
+
 .toolBar{
     background: #EC5853;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FF6961, #EC5853);  /* Chrome 10-25, Safari 5.1-6 */
@@ -12,36 +17,24 @@
 
 .loginButton{
     display: flex;
-    color: black;
+    color: white;
     background-color: transparent;
-    border: none;
+    border: 1px solid white;
     font-size: 1.2rem;
+    font-weight: 400;
     font-family: roboto;
     cursor: pointer;
-    transition: all 0.3s;
     height: 2.5rem;
     width: 8rem;
-    padding: 1rem;
+    padding: 0.2rem 0.8rem;
     margin: 0rem 2rem;
     justify-content: center;
     align-items: center;
-
 }
 
-
-.loginButton:hover{
-    border: 1px solid #0472a5;
-    border-radius: 5px;
-}
-
-.cartButton{
-    margin-right: 0.2rem;
-    color: black;
-}
-
-.badgeCart{
-    margin-right: 2rem;
-    color: white;
+.loginButton svg{
+    padding: 0.1rem 0;
+    margin-left: 0.4rem;
 }
 
 .menuLeft{
