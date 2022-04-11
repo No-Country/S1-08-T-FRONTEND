@@ -2,7 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;    
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 form{
@@ -19,13 +23,13 @@ form{
     margin: auto;
     border-radius: 0.25rem;
     align-items: center;
-    overflow: scroll;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .createPostTitle h2{
     text-align: center;
     margin: 0.5rem 0 0 0;
-
     font-size: 2rem !important;
 }
 
@@ -64,6 +68,10 @@ select{
     font-size: 1rem;
 }
 
+.uploadMedia{
+    width: 15rem;
+    margin-top: 1rem;
+}
 
 label{
     padding: 0.8rem;
@@ -83,6 +91,7 @@ label{
  
 #filepond--drop-label-qb0w8oqe0{
     height: 2rem !important;
+    width: 15 rem !important;
     background-color: #EC5853;
     cursor: pointer;
   }
@@ -92,9 +101,10 @@ label{
     color: green !important;
 }
 
-.filepond--list{
+.filepond--browser{
     display: flex !important;
     flex-direction: row !important;
+    width: 15 rem !important;
     background-color: greenyellow !important;
 }
 

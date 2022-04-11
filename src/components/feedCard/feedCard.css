@@ -37,6 +37,7 @@
     justify-items: center;
     align-items: center;
     padding: 0 0.4rem;
+    cursor: pointer;
 }
 
 .socialRatingA{
@@ -49,6 +50,7 @@
     border-bottom-left-radius: 5px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .socialRatingB{
@@ -61,6 +63,7 @@
     border-bottom-right-radius: 5px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .socialIcon img{
