@@ -27,14 +27,14 @@ export const postApi = createApi({
       }),
     }),
     updatePost: builder.mutation({
-      query: ({post, id}) => ({
+      query: ({ post, id }) => ({
         url: `edit/${id}`,
         method: "PUT",
         body: post,
       }),
     }),
     updatePostLikes: builder.mutation({
-      query: ({post, id}) => ({
+      query: ({ post, id }) => ({
         url: `likes/${id}`,
         method: "PUT",
         body: post,

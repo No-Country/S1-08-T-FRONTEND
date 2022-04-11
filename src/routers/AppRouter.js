@@ -10,7 +10,7 @@ import TestAuth from "../app/slices/users/TestAuth";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Home from "../components/Home/Home";
-
+import Detail from "../components/DetailPost/Detail";
 const theme = createTheme({
   typography: {
     fontFamily: ["Roboto", "karma"].join(","),
@@ -38,6 +38,7 @@ export const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<Detail />} />
         </Routes>
       </>
     </ThemeProvider>
