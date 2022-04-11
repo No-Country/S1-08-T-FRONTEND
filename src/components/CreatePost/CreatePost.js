@@ -1,13 +1,13 @@
 import * as React from 'react';
 import './CreatePost.css'
-
 import Modal from '@mui/material/Modal';
-
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { useCreatePostMutation } from "../../app/services/posts";
 import { uploadImage, uploadVideo} from "../../app/services/images";
+import "../../../node_modules/video-react/dist/video-react.css";
 
+import { Player } from 'video-react';
 //FilePond library
 import { FilePond, registerPlugin } from 'react-filepond';
 import 'filepond/dist/filepond.min.css';
@@ -170,6 +170,7 @@ export default function CreatePost() {
                   className='imageInput'
                 />
               </div>
+              
               {/*<div className='uploadVideo'>
                 <FilePond
                   files={video}
@@ -198,7 +199,7 @@ export default function CreatePost() {
                   <img alt='' src={videoUrl} />
                 )}
               </div>
-            </div>
+                </div>
           
           </div>
 

@@ -2,7 +2,7 @@ import React from 'react'
 import './Register.module.css'
 import { useState } from 'react'
 import { useRegisterMutation } from '../../app/services/users'
-import fontbg from '../../Assets/images/pizza.jpg'
+import fontbg from '../../Assets/images/font-bg.jpg'
 
 const Register = () => {
   const [email, setEmail] = useState('')
