@@ -22,6 +22,7 @@ const Register = () => {
       nickname
     })
 
+    // eslint-disable-next-line no-useless-escape
     const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     //testing  console.log(regexEmail.test(email))
 
@@ -68,7 +69,7 @@ const Register = () => {
     <>
       <div className='login-container'>
         <div className='login-img'>
-          <img src={fontbg} />
+          <img alt='' src={fontbg} />
         </div>
         <div className='login-div'>
           <p className='login-title'>Sign up</p>

@@ -5,7 +5,7 @@ import "./Login.css";
 import { useState } from 'react';
 import { useLoginMutation } from "../../app/services/users";
 import fontbg from "../../Assets/images/font-bg.jpg";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -50,7 +50,7 @@ const Login = () => {
     <>
     <div className="login-container">
     <div className="login-img">
-        <img src={fontbg}/>
+        <img alt='' src={fontbg}/>
       </div>     
         <div className="login-div">
           <p className="login-title">Iniciar sesión</p>
@@ -62,7 +62,6 @@ const Login = () => {
               <input type="password" placeholder="Contraseña" name="password" onChange={handleChange} required/>
             </div>   
             <button className="login-button" type="submit" onClick={handleSubmit} disabled={loading}>Entrar</button>
-            <Toaster />
           </form>
         </div>
       </div>

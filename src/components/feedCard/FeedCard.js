@@ -15,7 +15,7 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-
+import avatarDefault from '../../Assets/images/avatar-chef.jpg';
 const element = <FontAwesomeIcon icon={faCoffee} />
 
 const ExpandMore = styled((props) => {
@@ -53,11 +53,8 @@ export default function FeedCard({ post }) {
             <Card sx={{ maxHeight: 800, marginLeft: 2, marginRight: 2, width: 765 }}>
                 <CardHeader className="userIntro"
                     avatar={
-                        <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                            {avatar ? <img src={avatar} alt={description} /> : 'Av'}
-                        </Avatar>
+                        <Avatar sx={{ bgcolor: red[500], borderColor: red[500] }} src={avatar ? avatar: avatarDefault } aria-label="recipe" alt={description}/>
                     }
-
                     titleTypographyProps={{ variant: 'h5', marginBottom: -1 }}
                     title={username}
                     subheaderTypographyProps={{ variant: 'subtitle2' }}

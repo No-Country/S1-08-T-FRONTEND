@@ -33,12 +33,14 @@ export const AppRouter = () => {
     <ThemeProvider theme={theme}>
       <>
         <Navbar />
+        <main>
         <Routes>
           <Route path="/signin" element={<TestAuth />}/>
            <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/" element={<Home />} />
         </Routes>
+        </main>
       </>
     </ThemeProvider>
   )

@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import FeedCard from '../FeedCard/FeedCard';
-import { useGetPostsQuery } from '../../app/services/posts';
 import './Feed.css';
+import FeedCard from '../FeedCard/FeedCard';
+import CardContent from '@mui/material/CardContent';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import Typography from '@mui/material/Typography';
+import CreatePost from '../CreatePost/CreatePost';
 
-export default function Feed(){
-//importar la data
-    const { data, error, isLoading, isSuccess, isError,refetch } = useGetPostsQuery();
+import { useGetPostsQuery } from '../../app/services/posts';
+
+export default function Feed() {
+    //importar la data
+    const { data, error, isLoading, isSuccess, isError, refetch } = useGetPostsQuery();
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -27,7 +33,7 @@ export default function Feed(){
 
         <div className='feedContainer'>
             <div className='containerPosts'>
-
+   
                 {isLoading && "cargando..."}
 
                 {isError && error.message}
@@ -40,10 +46,9 @@ export default function Feed(){
                     ))
                 }
             </div>
-          
+
         </div>
     )
 }
 
 
-    
