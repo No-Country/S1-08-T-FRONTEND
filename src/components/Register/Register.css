@@ -1,4 +1,4 @@
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,6 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 5px;
 }
 
 .login-div {
@@ -22,7 +23,7 @@ body {
 }
 
 .login-form {
-  margin: 0 100px;
+  margin: 2px 100px;
 }
 
 .login-title {
@@ -56,14 +57,14 @@ input {
 
 .login-button {
   color: #fff;
-  padding: 14px 64px;
-  margin: 0px auto;
+  padding: 10px 64px;
+  margin: 2px auto;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bolder;
   cursor: pointer;
   background: #ec5853;
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: center;
 }
@@ -72,8 +73,15 @@ input {
   color: #1c1c1c;
 }
 
+h4 {
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 0 1px;
+}
+
 @media screen and (max-width: 720px) {
-  img {
+  .login-img img {
     display: none;
   }
 
