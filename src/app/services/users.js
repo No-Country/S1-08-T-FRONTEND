@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const usersApi = createApi({
   reducerPath: 'usersApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api-gout.herokuapp.com/api/users', //'https://api-gout.herokuapp.com/api/users/'
+    baseUrl: 'https://api-gout.herokuapp.com/api/users',
     prepareHeaders: (headers, { getState }) => {
       const token = getState().authUsers.token
       headers.set('Authorization', `Bearer ${token}`)
@@ -16,32 +16,32 @@ export const usersApi = createApi({
       query: () => ``
     }),
     getUser: builder.query({
-      query: id => `${id}`
+      query: (id) => `${id}`
     }),
 
     login: builder.mutation({
-      query: credentials => ({
+      query: (credentials) => ({
         url: 'login',
         method: 'POST',
         body: credentials
       })
     }),
     googleLogin: builder.mutation({
-      query: credentials => ({
+      query: (credentials) => ({
         url: 'googleLogin',
         method: 'POST',
         body: credentials
       })
     }),
     register: builder.mutation({
-      query: credentials => ({
+      query: (credentials) => ({
         url: 'register',
         method: 'POST',
         body: credentials
       })
     }),
     update: builder.mutation({
-      query: data => ({
+      query: (data) => ({
         url: 'profile',
         method: 'PUT',
         body: data
