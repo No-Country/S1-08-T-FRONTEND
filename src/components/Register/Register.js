@@ -9,7 +9,7 @@ import { Link, useNavigate } from 'react-router-dom'
 const Register = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  //const [repassword, setRepassword] = useState('')
+  const [repassword, setRepassword] = useState('')
   const [username, setUsername] = useState('')
   const [nickname, setNickname] = useState('')
   const [register] = useRegisterMutation()
@@ -45,6 +45,8 @@ const Register = () => {
       setEmail(value)
     } else if (name === 'password') {
       setPassword(value)
+    } else if (name === 'repassword') {
+      setRepassword(value)
     } else if (name === 'username') {
       setUsername(value)
     } else if (name === 'nickname') {
@@ -59,7 +61,7 @@ const Register = () => {
           <img src={fontbg} />
         </div>
         <div className='login-div'>
-          <p className='login-title'>Sobre vos</p>
+          <p className='login-title'>Registrate</p>
           <form className='login-form'>
             <div className='login-form-control'>
               <input
@@ -93,14 +95,14 @@ const Register = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* <div className='login-form-control'>
+            <div className='login-form-control'>
               <input
                 type='password'
                 placeholder='Confirmar contraseña'
                 name='repassword'
                 onChange={handleChange}
               />
-            </div> */}
+            </div>
             <button
               className='login-button'
               type='submit'
