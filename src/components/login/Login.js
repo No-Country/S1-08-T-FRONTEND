@@ -1,11 +1,12 @@
 import React from 'react';
 import {  useSelector } from "react-redux";
-import { Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import "./Login.css";
 import { useState } from 'react';
 import { useLoginMutation } from "../../app/services/users";
 import fontbg from "../../Assets/images/font-bg.jpg";
 import toast from 'react-hot-toast';
+import { LoginGoogleButton } from './LoginGoogleButton';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,19 +16,23 @@ const Login = () => {
 
   let location = useLocation();
   const from = location.state ? location.state.from : "/";
-  const { user, isAuthenticated } = useSelector((state) => state.authUsers);
+  const {isAuthenticated } = useSelector((state) => state.authUsers);
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    const loginToast = toast.loading('Iniciando sesión...')
+
     setLoading(true);
+
     const response = await login({
       email,
       password,
     }) 
     
     setLoading(false);
+    toast.dismiss(loginToast)
     if(response.error) {      
-      toast.error(response.error.data.msg, "Ocurrió un error")
+      toast.error(response.error.data.msg)
     } else {
       toast.success(`Bienvenido ${response.data.username}`);   
     }
@@ -61,7 +66,15 @@ const Login = () => {
             <div className="login-form-control">
               <input type="password" placeholder="Contraseña" name="password" onChange={handleChange} required/>
             </div>   
+            <div className='login-button-container'>
             <button className="login-button" type="submit" onClick={handleSubmit} disabled={loading}>Entrar</button>
+            <LoginGoogleButton  />
+            </div>
+            <div className='login-form-control'>
+              <h6>
+                ¿ Aun no tienes cuenta ?<Link to='/register'>  Registrarse</Link>
+              </h6>
+            </div>
           </form>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { makeStyles } from "@material-ui/styles";
 import Modal from '@mui/material/Modal';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
-
+// import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import MicrowaveIcon from '@mui/icons-material/Microwave';
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { useCreatePostMutation } from "../../app/services/posts";
@@ -103,7 +103,7 @@ export default function CreatePost() {
           root: classes.customButtonPost
         }}
       >
-        <AddAPhotoIcon size={5}/>
+        <MicrowaveIcon />
       </IconButton>
       <Modal
         open={open}

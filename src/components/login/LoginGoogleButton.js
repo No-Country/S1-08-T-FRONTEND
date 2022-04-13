@@ -1,10 +1,13 @@
 import React from 'react'
+import './LoginGoogleButton.css'
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleLogin } from 'react-google-login';
 import { useGoogleLoginMutation } from "../../app/services/users";
 import { client_secret_google } from './client_secret_google';
 import { useState } from 'react';
+
+console.log(client_secret_google.client_id)
 
 export const LoginGoogleButton = () => {
     const [loading, setLoading] = useState(false);
@@ -51,8 +54,7 @@ export const LoginGoogleButton = () => {
             render={(renderProps ) => (
                 <button
                 onClick={renderProps.onClick}
-                className="btn-outline-dark bg-white rounded-pill text-dark align-items-center"
-                style={{ color: "white", boxShadow: "none"}}
+                className="googleLogin-button"
                  disabled={loading}>
                     <FcGoogle
                         className="google-icon google-icon-wrapper"

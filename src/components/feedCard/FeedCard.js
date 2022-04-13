@@ -1,9 +1,9 @@
 import React from "react";
+import './FeedCard.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-import './FeedCard.css';
 
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';

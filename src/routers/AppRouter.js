@@ -8,7 +8,7 @@ import { purple, lightBlue, red } from '@mui/material/colors'
 import Navbar from '../components/Navbar/Navbar'
 import TestAuth from '../app/slices/users/TestAuth'
 import Login from '../components/Login/Login'
-import Register from '../components/register/Register'
+import Register from '../components/Register/Register'
 import Home from '../components/Home/Home'
 
 const theme = createTheme({

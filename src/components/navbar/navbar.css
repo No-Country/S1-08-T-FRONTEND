@@ -3,8 +3,7 @@
 }
 
 .logo {
-    height: 4.2rem;
-    width: auto;
+    width: min(10vw, 4.2rem);
 }
 
 .toolBar {
@@ -23,7 +22,7 @@
     color: #fff;
     background-color: transparent;
     border:.8px solid #fff;
-    font-size: .9rem;
+    font-size: min(10vw, 70%);
     font-weight: 600;
     font-family: roboto;
     cursor: pointer;
@@ -37,7 +36,21 @@
     display: flex;
     color: #FF6961;
     background-color: #fff;
-    font-size: .9rem;
+    font-size: min(10vw, 70%);
+    font-weight: 600;
+    font-family: roboto;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    margin: 0rem .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoutButton {
+    display: flex;
+    color: #fff;
+    background-color: transparent;
+    font-size: min(10vw, 70%);
     font-weight: 600;
     font-family: roboto;
     cursor: pointer;
@@ -64,7 +77,7 @@
     font-size: 1rem
 }
 
-@media screen and (max-width: 720px) {
+/* @media screen and (max-width: 600px) {
     .loginButton {
         display: none;
     }
@@ -73,4 +86,4 @@
         display: none;
     }
 }
-    
+     */

@@ -1,0 +1,29 @@
+.googleLogin-button {
+    display:inline-block;
+    background: #fff;
+    border: black solid 1px;
+    border-radius: 5px;
+    color: #000;
+    margin: 6px auto;
+    padding: 14px 48px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    min-width: 50%;
+    transition: .5s;
+
+}
+
+.googleLogin-button:hover {
+    color: #fff;
+    background-color: #000;
+    border: solid 1px #fff;
+}
+
+@media all and (max-width:30em) {
+    .googleLogin-button {
+        display: block;
+        min-width: 80%;
+    
+    }
+}

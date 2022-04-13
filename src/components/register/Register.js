@@ -1,5 +1,5 @@
 import React from 'react'
-import './register.module.css'
+import './Register.css'
 import { useState } from 'react'
 import { useRegisterMutation } from '../../app/services/users'
 import fontbg from '../../Assets/images/cena.jpg'
