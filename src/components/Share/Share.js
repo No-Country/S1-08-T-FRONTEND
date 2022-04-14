@@ -32,7 +32,7 @@ export default function Share({id}) {
                 <div className='shareModal'>
                     <div className='shareSection'>
                         <div className='leftImage'>
-                            <img src={shareFood}/>
+                            <img className="shareImage" src={shareFood}/>
                         </div>
                         <div className='socialSection'>
                             <h1>Compártelo en tus otras redes</h1>
