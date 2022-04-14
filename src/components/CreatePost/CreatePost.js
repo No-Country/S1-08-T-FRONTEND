@@ -1,13 +1,18 @@
 import * as React from 'react';
-import { makeStyles } from "@material-ui/styles";
+import './CreatePost.css'
 import Modal from '@mui/material/Modal';
-// import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
-import MicrowaveIcon from '@mui/icons-material/Microwave';
+
+import { makeStyles } from "@material-ui/styles";
+
+
+
 import { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { useCreatePostMutation } from "../../app/services/posts";
+import { useUploadPostsImageMutation } from "../../app/services/images";
+import { useUploadPostsVideoMutation } from "../../app/services/images";
 
-import './CreatePost.css'
+import MicrowaveIcon from '@mui/icons-material/Microwave';
 import { IconButton } from '@mui/material';
 
 const useStyles = makeStyles(theme => ({
@@ -63,7 +68,7 @@ export default function CreatePost() {
       }
     }
     getVideoUrl();
-  }, [video]);
+  }, [image]);
 
 
   const handleChange = (e) => {
@@ -99,13 +104,13 @@ export default function CreatePost() {
   return (
     <div>
       <IconButton
+        onClick={handleOpen}
         classes={{
           root: classes.customButtonPost
         }}
       >
         <MicrowaveIcon />
-      </IconButton>
-      <Modal
+      </IconButton>      <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -113,7 +118,7 @@ export default function CreatePost() {
       >
         <div className='creatPostContainer'>
           <div className='createPostTitle'>
-            <h2>Crea tu publicacion</h2>
+            <h2>Crea tu post</h2>
           </div>
           <div className='descriptions'>
             <input className='createTitle' type="text" placeholder="Escribe el título de tu post" name="title" onChange={handleChange}></input>

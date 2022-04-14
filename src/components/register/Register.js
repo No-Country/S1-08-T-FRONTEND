@@ -1,10 +1,3 @@
-<<<<<<< HEAD:src/components/register/Register.js
-import React from "react";
-import "./Register.css";
-import { useState } from "react";
-import { useRegisterMutation } from "../../app/services/users";
-import fontbg from "../../Assets/images/cena.jpg";
-=======
 import React from 'react'
 import './Register.css'
 import { useState } from 'react'
@@ -12,7 +5,6 @@ import { useRegisterMutation } from '../../app/services/users'
 import fontbg from '../../Assets/images/pizzaA.jpg'
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
->>>>>>> fee81b9690f76b8f95ea023b2dca63d4fd322a85:src/components/Register/Register.js
 
 const Register = () => {
   const [email, setEmail] = useState('')
@@ -34,25 +26,8 @@ const Register = () => {
       email,
       password,
       username,
-<<<<<<< HEAD:src/components/register/Register.js
-      nickname,
-    });
-
-    // eslint-disable-next-line no-useless-escape
-    const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-    //testing  console.log(regexEmail.test(email))
-
-    if (email !== "" && !regexEmail.test(email)) {
-      console.log("Debes escribir un correo electrónico válido");
-    }
-
-    if (email === "" || password === "" || repassword === "") {
-      console.log("Los campos no pueden estar vacios");
-    }
-=======
       nickname
     })
->>>>>>> fee81b9690f76b8f95ea023b2dca63d4fd322a85:src/components/Register/Register.js
 
     setLoading(false)
     toast.dismiss(registerToast)
@@ -79,73 +54,91 @@ const Register = () => {
     }
   }
 
+  // mauri debes hacer las validaciones necesarias del formulario
+
+  if (password !== repassword) {
+    console.log('Los campos deben coincidir')
+  }
+
   return (
     <>
-<<<<<<< HEAD:src/components/register/Register.js
-      <div className="login-container">
-        <div className="login-img">
-        <img alt='' src={fontbg} />
-=======
-      <div className='login-container'>
-        <div className='login-img'>
-          <img src={fontbg} />
->>>>>>> fee81b9690f76b8f95ea023b2dca63d4fd322a85:src/components/Register/Register.js
+      <div className="register-container">
+        <div className="register-img">
+          <img alt='' src={fontbg} />
+
         </div>
-        <div className='login-div'>
-          <p className='login-title'>Registrate</p>
-          <form className='login-form'>
-            <div className='login-form-control'>
+        <div className='register-div'>
+          <p className='register-title'>Registrate</p>
+          <form className='register-form'>
+            <div className='register-form-control'>
               <input
                 type='email'
                 placeholder='Email'
                 name='email'
                 onChange={handleChange}
+                required
               />
             </div>
-            <div className='login-form-control'>
+            <div className='register-form-control'>
               <input
                 type='text'
                 placeholder='Nombre'
                 name='username'
                 onChange={handleChange}
+                required
               />
             </div>
-            <div className='login-form-control'>
+            <div className='register-form-control'>
               <input
                 type='text'
                 placeholder='Apellido'
                 name='nickname'
                 onChange={handleChange}
+                required
               />
             </div>
-            <div className='login-form-control'>
+            <div className='register-form-control'>
               <input
                 type='password'
                 placeholder='Contraseña'
                 name='password'
                 onChange={handleChange}
+                required
               />
             </div>
-            <div className='login-form-control'>
+            <div className='register-form-control'>
               <input
                 type='password'
                 placeholder='Confirmar contraseña'
                 name='repassword'
                 onChange={handleChange}
+                required
               />
             </div>
+            <div className='register-form-control'>
+              <input
+                type='password'
+                placeholder='Confirmar contraseña'
+                name='repassword'
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className='register-button-container'>
             <button
-              className='login-button'
+              className='register-button'
               type='submit'
               onClick={handleSubmit}
               disabled={loading}
             >
               Registrarse
             </button>
-            <div className='login-form-control'>
-              <h4>
+            </div>
+
+            <div className='register-form-control'>
+              <h6>
                 ¿ Ya tienes cuenta ?<Link to='/login'> Iniciar sesion</Link>
-              </h4>
+              </h6>
             </div>
           </form>
         </div>
