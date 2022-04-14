@@ -49,7 +49,7 @@ export default function FeedCard({ post }) {
 
   return (
     <div className="feedCard">
-      <Card sx={{ maxHeight: 700, marginLeft: 2, marginRight: 2, width: 645 }}>
+      <Card sx={{ maxHeight: 620, marginLeft: 2, marginRight: 2, width: 645 }}>
         <CardHeader
           className="userIntro"
           avatar={

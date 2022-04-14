@@ -108,7 +108,7 @@
         justify-content: space-between;
         width: 42.5rem;
         height: 50rem;
-        margin: 2.2rem 0rem -5rem 0;
+        margin: 2.2rem 0rem -10rem 0;
     }
 
     .social{
@@ -178,6 +178,7 @@
 
     .mainImg{
         border: 1px solid #EC5853;
+        width: 38.375rem !important;
     }
 
     .descriptionFeed{
