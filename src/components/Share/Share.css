@@ -1,79 +1,166 @@
-.MuiModal-root{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-behavior: smooth;    
+@media (min-width:840px){
+    .MuiModal-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;    
+    }
+
+    .shareButton{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 7.2rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.6rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.4rem;
+        cursor: pointer;
+        font-size: 0.8rem;
+    }
+
+    .shareButton svg{
+        background-color: #FBF9F7;
+        margin-right: 0.6rem;
+        height: 1rem;
+    }
+
+    .shareModal{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 60vh;
+        background-color: #fbf9f7;
+        font-family: 'Karma';
+        margin: auto;
+        border-radius: 0.25rem;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .shareSection{
+        display: flex;
+    }
+
+    .leftImage{
+        width: 100%;
+    }
+
+    .leftImage img{
+        width: 100%;
+        height: auto;
+    }
+
+    .socialSection{
+        background-color: #EC5853;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialSection h1{
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    } 
+
+    .SocialIcons{
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+    }
+    .SocialIcons svg:hover{
+        fill: #000;
+    }
 }
 
-.shareButton{
-    display: flex;
-    height: 2.7rem;
-    background-color: #fbf9f7;
-    width: 9.8rem;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    margin-left: 1rem;
-    justify-items: center;
-    align-items: center;
-    padding: 0 0.4rem;
-    cursor: pointer;
-}
+@media (min-width:1200px){
+    .MuiModal-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;    
+    }
 
-.shareButton svg{
-    background-color: #FBF9F7;
-    margin-right: 1rem;
-}
+    .shareButton{
+        display: flex;
+        height: 2.2rem;
+        background-color: #fbf9f7;
+        width: 9rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 1rem;
+        justify-items: center;
+        align-items: center;
+        padding: 0 0.4rem;
+        cursor: pointer;
+    }
 
-.shareModal{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 60vh;
-    background-color: #fbf9f7;
-    font-family: 'Karma';
-    margin: auto;
-    border-radius: 0.25rem;
-    align-items: center;
-    overflow-y: scroll;
-    scrollbar-width: none;
-}
+    .shareButton svg{
+        background-color: #FBF9F7;
+        margin-right: 1rem;
+    }
 
-.shareSection{
-    display: flex;
-}
+    .shareModal{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 60vh;
+        background-color: #fbf9f7;
+        font-family: 'Karma';
+        margin: auto;
+        border-radius: 0.25rem;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
 
-.leftImage{
-    width: 100%;
-}
+    .shareSection{
+        display: flex;
+    }
 
-.leftImage img{
-    width: 100%;
-    height: auto;
-}
+    .leftImage{
+        width: 100%;
+    }
 
-.socialSection{
-    background-color: #EC5853;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .leftImage img{
+        width: 100%;
+        height: auto;
+    }
 
-.socialSection h1{
-    font-size: 1.6rem;
-    margin-top: 1rem;
-} 
+    .socialSection{
+        background-color: #EC5853;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.SocialIcons{
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-}
+    .socialSection h1{
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    } 
 
-.SocialIcons svg{
-    transition: all ease-in 0.3s;
-}
-.SocialIcons svg:hover{
-    fill: #000;
+    .SocialIcons{
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+    }
+    .SocialIcons svg:hover{
+        fill: #000;
+    }
 }

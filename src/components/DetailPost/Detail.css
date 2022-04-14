@@ -1,0 +1,63 @@
+.btn {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 60px;
+}
+.main_container {
+  width: 100vw;
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  width: 450px;
+  height: calc(100vh - 200px);
+}
+.main_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 200px);
+  padding: 25px;
+}
+.user {
+  height: 80px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.user .avatar {
+  display: flex;
+  height: 70px;
+  background-color: rgb(168, 124, 124);
+  border-radius: 50%;
+}
+.description {
+  height: auto;
+}
+.description p {
+  margin: 20 px;
+  padding: 15px;
+}
+.description p span {
+  font-weight: bold;
+  margin: 5px;
+}
+.actions {
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+}
+.likes {
+  height: 100px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: none;
+}

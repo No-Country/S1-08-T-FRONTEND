@@ -1,0 +1,188 @@
+@media (min-width:840px){
+    .feedCard{
+        display: flex;
+        width: 34.7rem;
+        height: 40rem;
+        margin: 2.2rem 0rem -5rem 0;
+    }
+
+    .social{
+        width: 94%;  
+        height: 3.2rem;  
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 1rem;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 7.2rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.6rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.1rem;
+        cursor: pointer;
+        font-size: 0.8rem;
+    }
+    
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0.6rem;
+        height: 1rem;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 3.2rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingA svg{
+        background-color: #FBF9F7;
+        height: 1rem;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 3.2rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0.1rem;
+        
+    }
+
+    .socialRatingB svg{
+        background-color: #FBF9F7;
+        height: 1rem;
+    }
+
+
+    .mainImg{
+        border: 1px solid #EC5853;
+        width: 30.7rem !important;
+        height: 20.4665rem !important;
+    }
+
+    .descriptionFeed{
+        border: 1px solid #EC5853;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:1200px){
+    *{
+        font-family: 'Karma';
+    };
+
+    .feedSection{
+    
+    }
+
+    .feedCard{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 42.5rem;
+        height: 50rem;
+        margin: 2.2rem 0rem -5rem 0;
+    }
+
+    .social{
+        width: 100%;    
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 1.5rem;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 2.2rem;
+        background-color: #fbf9f7;
+        width: 9rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.8rem;
+        justify-items: center;
+        align-items: center;
+        padding: 0 0.2rem;
+        cursor: pointer;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 2.2rem;
+        background-color: #fbf9f7;
+        width: 4.2rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 2.2rem;
+        background-color: #fbf9f7;
+        width: 4.2rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialIcon img{
+        background-color: #FBF9F7;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        width: 4rem;
+        height: 15px;
+    }
+
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0.8rem;
+    }
+
+    .mainImg{
+        border: 1px solid #EC5853;
+    }
+
+    .descriptionFeed{
+        border: 1px solid #EC5853;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        font-size: 1rem;
+    }
+}

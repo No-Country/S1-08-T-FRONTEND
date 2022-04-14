@@ -1,17 +1,40 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'karma';
+@media (min-width:840px){
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'karma';
+    }
+
+    .home{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .rightSection{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6rem;
+        margin-right: 2rem;
+    }
 }
 
-.home{
-    display: flex;
-    justify-content: space-evenly;
-}
+@media (min-width:1200px){
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'karma';
+    }
 
-.rightSection{
-    display: flex;
-    flex-direction: column;
-    margin-top: 6rem;
+    .home{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .rightSection{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6rem;
+    }
 }
