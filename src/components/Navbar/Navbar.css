@@ -1,50 +1,89 @@
-.navbar{
+.navbar {
     display: flex;
 }
 
-.logo{
-    height: 4.2rem;
-    width: auto;
+.logo {
+    width: min(10vw, 4.2rem);
 }
 
-.toolBar{
-    background: #EC5853;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FF6961, #EC5853);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FF6961, #EC5853); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.toolBar {
+    background: #EC5853;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF6961, #EC5853);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF6961, #EC5853);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
     justify-content: space-between;
 }
 
-.loginButton{
+.loginButton {
     display: flex;
-    color: white;
+    color: #fff;
     background-color: transparent;
-    border: 1px solid white;
-    font-size: 1.2rem;
-    font-weight: 400;
+    border:.8px solid #fff;
+    font-size: min(10vw, 70%);
+    font-weight: 600;
     font-family: roboto;
     cursor: pointer;
-    height: 2.5rem;
-    width: 8rem;
-    padding: 0.2rem 0.8rem;
-    margin: 0rem 2rem;
+    padding: 0.4rem 0.8rem;
+    margin: 0rem .5rem;
     justify-content: center;
     align-items: center;
 }
 
-.loginButton svg{
+.registerButton {
+    display: flex;
+    color: #FF6961;
+    background-color: #fff;
+    font-size: min(10vw, 70%);
+    font-weight: 600;
+    font-family: roboto;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    margin: 0rem .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoutButton {
+    display: flex;
+    color: #fff;
+    background-color: transparent;
+    font-size: min(10vw, 70%);
+    font-weight: 600;
+    font-family: roboto;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    margin: 0rem .5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loginButton svg {
     padding: 0.1rem 0;
     margin-left: 0.4rem;
 }
 
-.menuLeft{
+.menuLeft {
     display: flex;
     align-items: center;
 }
 
-.menuRight{
+.menuRight {
     display: flex;
     align-items: center;
-    font-size:1rem
-   
+    font-size: 1rem
 }
+
+/* @media screen and (max-width: 600px) {
+    .loginButton {
+        display: none;
+    }
+
+    .registerButton {
+        display: none;
+    }
+}
+     */
