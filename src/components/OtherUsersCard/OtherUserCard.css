@@ -1,0 +1,36 @@
+.otherUsers{
+    display: flex;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.otherAvatar img{
+    height: 2rem;
+    width: auto;
+    border: 1px solid #EC5853;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.userInfo {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-right: 2rem;
+    margin-left: 1rem;
+}
+
+.otherName{
+    margin: 0.5rem 0 0 0;
+
+}
+
+.otherSubtitle{
+    margin: -0.5rem 0rem 1rem 0;
+}
+
+.opensign{
+    height: 2.5rem;
+    cursor: pointer;
+}

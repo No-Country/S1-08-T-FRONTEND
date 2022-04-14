@@ -3,7 +3,13 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const postApi = createApi({
   reducerPath: "postApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api-gout.herokuapp.com/api/posts/"
+    baseUrl: "https://api-gout.herokuapp.com/api/posts/",
+    prepareHeaders: (headers, { getState }) => {
+      const token = getState().authUsers.token;
+      headers.set("Authorization", `Bearer ${token}`);
+      headers.set("Content-Type", "application/json");
+      return headers;
+    },
   }),
   endpoints: (builder) => ({
     getPosts: builder.query({
@@ -21,14 +27,14 @@ export const postApi = createApi({
       }),
     }),
     updatePost: builder.mutation({
-      query: ({post, id}) => ({
+      query: ({ post, id }) => ({
         url: `edit/${id}`,
         method: "PUT",
         body: post,
       }),
     }),
     updatePostLikes: builder.mutation({
-      query: ({post, id}) => ({
+      query: ({ post, id }) => ({
         url: `likes/${id}`,
         method: "PUT",
         body: post,

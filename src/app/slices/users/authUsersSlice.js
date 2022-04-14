@@ -4,7 +4,7 @@ import { usersApi } from "../../services/users";
 const initialState = {
   isAuthenticated: false,
   user: null,
-  token: null,
+  token: window.localStorage.getItem("token") || null,
 };
 
 const authUserSlice = createSlice({
@@ -15,11 +15,13 @@ const authUserSlice = createSlice({
       state.isAuthenticated = true;
       state.user = action.payload.user;
       state.token = action.payload.token;
+      localStorage.setItem("token", state.token);
     },
-    logout: () => {
+    logout: (state, action) => {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
-      return initialState;
+      state.isAuthenticated = false;
+      state.token = null;
     },
   },
   extraReducers: (builder) => {
@@ -38,28 +40,38 @@ const authUserSlice = createSlice({
         state.isAuthenticated = true;
         state.user = user;
         state.token = action.payload.token;
+        window.localStorage.setItem("token", state.token);
       })
       .addMatcher(usersApi.endpoints.login.matchRejected, (state, action) => {
         console.log("login rejected", action);
       })
-      .addMatcher(usersApi.endpoints.googleLogin.matchPending, (state, action) => {
-        console.log("login pending");
-      })
-      .addMatcher(usersApi.endpoints.googleLogin.matchFulfilled, (state, action) => {
-        const user = {
-          id: action.payload.id,
-          username: action.payload.username,
-          email: action.payload.email,
-        };
-        localStorage.setItem("token", action.payload.token);
-        localStorage.setItem("user", JSON.stringify(user));
-        state.isAuthenticated = true;
-        state.user = user;
-        state.token = action.payload.token;
-      })
-      .addMatcher(usersApi.endpoints.googleLogin.matchRejected, (state, action) => {
-        console.log("login rejected", action);
-      });
+      .addMatcher(
+        usersApi.endpoints.googleLogin.matchPending,
+        (state, action) => {
+          console.log("login pending");
+        }
+      )
+      .addMatcher(
+        usersApi.endpoints.googleLogin.matchFulfilled,
+        (state, action) => {
+          const user = {
+            id: action.payload.id,
+            username: action.payload.username,
+            email: action.payload.email,
+          };
+          localStorage.setItem("token", action.payload.token);
+          localStorage.setItem("user", JSON.stringify(user));
+          state.isAuthenticated = true;
+          state.user = user;
+          state.token = action.payload.token;
+        }
+      )
+      .addMatcher(
+        usersApi.endpoints.googleLogin.matchRejected,
+        (state, action) => {
+          console.log("login rejected", action);
+        }
+      );
   },
 });
 

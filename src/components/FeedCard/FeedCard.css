@@ -1,0 +1,87 @@
+*{
+    font-family: 'Karma';
+};
+
+.feedSection{
+   
+}
+
+.feedCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 49.0625rem;
+    margin: 2.2rem 0 0rem 0;
+}
+
+.social{
+    width: 100%;    
+    background: #EC5853;
+    border: 1px solid #EC5853;
+    box-sizing: border-box;
+    margin-top: 2.5rem;   
+}
+
+.socialButton{
+    display: flex;
+}
+
+.socialIcon{
+    display: flex;
+    height: 2.7rem;
+    background-color: #fbf9f7;
+    width: 9.8rem;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-left: 1rem;
+    justify-items: center;
+    align-items: center;
+    padding: 0 0.4rem;
+}
+
+.socialRatingA{
+    display: flex;
+    height: 2.7rem;
+    background-color: #fbf9f7;
+    width: 4.5rem;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialRatingB{
+    display: flex;
+    height: 2.7rem;
+    background-color: #fbf9f7;
+    width: 4.5rem;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialIcon img{
+    background-color: #FBF9F7;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 4rem;
+    height: 15px;
+}
+
+.socialIcon svg{
+    background-color: #FBF9F7;
+    margin-right: 1rem;
+}
+
+.mainImg{
+    border: 1px solid #EC5853;
+}
+
+.descriptionFeed{
+    border: 1px solid #EC5853;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+    font-size: 1rem;
+}
