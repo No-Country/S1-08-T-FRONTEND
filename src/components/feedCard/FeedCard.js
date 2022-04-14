@@ -15,7 +15,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import { Link } from "react-router-dom";
-import avatarDefault from '../../Assets/images/avatar-chef.jpg';
+
 const element = <FontAwesomeIcon icon={faCoffee} />;
 
 const ExpandMore = styled((props) => {
@@ -53,14 +53,9 @@ export default function FeedCard({ post }) {
         <CardHeader
           className="userIntro"
           avatar={
-            <Avatar
-              sx={{
-                bgcolor: red[500],
-                borderColor: red[500]
-              }}
-              src={avatar ? avatar : avatarDefault}
-              aria-label="recipe" alt={description}
-            />
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+              {avatar ? <img src={avatar} alt={description} /> : "Av"}
+            </Avatar>
           }
           titleTypographyProps={{ variant: "h5", marginBottom: -1 }}
           title={username}
