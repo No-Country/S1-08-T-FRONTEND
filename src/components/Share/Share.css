@@ -1,3 +1,87 @@
+@media (min-width:768px){
+    .MuiModal-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;    
+    }
+
+    .shareButton{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 6.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.5rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.4rem;
+        cursor: pointer;
+        font-size: 0.7rem;
+    }
+
+    .shareButton svg{
+        background-color: #FBF9F7;
+        margin-right: 0.6rem;
+        height: 1rem;
+    }
+
+    .shareModal{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 60vh;
+        background-color: #fbf9f7;
+        font-family: 'Karma';
+        margin: auto;
+        border-radius: 0.25rem;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .shareSection{
+        display: flex;
+    }
+
+    .leftImage{
+        width: 100%;
+    }
+
+    .leftImage img{
+        width: 100%;
+        height: auto;
+    }
+
+    .socialSection{
+        background-color: #EC5853;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialSection h1{
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    } 
+
+    .SocialIcons{
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+    }
+    .SocialIcons svg:hover{
+        fill: #000;
+    }
+}
 @media (min-width:840px){
     .MuiModal-root{
         display: flex;

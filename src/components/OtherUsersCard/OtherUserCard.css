@@ -1,12 +1,13 @@
-@media (min-width:840px){
+@media (min-width:768px){
     .otherUsers{
         display: flex;
-        margin-bottom: 1rem;
-        align-items: center;
+        margin-bottom: 0rem;
+        align-items: center;       
     }
 
     .otherUsersTitle{
-        font-size: 1rem;
+        font-size: 0.9rem;
+        text-align: center;
     }
 
     .otherAvatar img{
@@ -17,25 +18,32 @@
         margin-left: 0.8rem;
     }
 
+    .infoAndSign{
+        display: flex;
+        align-items: center;
+    }
+
     .userInfo {
         display: flex;
         flex-direction: column;
         text-align: left;
         margin-right: 1rem;
         margin-left: 1rem;
+        width: 8rem;
     }
 
     .otherName{
         margin: 0.5rem 0 0 0;
-
+        font-size: 1rem;
+        text-align: left;
     }
 
     .otherSubtitle{
         margin: -0.5rem 0rem 1rem 0;
     }
 
-    .opensign{
-        height: 2rem;
+    .openSign{
+        height: 1.8rem;
         cursor: pointer;
     }
 }
@@ -43,7 +51,7 @@
 @media (min-width:1024px){
     .otherUsers{
         display: flex;
-        margin-bottom: 3rem;
+        margin-bottom: 0rem;
         align-items: center;
     }
     
@@ -77,13 +85,18 @@
         margin: -0.5rem 0rem 1rem 0;
     }
 
-    .opensign{
+    .openSign{
         height: 2.5rem;
         cursor: pointer;
     }
 }
 
 @media (min-width:1200px){
+    .otherUsers{
+        margin-bottom: 0rem;
+        align-items: center;
+    }
+
     .otherUsersTitle{
         font-size: 1.3rem;
     }

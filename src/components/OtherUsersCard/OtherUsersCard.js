@@ -11,11 +11,13 @@ export default function OtherUsersCard({
         <div className='otherAvatar'>
             <img src={usuario} />
         </div>
+      <div className='infoAndSign'>
         <div className='userInfo'>
             <h4 className='otherName'>{username}</h4>
             <p className='otherSubtitle'>{description}</p>    
         </div>
-        <img className='opensign' src={open}/>
+        <img className='openSign' src={open}/>
+      </div>
     </div>
   );
 }

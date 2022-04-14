@@ -1,3 +1,100 @@
+@media (min-width:768px){
+    .feedCard{
+        display: flex;
+        width: 31.7rem;
+        height: 34rem;
+        margin: 2.2rem 0rem -4rem 0;
+    }
+
+    .social{
+        width: 94%;  
+        height: 2.8rem;  
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 1rem;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 6.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.5rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.1rem;
+        cursor: pointer;
+        font-size: 0.7rem;
+        color: black;
+    }
+    
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0.5rem;
+        height: 1rem;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 2.8rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingA svg{
+        background-color: #FBF9F7;
+        height: 1rem;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 2.8rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0.1rem;
+        
+    }
+
+    .socialRatingB svg{
+        background-color: #FBF9F7;
+        height: 1rem;
+    }
+
+
+    .mainImg{
+        border: 1px solid #EC5853;
+        width: 27.6355rem !important;
+        height: 17.79rem !important;
+    }
+
+    .descriptionFeed{
+        border: 1px solid #EC5853;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        font-size: 1rem;
+        width: 94%;
+    }
+}
+
 @media (min-width:840px){
     .feedCard{
         display: flex;
@@ -90,6 +187,7 @@
         border: 1px solid #EC5853;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         font-size: 1rem;
+        width: 94%;
     }
 }
 

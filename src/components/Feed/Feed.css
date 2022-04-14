@@ -1,3 +1,23 @@
+@media (min-width:768px){
+    .feedContainer{
+        display: flex;
+    }
+
+    .containerPosts{
+        display: flex;
+        flex-direction: column !important;
+        max-width: 25rem;
+        justify-content: center;
+        align-items: center;
+        margin-left: 4rem !important;
+        margin-top: 0.2rem !important;
+    }
+
+    .feedCardContainer{
+        margin-top: 4rem;
+    }
+}
+
 @media (min-width:840px){
     .feedContainer{
         display: flex;
@@ -10,7 +30,7 @@
         justify-content: center;
         align-items: center;
         margin-left: 5rem !important;
-        margin-top: 4.2rem !important;
+
     }
 }
 
@@ -26,7 +46,6 @@
         justify-content: center;
         align-items: center;
         margin-left: 7rem !important;
-        margin-top: 4.2rem !important;
     }
 
 }
@@ -38,8 +57,12 @@
 
     .containerPosts{
         max-width: 50rem;
-        margin-left: 8rem !important;
-        
+        margin-left: 8rem !important;   
+        margin-top: 4rem !important;
+    }
+
+    .feedCardContainer{
+        margin-top: 0rem;
     }
 }
 
