@@ -7,6 +7,7 @@ import CommentIcon from "@mui/icons-material/Comment";
 import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import "./Detail.css";
+import Share from '../Share/Share';
 const Detail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -50,9 +51,7 @@ const Detail = () => {
             <button>
               <CommentIcon />
             </button>
-            <button>
-              <ShareIcon />
-            </button>
+            <Share id={data?.id}/>
           </div>
           <div className="likes">
             <p>

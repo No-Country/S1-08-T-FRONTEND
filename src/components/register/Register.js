@@ -62,10 +62,9 @@ const Register = () => {
 
   return (
     <>
-      <div className="register-container">
-        <div className="register-img">
+      <div className='register-container'>
+        <div className='register-img'>
           <img alt='' src={fontbg} />
-
         </div>
         <div className='register-div'>
           <p className='register-title'>Registrate</p>
@@ -125,14 +124,14 @@ const Register = () => {
               />
             </div>
             <div className='register-button-container'>
-            <button
-              className='register-button'
-              type='submit'
-              onClick={handleSubmit}
-              disabled={loading}
-            >
-              Registrarse
-            </button>
+              <button
+                className='register-button'
+                type='submit'
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                Registrarse
+              </button>
             </div>
 
             <div className='register-form-control'>

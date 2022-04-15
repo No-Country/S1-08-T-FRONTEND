@@ -5,7 +5,7 @@ import OtherUsersCard from "../OtherUsersCard/OtherUsersCard";
 export default function OtherUsers() {
   return (
     <div className="sugestedUsers">
-      <h2>Usuarios recomendados para ti</h2>
+      <h2 className="otherUsersTitle">Usuarios recomendados para ti</h2>
       {/* <OtherUsersCard /> */}
 
       <div>
