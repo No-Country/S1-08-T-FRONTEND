@@ -12,9 +12,6 @@ function Category () {
         <option value='All' className={style.containerSelectOp1}>
           Elige una categoría
         </option>
-        <option value='All' className={style.containerSelectOp}>
-          All
-        </option>
         <option
           value='Desayunos y meriendas'
           className={style.containerSelectOp}

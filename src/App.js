@@ -19,7 +19,8 @@ function App () {
       <AppRouter />
       <Toaster />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
