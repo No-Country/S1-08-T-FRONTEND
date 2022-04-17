@@ -53,7 +53,7 @@ export default function FeedCard({ post }) {
         <CardHeader
           className="userIntro"
           avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+            <Avatar className="avatarFeed" sx={{ bgcolor: red[500] }} aria-label="recipe">
               {avatar ? <img src={avatar} alt={description} /> : "Av"}
             </Avatar>
           }

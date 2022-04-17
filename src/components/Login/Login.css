@@ -73,7 +73,7 @@
   }
 
   @media screen and (max-width: 720px) {
-     img {
+     .login-img img {
        display: none;
      }
  

@@ -196,6 +196,7 @@ export default function CreatePost() {
                   id="file_video"
                   accept="video/*"
                   onChange={handleVideo}
+                  className="inputVideo"
                 />
               </div>
             

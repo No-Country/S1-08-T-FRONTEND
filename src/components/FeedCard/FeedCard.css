@@ -1,3 +1,235 @@
+@media (max-width:640px){
+    .feedCard{
+        display: flex;
+        width: 31.4rem;
+        height: 29.5rem;
+        margin: 2.2rem 0rem -0.5rem 0;
+    }
+
+    .avatarFeed{
+        height: 1.5rem !important;
+        width: 1.5rem !important;
+        margin-top: -1em !important;
+        margin-bottom: -1rem !important;
+    }
+
+    .css-111s0v7-MuiTypography-root{
+        font-size: 1.1rem !important;
+        margin-top: -0.7rem !important;
+    }
+
+    .css-1t3luoj-MuiTypography-root{
+        margin-bottom: -0.5rem !important;
+    }
+
+    .social{
+        width: 92.5%;  
+        height: 1.5rem;  
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 1rem !important;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 6rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.6rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.1rem;
+        cursor: pointer;
+        font-size: 0.6rem;
+        color: black;
+    }
+    
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0.5rem;
+        height: 0.8rem;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 2.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingA svg{
+        background-color: #FBF9F7;
+        height: 0.8rem;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 2.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0.1rem;
+        
+    }
+
+    .socialRatingB svg{
+        background-color: #FBF9F7;
+        height: 0.8rem;
+    }
+
+
+    .mainImg{
+        border: 1px solid #EC5853;
+        width: 27.42rem !important;
+        height: 17.65rem !important;
+    }
+
+    .descriptionFeed{
+        border: 1px solid #EC5853;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        width: 92.5%;
+    }
+
+    .css-1lf7cpy-MuiTypography-root{
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (min-width:640px){
+    .feedCard{
+        display: flex;
+        width: 31.4rem;
+        height: 29.5rem;
+        margin: 2.5rem 0rem -0.5rem 0;
+    }
+
+    .avatarFeed{
+        height: 1.5rem !important;
+        width: 1.5rem !important;
+        margin-top: -1em !important;
+        margin-bottom: -1rem !important;
+    }
+
+    .css-111s0v7-MuiTypography-root{
+        font-size: 1.1rem !important;
+        margin-top: -0.7rem !important;
+    }
+
+    .css-1t3luoj-MuiTypography-root{
+        margin-bottom: -0.5rem !important;
+    }
+
+    .social{
+        width: 92.5%;  
+        height: 1.5rem;  
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 1rem !important;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 6rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.6rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.1rem;
+        cursor: pointer;
+        font-size: 0.6rem;
+        color: black;
+    }
+    
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0.5rem;
+        height: 0.8rem;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 2.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingA svg{
+        background-color: #FBF9F7;
+        height: 0.8rem;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 2.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0.1rem;
+        
+    }
+
+    .socialRatingB svg{
+        background-color: #FBF9F7;
+        height: 0.8rem;
+    }
+
+
+    .mainImg{
+        border: 1px solid #EC5853;
+        width: 27.42rem !important;
+        height: 17.65rem !important;
+    }
+
+    .descriptionFeed{
+        border: 1px solid #EC5853;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        width: 92.5%;
+    }
+
+    .css-1lf7cpy-MuiTypography-root{
+        font-size: 0.8rem !important;
+    }
+}
+
 @media (min-width:768px){
     .feedCard{
         display: flex;
@@ -5,6 +237,12 @@
         height: 34rem;
         margin: 2.2rem 0rem -4rem 0;
     }
+
+    .avatarFeed{
+        height: 2.5rem !important;
+        width: 2.5rem !important;
+    }
+
 
     .social{
         width: 94%;  
@@ -90,8 +328,11 @@
     .descriptionFeed{
         border: 1px solid #EC5853;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        font-size: 1rem;
         width: 94%;
+    }
+
+    .css-1lf7cpy-MuiTypography-root{
+        font-size: 1rem !important;
     }
 }
 

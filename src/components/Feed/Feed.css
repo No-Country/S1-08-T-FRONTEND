@@ -1,3 +1,23 @@
+@media (min-width:640px){
+    .feedContainer{
+        display: flex;
+    }
+
+    .containerPosts{
+        display: flex;
+        flex-direction: column !important;
+        max-width: 25rem;
+        justify-content: center;
+        align-items: center;
+        margin-left: 7.5rem !important;
+        margin-top: 0.2rem !important;
+    }
+
+    .feedCardContainer{
+        margin-top: 0rem;
+    }
+}
+
 @media (min-width:768px){
     .feedContainer{
         display: flex;

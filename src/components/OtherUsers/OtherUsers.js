@@ -1,6 +1,7 @@
 import React from "react";
 import posts from "../postsData";
 import OtherUsersCard from "../OtherUsersCard/OtherUsersCard";
+import './OtherUsers.css';
 
 export default function OtherUsers() {
   return (

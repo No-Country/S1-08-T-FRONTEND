@@ -1,175 +1,537 @@
-.MuiModal-root{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-behavior: smooth;    
+@media (max-width:640px){
+    .MuiModal-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;    
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .creatPostContainer{
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        height: 95vh;
+        background-color: #fbf9f7;
+        font-family: 'Karma';
+        margin: auto;
+        border-radius: 0.25rem;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        position: relative;
+    }
+
+    .createPostTitle h2{
+        text-align: center;
+        margin: 0.5rem 0 0 0;
+        font-size: 1rem !important;
+    }
+
+    .descriptions{
+        width: 75%;
+    }
+
+    .createTitle{
+        padding: 0.2rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        font-size: 0.8rem;
+        height: 1.3rem;
+    }
+
+    .createDescription{
+        padding: 0.2rem;
+        font-family: 'karma';
+        max-width: 100%;
+        width: 100%;
+        max-height: 35vh;
+        height: 8rem;
+        margin: 0.5rem 0;
+        font-size: 0.8rem;
+        background: #e8e8e8;
+        border: none;
+        border-radius: 0.25rem;
+    }
+
+    select{
+        font-family: 'karma';
+        width: 18rem;
+        border: none;
+        border-radius: 0.25rem;
+        background: #e8e8e8;
+        margin: 0rem 0 0.5rem 0;
+        font-size: 0.8rem;
+    }
+
+    .uploadMedia{
+        width: 20rem !important;
+        height: 13.5rem !important;
+        margin-top: 1rem;
+    }
+
+    label{
+        padding: 0.8rem;
+        width: 20rem !important;
+        height: 2.5rem !important;
+        margin: 0.5rem 0 1rem 0;
+        font-size: 1.125rem;
+        background: #EC5853;
+        color: #fbf9f7 !important;
+        border: none;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .uploadVideo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #filepond--drop-label-qb0w8oqe0{
+        height: 2rem !important;
+        width: 18 rem !important;
+        background-color: #EC5853;
+        cursor: pointer;
+    }
+
+    .filepond--root a{
+        display: none;
+        color: green !important;
+    }
+
+    .filepond--browser{
+        display: flex !important;
+        flex-direction: row !important;
+        width: 15 rem !important;
+        background-color: greenyellow !important;
+    }
+
+    .createPostButton{
+        padding: 0.8rem;
+        width: 13.5rem;
+        height: 2.5rem;
+        margin: 18.5rem 0 1rem 0;
+        font-size: 1.125rem;
+        background: #EC5853;
+        color: #fbf9f7;
+        border: none;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+
+    .inputVideo{
+        margin: 1rem;
+    }
+
+    .previewReproducer{
+        width: 20rem;
+        height: 15rem;
+        border-radius: 0.125rem !important;
+    }
+
+    .createPostButton svg{
+        padding: 0.1rem 0;
+        margin-left: 0.4rem;
+    }
+
+    .addPost{
+        display: flex;
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        font-size: 1.2rem;
+        font-weight: 400;
+        font-family: roboto;
+        cursor: pointer;
+        height: 2.5rem;
+        width: 8rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0rem 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addIcon{
+        padding: 0.1rem 0;
+        margin-left: 0.4rem;
+    }
+
+
+    .confirmImg img{
+        width: 12rem;
+        height: 8rem;
+    }
+
+    .confirmVideo{
+        width: 100%;
+        height: 4rem;
+        color: black;
+        background-color: #EC5853;
+    }
+
+    .videoInput{
+        width: 100%;
+        height: 4rem;
+        color: black;
+    }
+
+    .previewReproducer{
+        border-radius: 0.125rem;
+    }
 }
 
-::-webkit-scrollbar {
-    display: none;
+@media (min-width:640px){
+    .MuiModal-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;    
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .creatPostContainer{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 95vh;
+        background-color: #fbf9f7;
+        font-family: 'Karma';
+        margin: auto;
+        border-radius: 0.25rem;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        position: relative;
+    }
+
+    .createPostTitle h2{
+        text-align: center;
+        margin: 0.5rem 0 0 0;
+        font-size: 1rem !important;
+    }
+
+    .descriptions{
+        width: 70%;
+    }
+
+    .createTitle{
+        padding: 0.2rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        font-size: 0.8rem;
+        height: 1.3rem;
+    }
+
+    .createDescription{
+        padding: 0.2rem;
+        font-family: 'karma';
+        max-width: 100%;
+        width: 100%;
+        max-height: 35vh;
+        height: 8rem;
+        margin: 0.5rem 0;
+        font-size: 0.8rem;
+        background: #e8e8e8;
+        border: none;
+        border-radius: 0.25rem;
+    }
+
+    select{
+        font-family: 'karma';
+        width: 18rem;
+        border: none;
+        border-radius: 0.25rem;
+        background: #e8e8e8;
+        margin: 0rem 0 0.5rem 0;
+        font-size: 0.8rem;
+    }
+
+    .uploadMedia{
+        width: 18rem !important;
+        height: 13.5rem !important;
+        margin-top: 1rem;
+    }
+
+    label{
+        padding: 0.8rem;
+        width: 18rem !important;
+        height: 2rem !important;
+        margin: 0.5rem 0 1rem 0;
+        font-size: 1.125rem;
+        background: #EC5853;
+        color: #fbf9f7 !important;
+        border: none;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .uploadVideo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #filepond--drop-label-qb0w8oqe0{
+        height: 2rem !important;
+        width: 18 rem !important;
+        background-color: #EC5853;
+        cursor: pointer;
+    }
+
+    .filepond--root a{
+        display: none;
+        color: green !important;
+    }
+
+    .filepond--browser{
+        display: flex !important;
+        flex-direction: row !important;
+        width: 15 rem !important;
+        background-color: greenyellow !important;
+    }
+
+    .createPostButton{
+        padding: 0.8rem;
+        width: 13.5rem;
+        height: 2.5rem;
+        margin: 19.5rem 0 1rem 0;
+        font-size: 1.125rem;
+        background: #EC5853;
+        color: #fbf9f7;
+        border: none;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+
+    .inputVideo{
+        margin: 1rem;
+    }
+
+    .previewReproducer{
+        width: 20rem;
+        height: 15rem;
+        border-radius: 0.125rem !important;
+    }
+
+    .createPostButton svg{
+        padding: 0.1rem 0;
+        margin-left: 0.4rem;
+    }
+
+    .addPost{
+        display: flex;
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        font-size: 1.2rem;
+        font-weight: 400;
+        font-family: roboto;
+        cursor: pointer;
+        height: 2.5rem;
+        width: 8rem;
+        padding: 0.2rem 0.8rem;
+        margin: 0rem 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addIcon{
+        padding: 0.1rem 0;
+        margin-left: 0.4rem;
+    }
+
+
+    .confirmImg img{
+        width: 12rem;
+        height: 8rem;
+    }
+
+    .confirmVideo{
+        width: 100%;
+        height: 4rem;
+        color: black;
+        background-color: #EC5853;
+    }
+
+    .videoInput{
+        width: 100%;
+        height: 4rem;
+        color: black;
+    }
+
+    .previewReproducer{
+        border-radius: 0.125rem;
+    }
 }
 
-form{
-    width: 100%;
-}
+@media (min-width:768px){
+    .creatPostContainer{
+        width: 70%;
+        height: 95vh;
+    }
 
-.creatPostContainer{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 95vh;
-    background-color: #fbf9f7;
-    font-family: 'Karma';
-    margin: auto;
-    border-radius: 0.25rem;
-    align-items: center;
-    overflow-y: scroll;
-    scrollbar-width: none;
-}
+    .createPostTitle h2{
+        font-size: 2rem !important;
+    }
 
-.createPostTitle h2{
-    text-align: center;
-    margin: 0.5rem 0 0 0;
-    font-size: 2rem !important;
-}
+    .descriptions{
+        width: 70%;
+    }
 
-.descriptions{
-    width: 70%;
-}
+    .createTitle{
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        height: 1.7rem;
+    }
 
-.createTitle{
-    padding: 0.8rem;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    font-size: 1.2rem;
-    height: 1.7rem;
-}
+    .createDescription{
+        padding: 0.5rem;
+        max-height: 40vh;
+        height: 10rem;
+        font-size: 1rem;
+    }
 
-.createDescription{
-    padding: 0.8rem;
-    max-width: 100%;
-    width: 100%;
-    max-height: 40vh;
-    height: 10rem;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    background: #e8e8e8;
-    border: none;
-    border-radius: 0.25rem;
-}
+    select{
+        width: 18rem;
+        margin: 0rem 0 0.5rem 0;
+        font-size: 1rem;
+    }
 
-select{
-    font-family: 'karma';
-    width: 15rem;
-    border: none;
-    border-radius: 0.25rem;
-    background: #e8e8e8;
-    margin: 0rem 0 0.5rem 0;
-    font-size: 1rem;
-}
+    .uploadMedia{
+        width: 18rem !important;
+        height: 13.5rem !important;
+    }
 
-.uploadMedia{
-    width: 15rem;
-    margin-top: 1rem;
-}
+    label{
+        padding: 0.8rem;
+        width: 20rem !important;
+        height: 2rem !important;
+     }
 
-label{
-    padding: 0.8rem;
-    width: 15rem !important;
-    height: 2rem !important;
-    margin: 0.5rem 0 1rem 0;
-    font-size: 1.125rem;
-    background: #EC5853;
-    color: #fbf9f7 !important;
-    border: none;
-    border-radius: 0.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
- 
-#filepond--drop-label-qb0w8oqe0{
-    height: 2rem !important;
-    width: 15 rem !important;
-    background-color: #EC5853;
-    cursor: pointer;
-  }
+    .uploadVideo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .createPostButton{
+        padding: 0.8rem;
+        width: 13.5rem;
+        height: 2.5rem;
+        margin: 1rem 0 1rem 0;
+        position: absolute;
+        bottom: 0;
+    }
 
-.filepond--root a{
-    display: none;
-    color: green !important;
-}
+    .inputVideo{
+        margin: 1rem;
+    }
 
-.filepond--browser{
-    display: flex !important;
-    flex-direction: row !important;
-    width: 15 rem !important;
-    background-color: greenyellow !important;
-}
-
-.createPostButton{
-    padding: 0.8rem;
-    width: 13.5rem;
-    height: 2.5rem;
-    margin: 0.5rem 0 1rem 0;
-    font-size: 1.125rem;
-    background: #EC5853;
-    color: #fbf9f7;
-    border: none;
-    border-radius: 0.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.createPostButton svg{
-    padding: 0.1rem 0;
-    margin-left: 0.4rem;
-}
-
-.addPost{
-    display: flex;
-    color: white;
-    background-color: transparent;
-    border: 1px solid white;
-    font-size: 1.2rem;
-    font-weight: 400;
-    font-family: roboto;
-    cursor: pointer;
-    height: 2.5rem;
-    width: 8rem;
-    padding: 0.2rem 0.8rem;
-    margin: 0rem 2rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.addIcon{
-    padding: 0.1rem 0;
-    margin-left: 0.4rem;
+    .previewReproducer{
+        width: 25rem;
+        height: 18.75rem;
+        border-radius: 0.125rem !important;
+    }
 }
 
 
-.confirmImg img{
-    width: 12rem;
-    height: 8rem;
+@media (min-width:840px){
+    .creatPostContainer{
+        height: 80vh;
+    }
 }
+    
 
-.confirmVideo{
-    width: 100%;
-    height: 4rem;
-    color: black;
-    background-color: #EC5853;
-}
 
-.videoInput{
-    width: 100%;
-    height: 4rem;
-    color: black;
-}
 
-.previewReproducer{
-    border-radius: 0.125rem;
+@media (min-width:1024px){
+    .creatPostContainer{
+        width: 60%;
+        height: 95vh;
+    }
+    
+    .descriptions{
+        width: 70%;
+    }
+
+    .createTitle{
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        font-family: 'karma';
+    }
+
+    .createDescription{
+        padding: 0.5rem;
+        max-height: 40vh;
+        height: 10rem;
+        font-size: 1.2rem;
+        font-family: 'karma';
+    }
+
+    .uploadMedia{
+        width: 20rem !important;
+        height: 14.85rem !important;
+        margin-top: 1rem;
+        cursor: pointer;
+        align-self: center;
+        justify-self: center;
+    }
+
+    label{
+        padding: 0.2rem;
+        width: 20rem !important;
+        height: 2.5rem !important;
+        margin: 0.5rem 0 1rem 0;
+        font-size: 1.2rem !important;
+        background: #EC5853;
+        color: #fbf9f7 !important;
+        border: none;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .createPostButton{
+        padding: 0.8rem;
+        width: 13.5rem;
+        height: 2.5rem;
+        margin: 22.5rem 0 1rem 0;
+        cursor: pointer;
+        position: relative;
+    }
+
 }
