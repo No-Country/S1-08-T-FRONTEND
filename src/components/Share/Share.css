@@ -31,8 +31,8 @@
     .shareModal{
         display: flex;
         flex-direction: column;
-        width: 85%;
-        height: 34.5vh;
+        width: 95%;
+        height: 25.5vh;
         background-color: #fbf9f7;
         font-family: 'Karma';
         margin: auto;
@@ -47,7 +47,7 @@
     }
 
     .leftImage{
-        width: 66%;
+        width: 60%;
     }
 
     .leftImage img{
@@ -66,10 +66,11 @@
 
     .socialSection h1{
         display: flex;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         margin-top: 1rem;
         padding: 0.2rem;
         align-items: center;
+        text-align: center;
     } 
 
     .SocialIcons{
@@ -80,6 +81,8 @@
 
     .SocialIcons svg{
         transition: all ease-in 0.3s;
+        height: 1.8rem;
+        width: 1.8rem;
     }
     .SocialIcons svg:hover{
         fill: #000;
@@ -122,13 +125,19 @@
     }
 
     .shareImage{
-        width: 100%;
-        height: auto;
+        width: 10rem;
+        height: 10rem;
     }
 
     .socialSection h1{
         font-size: 1.3rem;
     } 
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+        height: 2.2rem;
+        width: 2.2rem;
+    }
 }
 
 @media (min-width:768px){
@@ -210,7 +219,10 @@
 
     .SocialIcons svg{
         transition: all ease-in 0.3s;
+        height: 2.5rem;
+        width: 2.5rem;
     }
+
     .SocialIcons svg:hover{
         fill: #000;
     }
@@ -241,6 +253,12 @@
         font-size: 1.5rem;
         margin-top: 1rem;
     } 
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+        height: 2.8rem;
+        width: 2.8rem;
+    }
 
 }
 
