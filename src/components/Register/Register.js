@@ -54,67 +54,91 @@ const Register = () => {
     }
   }
 
+  // mauri debes hacer las validaciones necesarias del formulario
+
+  if (password !== repassword) {
+    console.log('Los campos deben coincidir')
+  }
+
   return (
     <>
-      <div className='login-container'>
-        <div className='login-img'>
-          <img src={fontbg} />
+      <div className="register-container">
+        <div className="register-img">
+          <img alt='' src={fontbg} />
+
         </div>
-        <div className='login-div'>
-          <p className='login-title'>Registrate</p>
-          <form className='login-form'>
-            <div className='login-form-control'>
+        <div className='register-div'>
+          <p className='register-title'>Registrate</p>
+          <form className='register-form'>
+            <div className='register-form-control'>
               <input
                 type='email'
                 placeholder='Email'
                 name='email'
                 onChange={handleChange}
+                required
               />
             </div>
-            <div className='login-form-control'>
+            <div className='register-form-control'>
               <input
                 type='text'
                 placeholder='Nombre'
                 name='username'
                 onChange={handleChange}
+                required
               />
             </div>
-            <div className='login-form-control'>
+            <div className='register-form-control'>
               <input
                 type='text'
                 placeholder='Apellido'
                 name='nickname'
                 onChange={handleChange}
+                required
               />
             </div>
-            <div className='login-form-control'>
+            <div className='register-form-control'>
               <input
                 type='password'
                 placeholder='Contraseña'
                 name='password'
                 onChange={handleChange}
+                required
               />
             </div>
-            <div className='login-form-control'>
+            <div className='register-form-control'>
               <input
                 type='password'
                 placeholder='Confirmar contraseña'
                 name='repassword'
                 onChange={handleChange}
+                required
               />
             </div>
+            <div className='register-form-control'>
+              <input
+                type='password'
+                placeholder='Confirmar contraseña'
+                name='repassword'
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className='register-button-container'>
             <button
-              className='login-button'
+              className='register-button'
               type='submit'
               onClick={handleSubmit}
               disabled={loading}
             >
               Registrarse
             </button>
-            <div className='login-form-control'>
-              <h4>
+            </div>
+
+            <div className='register-form-control'>
+              <h6>
                 ¿ Ya tienes cuenta ?<Link to='/login'> Iniciar sesion</Link>
-              </h4>
+              </h6>
             </div>
           </form>
         </div>
