@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import "./Feed.css";
 import FeedCard from "../FeedCard/FeedCard";
 import { useGetPostsQuery } from "../../app/services/posts";
-import "./Feed.css";
 
 export default function Feed() {
   //importar la data
