@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { styled, alpha} from '@mui/material/styles';
 import { makeStyles } from "@material-ui/styles";
 
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton, useTheme, useMediaQuery} from '@mui/material';
+import { useGetUsersQuery } from '../../../app/services/users';
+import Spinner from '../../Spinner/Spinner';
 
-import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 
 
 const useStyles = makeStyles(theme => ({
@@ -65,6 +66,41 @@ export default function InputSearch() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [userFound, setUserFound] = useState([])
+
+  const { data: users, error, isLoading, isSuccess, isError } = useGetUsersQuery()
+
+  console.log(users)
+
+  useEffect(() => {
+
+    if (!isLoading) {
+
+      // eslint-disable-next-line array-callback-return
+      const searchUsers = users.filter((val) => {
+        if (searchTerm === "") {
+          return ""
+        } else if (val.username.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+          return val
+        } else if (val.email.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+          return val
+        } else if (val.nickname?.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+          return val
+        } 
+      }
+
+      )
+
+
+      setUserFound(searchUsers)
+    }
+
+  }, [users, searchTerm, isLoading])
+
+
   return (
     <>
       {isMobile ? (
@@ -79,14 +115,35 @@ export default function InputSearch() {
 
         <Search>
           <SearchIconWrapper>
-            <SearchIcon />
+            <SearchIcon/>
           </SearchIconWrapper>
           <StyledInputBase sx={{ fontSize: '.9rem', fontWeight: 400 }}
             placeholder="Buscar…"
             inputProps={{ 'aria-label': 'search' }}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </Search>
       )}
+
+      <div className="searchBar-dropdown">
+        {isLoading && <Spinner />}
+
+        {
+          isSuccess && userFound && userFound.map((user) => {
+            return (
+              <>
+              {
+              <div key={user.id}>
+                <p>{user.username}</p>
+                <p>{user.email}</p>
+                <p>{user.nickname?user.nickname:""}</p>
+              </div>
+              }
+              </>
+            )
+          })
+        }
+      </div>
         </>
   )
 }
