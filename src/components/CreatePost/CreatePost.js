@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 import './CreatePost.css'
 import Modal from '@mui/material/Modal';
 import { useState, useEffect } from 'react';
@@ -13,70 +13,73 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
-import { makeStyles } from "@material-ui/styles";
 
+import { makeStyles } from '@material-ui/styles'
 
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useCreatePostMutation } from '../../app/services/posts'
+import { useUploadPostsImageMutation } from '../../app/services/images'
+import { useUploadPostsVideoMutation } from '../../app/services/images'
 
-import { useState, useEffect } from 'react';
-import { useSelector } from "react-redux";
-import { useCreatePostMutation } from "../../app/services/posts";
-import { useUploadPostsImageMutation } from "../../app/services/images";
-import { useUploadPostsVideoMutation } from "../../app/services/images";
-
-import MicrowaveIcon from '@mui/icons-material/Microwave';
-import { IconButton } from '@mui/material';
+import MicrowaveIcon from '@mui/icons-material/Microwave'
+import { IconButton } from '@mui/material'
+import Category from '../Category/Category'
 
 const useStyles = makeStyles(theme => ({
   customButtonPost: {
     color: '#fff',
-    "&:hover, &.Mui-focusVisible": { backgroundColor: "" },
+    '&:hover, &.Mui-focusVisible': { backgroundColor: '' },
     margin: '0 2px',
-    padding: "5px",
-    alignItems: "center",
+    padding: '5px',
+    alignItems: 'center'
   }
+
 }));
 
-export default function CreatePost() {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [image, setImage] = useState(""); //para que sea una array, deberia tener[]
-  const [imageUrl, setImageUrl] = useState("");
-  const [video, setVideo] = useState(""); //para que sea una array, deberia tener[]
-  const [videoUrl, setVideoUrl] = useState("");
+export default function CreatePost () {
+  const classes = useStyles()
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
-  const { user, isAuthenticated } = useSelector((state) => state.authUsers); //solo puede postear un usuario logueado
-  const [createPost] = useCreatePostMutation();
-  const [createImage] = useCreatePostMutation();
-  const [createVideo] = useCreatePostMutation();
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [category, setCategory] = useState('')
+  const [image, setImage] = useState('') //para que sea una array, deberia tener[]
+  const [imageUrl, setImageUrl] = useState('')
+  const [video, setVideo] = useState('') //para que sea una array, deberia tener[]
+  const [videoUrl, setVideoUrl] = useState('')
+
+  const { user, isAuthenticated } = useSelector(state => state.authUsers) //solo puede postear un usuario logueado
+  const [createPost] = useCreatePostMutation()
+  const [createImage] = useCreatePostMutation()
+  const [createVideo] = useCreatePostMutation()
 
   useEffect(() => {
-    async function getImageUrl() {
+    async function getImageUrl () {
       if (image) {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(image);
+        const fileReader = new FileReader()
+        fileReader.readAsDataURL(image)
         fileReader.onload = () => {
-          setImageUrl(fileReader.result);
-        };
+          setImageUrl(fileReader.result)
+        }
       }
     }
-    getImageUrl();
-  }, [image]);
+    getImageUrl()
+  }, [image])
 
   useEffect(() => {
-    async function getVideoUrl() {
+    async function getVideoUrl () {
       if (video) {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(video);
+        const fileReader = new FileReader()
+        fileReader.readAsDataURL(video)
         fileReader.onload = () => {
-          setVideoUrl(fileReader.result);
-        };
+          setVideoUrl(fileReader.result)
+        }
       }
     }
+
     getVideoUrl();
   }, [video]);
 
@@ -87,10 +90,10 @@ export default function CreatePost() {
     } else if (name === "description") {
       setDescription(value);
     } else if (name === "category") {
+  
       setCategory(value)
     }
-  };
-
+  }
 
   {/*const handleVideo = (e) => {
     const file = e.target.files[0];
@@ -131,8 +134,8 @@ export default function CreatePost() {
         console.log(data.msg)
       }
     }
-  }
 
+  }
 
   return (
     <div>
@@ -143,12 +146,14 @@ export default function CreatePost() {
         }}
       >
         <MicrowaveIcon />
+
       </IconButton>      
+
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        aria-labelledby='modal-modal-title'
+        aria-describedby='modal-modal-description'
       >
         <form className='formPost' onSubmit={handleSubmit}>
           <div className='creatPostContainer'>
@@ -220,6 +225,7 @@ export default function CreatePost() {
                   onChange={handleVideo}
                   className="inputVideo"
                 />
+
               </div>
             
 
@@ -234,3 +240,4 @@ export default function CreatePost() {
     </div >
   );
 }
+
