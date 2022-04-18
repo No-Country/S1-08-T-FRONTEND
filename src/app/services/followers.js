@@ -3,9 +3,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const followersApi = createApi({
   reducerPath: "followersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api-ingamer.herokuapp.com/api/followers/",
+    baseUrl: "https://api-gout.herokuapp.com/api/followers/",
     prepareHeaders: (headers, { getState }) => {
-      const token = getState().auth.token;
+      const token = getState().authUsers.token;
       headers.set("Authorization", `Bearer ${token}`);
       headers.set("Content-Type", "application/json");
       return headers;
@@ -13,10 +13,10 @@ export const followersApi = createApi({
   }),
   endpoints: (builder) => ({
     getFollowersOfId: builder.query({
-      query: (id) => `followingToUserid/${id}`,
+      query: (userid) => `followingToUserid/${userid}`,
     }),
     getFollowers: builder.query({
-      query: (id) => `followersToUserid/${id}`,
+      query: (userid) => `followersToUserid/${userid}`,
     }),
     getFollowsOfId: builder.query({
       query: (id) => `followersToUserid/${id}`,
