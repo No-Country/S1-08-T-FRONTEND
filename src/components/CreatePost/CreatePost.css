@@ -3,7 +3,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        scroll-behavior: smooth;    
+            
     }
 
     ::-webkit-scrollbar {
@@ -27,6 +27,7 @@
         overflow-y: scroll;
         scrollbar-width: none;
         position: relative;
+        scroll-behavior: smooth;
     }
 
     .createPostTitle h2{
@@ -123,7 +124,7 @@
         padding: 0.8rem;
         width: 13.5rem;
         height: 2.5rem;
-        margin: 18.5rem 0 1rem 0;
+        margin: 2.5rem 0 1rem 0;
         font-size: 1.125rem;
         background: #EC5853;
         color: #fbf9f7;
@@ -201,8 +202,7 @@
     .MuiModal-root{
         display: flex;
         justify-content: center;
-        align-items: center;
-        scroll-behavior: smooth;    
+        align-items: center;  
     }
 
     ::-webkit-scrollbar {
@@ -226,6 +226,7 @@
         overflow-y: scroll;
         scrollbar-width: none;
         position: relative;
+        scroll-behavior: smooth;  
     }
 
     .createPostTitle h2{
@@ -322,7 +323,7 @@
         padding: 0.8rem;
         width: 13.5rem;
         height: 2.5rem;
-        margin: 19.5rem 0 1rem 0;
+        margin: 1.5rem 0 1rem 0;
         font-size: 1.125rem;
         background: #EC5853;
         color: #fbf9f7;
@@ -529,7 +530,7 @@
         padding: 0.8rem;
         width: 13.5rem;
         height: 2.5rem;
-        margin: 22.5rem 0 1rem 0;
+        margin: 2.5rem 0 1rem 0;
         cursor: pointer;
         position: relative;
     }

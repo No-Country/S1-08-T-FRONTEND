@@ -141,8 +141,9 @@
     width: 50%;
   }
 
-<<<<<<< HEAD
-  @media screen and (max-width: 720px) {
+}
+
+@media screen and (max-width: 720px) {
     .login-img img{
        display: none;
      }
@@ -157,16 +158,9 @@
        font-size: 20px;   
      } 
 
-     input, .login-button {
-      font-size: 15px;
+     .login-container input,
+     .login-container button {
+       font-size: 14px;
      }
-     
-  }
-=======
-   .login-container input,
-   .login-container button {
-     font-size: 14px;
-   }
->>>>>>> 5cad5df1f83408ad534e4c111e56c0a6d7d4f523
-
- }
+}
+ 

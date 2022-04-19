@@ -1,11 +1,19 @@
 @media (max-width:640px){
     .feedCard{
         display: flex;
-        width: 31.4rem;
-        height: 29.5rem;
+        width: 22.9rem;
+        height: 27.5rem;
         margin: 2.2rem 0rem -0.5rem 0;
+        font-family: 'karma';
     }
 
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 25rem !important;
+    }
+
+    .userIntro{
+        padding: 0 !important;
+    }
     .avatarFeed{
         height: 1.5rem !important;
         width: 1.5rem !important;
@@ -15,20 +23,25 @@
 
     .css-111s0v7-MuiTypography-root{
         font-size: 1.1rem !important;
-        margin-top: -0.7rem !important;
+        margin-top: 0rem !important;
+        margin-bottom: -0.2rem !important;
     }
 
     .css-1t3luoj-MuiTypography-root{
-        margin-bottom: -0.5rem !important;
+        margin-bottom: 0rem !important;
+        font-size: 0.8rem !important;
     }
 
+    .css-3200hu-MuiCardMedia-root{
+        margin: 0;
+    }
     .social{
         width: 92.5%;  
         height: 1.5rem;  
         background: #EC5853;
         border: 1px solid #EC5853;
         box-sizing: border-box;
-        margin-top: 1rem !important;   
+        margin-top: 0.8rem !important;   
     }
 
     .socialButton{
@@ -39,22 +52,23 @@
         display: flex;
         height: 1.2rem;
         background-color: #fbf9f7;
-        width: 6rem;
+        width: 4.5rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
-        margin-left: 0.6rem;
+        margin-left: 0.4rem;
         justify-items: center;
         justify-content: center;
         align-items: center;
-        padding: 0 0.1rem;
+        padding: 0 0rem;
         cursor: pointer;
-        font-size: 0.6rem;
+        font-size: 0.5rem;
+        font-family: 'karma';
         color: black;
     }
     
     .socialIcon svg{
         background-color: #FBF9F7;
-        margin-right: 0.5rem;
+        margin-right: 0rem;
         height: 0.8rem;
     }
 
@@ -62,7 +76,7 @@
         display: flex;
         height: 1.2rem;
         background-color: #fbf9f7;
-        width: 2.5rem;
+        width: 2.4rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
@@ -80,14 +94,14 @@
         display: flex;
         height: 1.2rem;
         background-color: #fbf9f7;
-        width: 2.5rem;
+        width: 2.4rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        padding: 0 0.1rem;
+        padding: 0 0rem;
         
     }
 
@@ -99,8 +113,8 @@
 
     .mainImg{
         border: 1px solid #EC5853;
-        width: 27.42rem !important;
-        height: 17.65rem !important;
+        width: 92.5% !important;
+        height: 12.805rem !important;
     }
 
     .descriptionFeed{
@@ -117,9 +131,13 @@
 @media (min-width:640px){
     .feedCard{
         display: flex;
-        width: 31.4rem;
-        height: 29.5rem;
+        width: 28rem;
+        height: 27.5rem;
         margin: 2.5rem 0rem -0.5rem 0;
+    }
+
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 30rem !important;
     }
 
     .avatarFeed{
@@ -131,11 +149,11 @@
 
     .css-111s0v7-MuiTypography-root{
         font-size: 1.1rem !important;
-        margin-top: -0.7rem !important;
+        margin-top: -0.4rem !important;
     }
 
     .css-1t3luoj-MuiTypography-root{
-        margin-bottom: -0.5rem !important;
+        margin-bottom: -0.2rem !important;
     }
 
     .social{
@@ -144,7 +162,7 @@
         background: #EC5853;
         border: 1px solid #EC5853;
         box-sizing: border-box;
-        margin-top: 1rem !important;   
+        margin-top: 0.8rem !important;   
     }
 
     .socialButton{
@@ -155,7 +173,7 @@
         display: flex;
         height: 1.2rem;
         background-color: #fbf9f7;
-        width: 6rem;
+        width: 5.4rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         margin-left: 0.6rem;
@@ -215,8 +233,8 @@
 
     .mainImg{
         border: 1px solid #EC5853;
-        width: 27.42rem !important;
-        height: 17.65rem !important;
+        width: 92.5% !important;
+        height: 15.95rem !important;
     }
 
     .descriptionFeed{
@@ -236,6 +254,10 @@
         width: 31.7rem;
         height: 34rem;
         margin: 2.2rem 0rem -4rem 0;
+    }
+
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 35rem !important;
     }
 
     .avatarFeed{
@@ -321,8 +343,8 @@
 
     .mainImg{
         border: 1px solid #EC5853;
-        width: 27.6355rem !important;
-        height: 17.79rem !important;
+        width: 94% !important;
+        height: 18.52rem !important;
     }
 
     .descriptionFeed{
@@ -339,9 +361,13 @@
 @media (min-width:840px){
     .feedCard{
         display: flex;
-        width: 34.7rem;
+        width: 31.7rem;
         height: 40rem;
-        margin: 2.2rem 0rem -5rem 0;
+        margin: 0.2rem 0rem -16rem 0;
+    }
+    
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 35rem !important;
     }
 
     .social{
@@ -359,18 +385,18 @@
 
     .socialIcon{
         display: flex;
-        height: 2rem;
+        height: 1.8rem;
         background-color: #fbf9f7;
-        width: 7.2rem;
+        width: 6.8rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
-        margin-left: 0.6rem;
+        margin-left: 0.4rem;
         justify-items: center;
         justify-content: center;
         align-items: center;
         padding: 0 0.1rem;
         cursor: pointer;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     
     .socialIcon svg{
@@ -381,7 +407,7 @@
 
     .socialRatingA{
         display: flex;
-        height: 2rem;
+        height: 1.8rem;
         background-color: #fbf9f7;
         width: 3.2rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
@@ -399,9 +425,9 @@
 
     .socialRatingB{
         display: flex;
-        height: 2rem;
+        height: 1.8rem;
         background-color: #fbf9f7;
-        width: 3.2rem;
+        width: 3rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -419,13 +445,23 @@
 
 
     .mainImg{
-        width: 30.7rem !important;
-        height: 20.4665rem !important;
+        width: 94% !important;
+        height: 18.53rem !important;
     }
 
     .descriptionFeed{
         font-size: 1rem;
         width: 94%;
+    }
+}
+
+@media (min-width:1024px){
+    .feedCard{
+        margin: 0.2rem 0rem -20rem 0;
+    }
+    
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 35rem !important;
     }
 }
 
@@ -438,23 +474,28 @@
     
     }
 
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 38rem !important;
+    }
+
     .feedCard{
-        width: 42.5rem;
-        height: 50rem;
-        margin: 2.2rem 0rem -10rem 0;
+        width: 38.5rem;
+        height: 40rem !important;
+        margin: 0.2rem 0rem -12rem 0;
     }
 
     .social{
-        width: 100%;    
-        margin-top: 1.5rem;   
+        width: 95%;    
+        margin-top: 1.5rem;  
+        padding: 0.3rem !important; 
     }
 
     .socialIcon{
         height: 2.2rem;
-        width: 8.5rem;
-        margin-left: 0.8rem;
+        width: 8rem;
+        margin-left: 0.6rem;
         padding: 0 0.2rem;
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .socialRatingA{
@@ -473,10 +514,12 @@
     }
 
     .mainImg{
-        width: 38.375rem !important;
+        width: 95% !important;
+        height: 23.03rem !important;
     }
 
     .descriptionFeed{
-        width: 100%;
+        width: 95%;
+        margin-bottom: 0.5rem;
     }
 }

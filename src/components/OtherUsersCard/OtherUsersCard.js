@@ -16,7 +16,7 @@ export default function OtherUsersCard({
             <h4 className='otherName'>{username}</h4>
             <p className='otherSubtitle'>{description}</p>    
         </div>
-        <img alt='open' className='opensign' src={open}/>
+        <img alt='open' className='openSign' src={open}/>
     </div>
     </div>
   );
