@@ -3,13 +3,14 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'poppins', sans-serif !important;
-  overflow-x: hidden; ;
+  
 }
 
 main {
   width: 100vw;
   height: 100vh;
   margin-top: 3%;
+  /*overflow-x: hidden;*/
 }
 
 a {

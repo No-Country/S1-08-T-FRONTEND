@@ -163,23 +163,6 @@ export default function CreatePost() {
                   className='imageInput'
                 />
               </div>
-
-              {/*<div className='uploadVideo'>
-                <input
-                  className="videoInput"
-                  id="fileid"
-                  placeholder='Puedes sumar videos'
-                  name="video"
-                  type="file"
-                  accept="video/*"
-                  onChange={handleChange}
-                  required
-                />
-                <div className='confirmVideo'>
-                   {videoUrl && (
-                    <img alt='' src={videoUrl} />
-                )} 
-                   </div>*/}
               <div className="uploadVideo">
                 <video
                   className='previewReproducer'
