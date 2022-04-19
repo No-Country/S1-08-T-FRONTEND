@@ -34,7 +34,7 @@ const theme = createTheme({
 export const AppRouter = () => {
   return (
     <ThemeProvider theme={theme}>
-      <>
+      <div className="body-container">
         <Navbar />
         <main>
         <Routes>
@@ -47,7 +47,7 @@ export const AppRouter = () => {
           <Route path="/following/:id" element={<FollowingScreen/>} />
         </Routes>
         </main>
-      </>
+      </div>
     </ThemeProvider>
   );
 };
