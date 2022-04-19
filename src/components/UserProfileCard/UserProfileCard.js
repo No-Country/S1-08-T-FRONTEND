@@ -1,9 +1,9 @@
 import React from 'react'
-import './UserFoundCard.css'
+import './UserProfileCard.css'
 import Avatar from '@mui/material/Avatar';
-import avatarDefault from '../../../../Assets/images/avatar-chef.jpg';
+import avatarDefault from '../../Assets/images/avatar-chef.jpg';
 
-export default function UserFoundCard({ user, captionSize, nickNameSize, AvatarSize}) {
+export default function UserProfileCard({ user, captionSize, nickNameSize, AvatarSize}) {
 
     const { username, nickname, avatar } = user;
     return (

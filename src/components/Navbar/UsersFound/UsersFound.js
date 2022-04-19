@@ -61,7 +61,13 @@ export default function UsersFound() {
             return (
               <>
                 {
-                  <UserFoundCard key={user.id} user={user} />
+                  <UserFoundCard 
+                   key={user.id}
+                    user={user} 
+                    captionSize="small"
+                    nickNameSize="medium"
+                    AvatarSize={50}
+                    />
                 }
               </>
             )
