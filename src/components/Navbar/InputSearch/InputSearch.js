@@ -1,24 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { styled, alpha} from '@mui/material/styles';
-import { makeStyles } from "@material-ui/styles";
+import { styled, alpha } from '@mui/material/styles';
 
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { IconButton, useTheme, useMediaQuery} from '@mui/material';
-import { useGetUsersQuery } from '../../../app/services/users';
-import Spinner from '../../Spinner/Spinner';
+import { useMediaQuery } from '@mui/material';
+import { addSearchTerm } from '../../../app/slices/searcher/searcherSlice';
+import { useDispatch } from 'react-redux';
+import UsersFound from '../UsersFound/UsersFound';
 
 
 
-const useStyles = makeStyles(theme => ({
-  customButtonSearch: {
-    color: '#fff',
-    "&:hover, &.Mui-focusVisible": { backgroundColor: "" },
-    margin: '0 2px',
-    padding: "5px",
-    alignItems: "center",
-  }
-}));
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -28,7 +20,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
-  width: '30%',
+  width: '100%',
   [theme.breakpoints.up('sx')]: {
     marginLeft: theme.spacing(1),
     width: 'auto',
@@ -62,60 +54,26 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 export default function InputSearch() {
-  const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery('(max-width:820px)');
 
+  const dispatch = useDispatch()
 
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [userFound, setUserFound] = useState([])
-
-  const { data: users, error, isLoading, isSuccess, isError } = useGetUsersQuery()
-
-  console.log(users)
 
   useEffect(() => {
-
-    if (!isLoading) {
-
-      // eslint-disable-next-line array-callback-return
-      const searchUsers = users.filter((val) => {
-        if (searchTerm === "") {
-          return ""
-        } else if (val.username.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
-          return val
-        } else if (val.email.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
-          return val
-        } else if (val.nickname?.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
-          return val
-        } 
-      }
-
-      )
-
-
-      setUserFound(searchUsers)
-    }
-
-  }, [users, searchTerm, isLoading])
-
+    dispatch(addSearchTerm({ searchTerm }));
+  }, [dispatch, searchTerm]);
 
   return (
     <>
       {isMobile ? (
-        <IconButton
-          classes={{
-            root: classes.customButtonSearch
-          }}
-        >
-          <SearchIcon />
-        </IconButton>
+        ""
       ) : (
-
+        <div className="search">
         <Search>
           <SearchIconWrapper>
-            <SearchIcon/>
+            <SearchIcon />
           </SearchIconWrapper>
           <StyledInputBase sx={{ fontSize: '.9rem', fontWeight: 400 }}
             placeholder="Buscar…"
@@ -123,27 +81,9 @@ export default function InputSearch() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </Search>
-      )}
-
-      <div className="searchBar-dropdown">
-        {isLoading && <Spinner />}
-
-        {
-          isSuccess && userFound && userFound.map((user) => {
-            return (
-              <>
-              {
-              <div key={user.id}>
-                <p>{user.username}</p>
-                <p>{user.email}</p>
-                <p>{user.nickname?user.nickname:""}</p>
-              </div>
-              }
-              </>
-            )
-          })
-        }
+        <UsersFound/>
       </div>
-        </>
+      )}
+    </>
   )
 }

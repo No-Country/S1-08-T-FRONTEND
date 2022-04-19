@@ -6,6 +6,11 @@
   overflow-x: hidden; ;
 }
 
+.body-container{
+ position: relative;
+
+}
+
 main {
   width: 100vw;
   height: 100vh;

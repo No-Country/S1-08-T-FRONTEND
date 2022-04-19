@@ -7,6 +7,7 @@ import { commentsApi } from "./services/comments";
 import { followersApi } from "./services/followers";
 
 import authUsers from "./slices/users/authUsersSlice";
+import searcher from "./slices/searcher/searcherSlice";
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +16,8 @@ export const store = configureStore({
     [imageApi.reducerPath]: imageApi.reducer,
     [commentsApi.reducerPath]: commentsApi.reducer,
     [followersApi.reducerPath]: followersApi.reducer,
-    authUsers
+    authUsers,
+    searcher
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

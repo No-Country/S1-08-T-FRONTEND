@@ -1,0 +1,34 @@
+
+.profile {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    margin: 0.80em;
+    cursor: pointer;
+}
+.profile span {
+    margin-left: 0.2em;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    min-width: 180px;
+}
+
+.nickName {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+
+.caption {
+    color: #8e8e8e;
+}
+
+.caption .small {
+    font-size: 0.8em;
+}

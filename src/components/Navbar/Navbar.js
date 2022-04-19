@@ -3,7 +3,6 @@ import './Navbar.css';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 // import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import avatarDefault from '../../Assets/images/avatar-chef.jpg';
@@ -16,10 +15,15 @@ import { logout } from '../../app/slices/users/authUsersSlice';
 import CreatePost from '../CreatePost/CreatePost';
 import Notifications from '../Notifications/Notifications';
 import InputSearch from './InputSearch/InputSearch';
+import { IconButton, useMediaQuery } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 
 
 export default function Navbar() {
+
+  const isMobile = useMediaQuery('(max-width:820px)');
 
   const { user, isAuthenticated } = useSelector((state) => state.authUsers);
 
@@ -53,9 +57,26 @@ export default function Navbar() {
               {
                 isAuthenticated &&
                 <>
+                  {isMobile ?
+                    <IconButton
+                      sx={{ color: '#fff' }}
+                    >
+                      <SearchIcon />
+                    </IconButton>
+                    :
+                    ""
+
+                  }
                   <CreatePost />
                   <Notifications />
-                  <Avatar sx={{ width: 24, height: 24 }} src={user?.avatar ? user?.avatar : avatarDefault} aria-label="recipe" />
+                  <IconButton>
+                    <Avatar
+                      sx={{ width: 24, height: 24, border: '1px solid #b1b1b5' }}
+                      src={user?.avatar ? user?.avatar : avatarDefault}
+                      aria-label="recipe"
+                    />
+                  </IconButton>
+
                   {/* <Typography
                     variant="h6"
                     color="#fff"
