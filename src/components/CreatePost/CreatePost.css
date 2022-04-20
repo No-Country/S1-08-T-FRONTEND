@@ -20,7 +20,7 @@
     .creatPostContainer{
         display: flex;
         flex-direction: column;
-        width: 75%;
+        width: 85%;
         height: 95vh;
         background-color: #fbf9f7;
         font-family: 'Karma';
@@ -34,15 +34,16 @@
     }
 
     .createPostTitle{
+        width: 100%;
         display: flex;
-        justify-content: space-between;
+        
     }
 
     .createPostTitle h2{
         text-align: center;
         width: 95%;
         text-align: center;
-        margin: 0.5rem 0 0 1.5rem;
+        margin: 0.5rem 0 0 2.5rem;
         font-size: 1rem !important;
     }
 
@@ -108,6 +109,8 @@
         width: 15rem !important;
         height: 13.5rem !important;
         margin-top: 0.8rem;
+        display: flex;
+        flex-direction: column;
     }
 
     label{
@@ -124,14 +127,6 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-    }
-
-    .uploadVideo{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 15rem !important;
     }
     
     #filepond--drop-label-qb0w8oqe0{
@@ -158,7 +153,7 @@
         padding: 0.8rem;
         width: 13.5rem;
         height: 2.5rem;
-        margin: 16.5rem 0 1rem 0;
+        margin: 15.5rem 0 1rem 0;
         font-size: 1.125rem;
         background: #EC5853;
         color: #fbf9f7;
@@ -168,7 +163,14 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-
+    }
+    
+    .uploadVideo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 15rem !important;
     }
 
     .videoInput{
@@ -227,82 +229,26 @@
         color: black;
     }
 
-    .previewReproducer{
-        border-radius: 0.125rem;
-    }
 }
 
 @media (min-width:640px){
-    .MuiModal-root{
-        display: flex;
-        justify-content: center;
-        align-items: center;  
-    }
-
-    ::-webkit-scrollbar {
-        display: none;
-    }
-
     .formPost{
         width: 100%;
     }
 
     .creatPostContainer{
-        display: flex;
-        flex-direction: column;
         width: 70%;
-        height: 95vh;
+        height: 85vh;
         background-color: #fbf9f7;
-        font-family: 'Karma';
-        margin: auto;
-        border-radius: 0.25rem;
-        align-items: center;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        position: relative;
-        scroll-behavior: smooth;  
     }
 
-    .createPostTitle h2{
-        text-align: center;
-        margin: 0.5rem 0 0 0;
-        font-size: 1rem !important;
+    .createPostTitle{
+        display: flex;
+        justify-content: space-between;
     }
 
-    .descriptions{
-        width: 70%;
-    }
-
-    .createTitle{
-        padding: 0.2rem;
-        margin-bottom: 0.5rem;
-        width: 100%;
-        font-size: 0.8rem;
-        height: 1.3rem;
-    }
-
-    .createDescription{
-        padding: 0.2rem;
-        font-family: 'karma';
-        max-width: 100%;
-        width: 100%;
-        max-height: 35vh;
-        height: 8rem;
-        margin: 0.5rem 0;
-        font-size: 0.8rem;
-        background: #e8e8e8;
-        border: none;
-        border-radius: 0.25rem;
-    }
-
-    select{
-        font-family: 'karma';
-        width: 18rem;
-        border: none;
-        border-radius: 0.25rem;
-        background: #e8e8e8;
-        margin: 0rem 0 0.5rem 0;
-        font-size: 0.8rem;
+    .selectCategory{
+        width: 20rem;
     }
 
     .uploadMedia{
@@ -317,6 +263,147 @@
         height: 2rem !important;
         margin: 0.5rem 0 1rem 0;
         font-size: 1.125rem;
+     }
+    
+    .createPostButton{
+        margin: 16rem 0 1rem 0;
+    }
+
+    .uploadVideo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 18rem !important;
+    }
+
+    .previewReproducer{
+        width: 18rem;
+        height: 14rem;
+    }
+
+    .confirmImg img{
+        width: 12rem;
+        height: 8rem;
+    }
+
+    .confirmVideo{
+        width: 100%;
+        height: 4rem;
+        color: black;
+        background-color: #EC5853;
+    }
+
+    .videoInput{
+        width: 100%;
+        height: 4rem;
+    }
+
+    .previewReproducer{
+        border-radius: 0.125rem;
+    }
+}
+
+@media (min-width:768px){
+   
+    .formPost{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+   
+    .creatPostContainer{
+        width: 85%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        position: relative;
+        scroll-behavior: smooth;
+    }
+    
+    .createPostTitle{
+        width: 100%;
+    }
+
+    .createPostTitle h2{
+        text-align: center;
+        width: 95%;
+        margin: 0.5rem 0 0 2.5rem;
+        font-size: 1.2rem !important;
+    }
+
+    .closeButton{
+        border: #EC5853 2px solid;
+        border-radius: 50%;
+        background-color:#e8e8e8;
+        transition: 0.3s all ease-in-out !important;
+        height: 1.1rem !important;
+        width: 1.1rem !important;
+    }
+
+    .closeButton:hover{
+        transform: rotate(45deg);
+        
+    }
+
+    .closeButtonContainer{
+        margin: 0rem 0.2rem 0 0 !important;
+    }
+
+    .descriptions{
+        width: 75%;
+    }
+
+    .createTitle{
+        padding: 0.2rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        font-size: 0.8rem;
+        height: 1.3rem;
+        background-color: #e8e8e8;
+        border: none;
+        border-radius: 0.25rem;
+    }
+
+    .createDescription{
+        padding: 0.2rem;
+        font-family: 'karma';
+        max-width: 100%;
+        width: 100%;
+        min-width: 100%;
+        max-height: 35vh;
+        height: 8rem;
+        margin: 0.5rem 0;
+        font-size: 0.8rem;
+        background: #e8e8e8;
+        border: none;
+        border-radius: 0.25rem;
+    }
+
+    .selectCategory{
+        font-family: 'karma';
+        width: 16.5rem;
+        border: none;
+        border-radius: 0.25rem;
+        background: #e8e8e8;
+        margin: 0rem 0 0.5rem 0;
+        font-size: 0.8rem;
+    }
+
+    .uploadMedia{
+        width: 16.5rem !important;
+        height: 13.5rem !important;
+        margin-top: 0.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label{
+        padding: 0.5rem;
+        width: 16.5rem !important;
+        height: 2.5rem !important;
+        margin: 0.5rem 0 1rem 0;
+        font-size: 0.9rem !important;
         background: #EC5853;
         color: #fbf9f7 !important;
         border: none;
@@ -326,38 +413,17 @@
         justify-content: center;
         cursor: pointer;
     }
-
-    .uploadVideo{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
     
-    #filepond--drop-label-qb0w8oqe0{
-        height: 2rem !important;
-        width: 18 rem !important;
-        background-color: #EC5853;
-        cursor: pointer;
-    }
-
     .filepond--root a{
         display: none;
         color: green !important;
-    }
-
-    .filepond--browser{
-        display: flex !important;
-        flex-direction: row !important;
-        width: 15 rem !important;
-        background-color: greenyellow !important;
     }
 
     .createPostButton{
         padding: 0.8rem;
         width: 13.5rem;
         height: 2.5rem;
-        margin: 1.5rem 0 1rem 0;
+        margin: 17rem 0 1rem 0;
         font-size: 1.125rem;
         background: #EC5853;
         color: #fbf9f7;
@@ -367,7 +433,14 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-
+    }
+    
+    .uploadVideo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 16.5rem !important;
     }
 
     .videoInput{
@@ -375,9 +448,9 @@
     }
 
     .previewReproducer{
-        width: 20rem;
-        height: 15rem;
-        border-radius: 0.125rem !important;
+        width: 16.5rem;
+        height: 15.4rem;
+        border-radius: 0.25rem !important;
     }
 
     .createPostButton svg{
@@ -423,165 +496,62 @@
     .videoInput{
         width: 100%;
         height: 4rem;
-        color: black;
-    }
-
-    .previewReproducer{
-        border-radius: 0.125rem;
+   
     }
 }
 
-@media (min-width:768px){
+@media (min-width:840px){
     .creatPostContainer{
         width: 70%;
         height: 95vh;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        position: relative;
+        scroll-behavior: smooth;
     }
-
-    .createPostTitle h2{
-        font-size: 2rem !important;
+    .createPostButton{
+        margin: 19rem 0 1rem 0;
     }
+}
 
-    .descriptions{
-        width: 70%;
+@media (min-width:1024px){
+    .creatPostContainer{
+        width: 60%;
+        height: 95vh;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        position: relative;
+        scroll-behavior: smooth;
     }
-
-    .createTitle{
-        padding: 0.5rem;
-        font-size: 1.2rem;
-        height: 1.7rem;
-    }
-
-    .createDescription{
-        padding: 0.5rem;
-        max-height: 40vh;
-        height: 10rem;
-        font-size: 1rem;
-    }
-
-    select{
-        width: 18rem;
-        margin: 0rem 0 0.5rem 0;
-        font-size: 1rem;
-    }
-
-    .uploadMedia{
-        width: 18rem !important;
-        height: 20.5rem !important;
-    }
-
-    label{
+    
+   
+    .createPostButton{
         padding: 0.8rem;
-        width: 20rem !important;
-        height: 2rem !important;
-     }
+        width: 13.5rem;
+        height: 2.5rem;
+        margin: 20.5rem 0 1rem 0;
+        cursor: pointer;
+    }
 
     .uploadVideo{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-    
-    .createPostButton{
-        padding: 0.8rem;
-        width: 13.5rem;
-        height: 2.5rem;
-        margin: 1rem 0 1rem 0;
-    }
-
-    .videoInput{
-        margin: 1rem;
-    }
-
-    .previewReproducer{
-        width: 25rem;
-        height: 18.75rem;
-        border-radius: 0.125rem !important;
-    }
-}
-
-
-@media (min-width:840px){
-    .creatPostContainer{
-        height: 80vh;
-    }
-}
-    
-
-
-
-@media (min-width:1024px){
-    .creatPostContainer{
-        width: 60%;
-        height: 95vh;
-        
-    }
-    
-    .descriptions{
-        width: 70%;
-    }
-
-    .createTitle{
-        padding: 0.5rem;
-        font-size: 1.2rem;
-        font-family: 'karma';
-    }
-
-    .createDescription{
-        padding: 0.5rem;
-        max-height: 40vh;
-        height: 10rem;
-        font-size: 1.2rem;
-        font-family: 'karma';
+        width: 18.15rem !important;
     }
 
     .uploadMedia{
-        width: 20rem !important;
-        height: 14.85rem !important;
-        margin-top: 5rem;
-        margin-bottom: 10rem;
-        cursor: pointer;
-        align-self: center;
-        justify-self: center;
-    }
-    .uploadVideo{
-        width: 288 !important;
-        height: 14.85rem !important;
-        margin-top: 5rem;
-        margin-bottom: 10rem;
-        cursor: pointer;
-        align-self: center;
-        justify-self: center;
+        width: 18.15rem !important;
+        height: 13.5rem !important;
+        margin-top: 0.8rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .previewReproducer{
-        width: 288px;
-        border-radius: 0.125rem !important;
-        /* margin-bottom: 5rem; */
+        width: 18.15rem;
+        height: 16.94rem;
+        border-radius: 0.25rem !important;
     }
-
-    label{
-        padding: 0.2rem;
-        width: 20rem !important;
-        height: 2.5rem !important;
-        margin: 0.5rem 0 1rem 0;
-        font-size: 1.2rem !important;
-        background: #EC5853;
-        color: #fbf9f7 !important;
-        border: none;
-        border-radius: 0.25rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-    .createPostButton{
- 
-        padding: 0.8rem;
-        width: 13.5rem;
-        height: 2.5rem;
-        margin: 2.5rem 0 1rem 0;
-        cursor: pointer;
-    }
-
 }
