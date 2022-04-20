@@ -7,7 +7,7 @@ import { useGoogleLoginMutation } from "../../app/services/users";
 import { client_secret_google } from './client_secret_google';
 import { useState } from 'react';
 
-console.log(client_secret_google.client_id)
+// console.log(client_secret_google.client_id)
 
 export const LoginGoogleButton = () => {
     const [loading, setLoading] = useState(false);

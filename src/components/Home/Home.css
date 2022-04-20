@@ -23,6 +23,10 @@
 
     }
 
+    .rightSection__scroll{
+        overflow-y: scroll;
+    }
+
 
 @media (max-width:768px){
 

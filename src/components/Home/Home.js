@@ -14,10 +14,12 @@ export default function Home () {
         <Feed />
       </div>
       <div className='rightSection'>
+        <div className='rightSection__scroll'>
         <Profile />
         <OtherUsers />
         <CategoryList />
         <Footer />
+        </div>
       </div>
     </div>
   )
