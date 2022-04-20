@@ -135,7 +135,7 @@ const Register = () => {
               <div className='register-form-control'>
                 <Field
                   type='text'
-                  placeholder='Apellido'
+                  placeholder='Nombre de Cuenta'
                   name='nickname'
                   //onChange={handleChange}
                   required
