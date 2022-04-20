@@ -6,6 +6,7 @@ import fontbg from '../../Assets/images/pizzaA.jpg'
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { Input } from '@material-ui/core'
 
 const Register = () => {
   const [email, setEmail] = useState('')
@@ -71,31 +72,30 @@ const Register = () => {
           email: '',
           password: ''
         }}
-        validate={values => {
+        validate={value => {
           const errors = {}
-          if (!values.username) {
+          if (!value.username) {
             errors.username = 'Nombre requerido'
           }
-          if (!values.nickname) {
+          if (!value.nickname) {
             errors.nickname = 'Apellido requerido'
           }
-          if (!values.repassword) {
+          if (!value.repassword) {
             errors.repassword = 'Confirmar contraseña'
           }
-          if (!values.email) {
+          if (!value.email) {
             errors.email = 'Email requerido'
           } else {
-            if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-            ) {
+            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.email)) {
               errors.email = 'email invalido'
             }
           }
-          if (!values.password) {
+          if (!value.password) {
             errors.password = 'Contraseña requerida'
           }
           return errors
         }}
+        handleChange={handleChange}
       >
         <div className='register-container'>
           <div className='register-img'>
@@ -109,7 +109,7 @@ const Register = () => {
                   type='text'
                   name='email'
                   placeholder='Email'
-                  onChange={handleChange}
+                  //onChange={handleChange}
                   required
                 />
                 <ErrorMessage
@@ -123,7 +123,7 @@ const Register = () => {
                   type='text'
                   placeholder='Nombre'
                   name='username'
-                  onChange={handleChange}
+                  //onChange={handleChange}
                   required
                 />
                 <ErrorMessage
@@ -137,7 +137,7 @@ const Register = () => {
                   type='text'
                   placeholder='Apellido'
                   name='nickname'
-                  onChange={handleChange}
+                  //onChange={handleChange}
                   required
                 />
                 <ErrorMessage
@@ -151,7 +151,7 @@ const Register = () => {
                   type='password'
                   placeholder='Contraseña'
                   name='password'
-                  onChange={handleChange}
+                  //onChange={handleChange}
                   required
                 />
                 <ErrorMessage
@@ -165,7 +165,7 @@ const Register = () => {
                   type='password'
                   placeholder='Confirmar contraseña'
                   name='repassword'
-                  onChange={handleChange}
+                  //onChange={handleChange}
                   required
                 />
                 <ErrorMessage
