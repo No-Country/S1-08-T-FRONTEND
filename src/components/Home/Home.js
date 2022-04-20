@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Footer from '../Footer/Footer'
 import Feed from '../Feed/Feed'
 import OtherUsers from '../OtherUsers/OtherUsers'
 import './Home.css'
 import CategoryList from '../CategoryList/CategoryList'
+import Profile from './Profile/Profile'
+
 
 export default function Home () {
   return (
@@ -12,6 +14,7 @@ export default function Home () {
         <Feed />
       </div>
       <div className='rightSection'>
+        <Profile />
         <OtherUsers />
         <CategoryList />
         <Footer />

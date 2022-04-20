@@ -32,7 +32,7 @@ export default function Feed() {
         {isSuccess &&
           posts &&
           posts.map((post) => (
-            <div key={post.id}>
+            <div className="feedCardContainer" key={post.id}>
               <FeedCard post={post} />
             </div>
           ))}

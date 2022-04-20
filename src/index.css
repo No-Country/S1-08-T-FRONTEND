@@ -3,11 +3,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'poppins', sans-serif !important;
-  overflow-x: hidden; ;
 }
 
 .body-container{
  position: relative;
+ overflow-x: hidden;
 
 }
 

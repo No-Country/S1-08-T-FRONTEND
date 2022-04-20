@@ -1,87 +1,525 @@
-*{
-    font-family: 'Karma';
-};
+@media (max-width:640px){
+    .feedCard{
+        display: flex;
+        width: 22.9rem;
+        height: 27.5rem;
+        margin: 2.2rem 0rem -0.5rem 0;
+        font-family: 'karma';
+    }
 
-.feedSection{
-   
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 25rem !important;
+    }
+
+    .userIntro{
+        padding: 0 !important;
+    }
+    .avatarFeed{
+        height: 1.5rem !important;
+        width: 1.5rem !important;
+        margin-top: -1em !important;
+        margin-bottom: -1rem !important;
+    }
+
+    .css-111s0v7-MuiTypography-root{
+        font-size: 1.1rem !important;
+        margin-top: 0rem !important;
+        margin-bottom: -0.2rem !important;
+    }
+
+    .css-1t3luoj-MuiTypography-root{
+        margin-bottom: 0rem !important;
+        font-size: 0.8rem !important;
+    }
+
+    .css-3200hu-MuiCardMedia-root{
+        margin: 0;
+    }
+    .social{
+        width: 92.5%;  
+        height: 1.5rem;  
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 0.8rem !important;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 4.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.4rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0rem;
+        cursor: pointer;
+        font-size: 0.5rem;
+        font-family: 'karma';
+        color: black;
+    }
+    
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0rem;
+        height: 0.8rem;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 2.4rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingA svg{
+        background-color: #FBF9F7;
+        height: 0.8rem;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 2.4rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0rem;
+        
+    }
+
+    .socialRatingB svg{
+        background-color: #FBF9F7;
+        height: 0.8rem;
+    }
+
+
+    .mainImg{
+        border: 1px solid #EC5853;
+        width: 92.5% !important;
+        height: 12.805rem !important;
+    }
+
+    .descriptionFeed{
+        border: 1px solid #EC5853;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        width: 92.5%;
+    }
+
+    .css-1lf7cpy-MuiTypography-root{
+        font-size: 0.8rem !important;
+    }
 }
 
-.feedCard{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 49.0625rem;
-    margin: 2.2rem 0 0rem 0;
+@media (min-width:640px){
+    .feedCard{
+        display: flex;
+        width: 28rem;
+        height: 27.5rem;
+        margin: 2.5rem 0rem -0.5rem 0;
+    }
+
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 30rem !important;
+    }
+
+    .avatarFeed{
+        height: 1.5rem !important;
+        width: 1.5rem !important;
+        margin-top: -1em !important;
+        margin-bottom: -1rem !important;
+    }
+
+    .css-111s0v7-MuiTypography-root{
+        font-size: 1.1rem !important;
+        margin-top: -0.4rem !important;
+    }
+
+    .css-1t3luoj-MuiTypography-root{
+        margin-bottom: -0.2rem !important;
+    }
+
+    .social{
+        width: 92.5%;  
+        height: 1.5rem;  
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 0.8rem !important;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 5.4rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.6rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.1rem;
+        cursor: pointer;
+        font-size: 0.6rem;
+        color: black;
+    }
+    
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0.5rem;
+        height: 0.8rem;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 2.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingA svg{
+        background-color: #FBF9F7;
+        height: 0.8rem;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 2.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0.1rem;
+        
+    }
+
+    .socialRatingB svg{
+        background-color: #FBF9F7;
+        height: 0.8rem;
+    }
+
+
+    .mainImg{
+        border: 1px solid #EC5853;
+        width: 92.5% !important;
+        height: 15.95rem !important;
+    }
+
+    .descriptionFeed{
+        border: 1px solid #EC5853;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        width: 92.5%;
+    }
+
+    .css-1lf7cpy-MuiTypography-root{
+        font-size: 0.8rem !important;
+    }
 }
 
-.social{
-    width: 100%;    
-    background: #EC5853;
-    border: 1px solid #EC5853;
-    box-sizing: border-box;
-    margin-top: 2.5rem;   
+@media (min-width:768px){
+    .feedCard{
+        display: flex;
+        width: 31.7rem;
+        height: 34rem;
+        margin: 2.2rem 0rem -4rem 0;
+    }
+
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 35rem !important;
+    }
+
+    .avatarFeed{
+        height: 2.5rem !important;
+        width: 2.5rem !important;
+    }
+
+
+    .social{
+        width: 94%;  
+        height: 2.8rem;  
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 1rem;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 6.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.5rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.1rem;
+        cursor: pointer;
+        font-size: 0.7rem;
+        color: black;
+    }
+    
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0.5rem;
+        height: 1rem;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 2.8rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingA svg{
+        background-color: #FBF9F7;
+        height: 1rem;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 2.8rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0.1rem;
+        
+    }
+
+    .socialRatingB svg{
+        background-color: #FBF9F7;
+        height: 1rem;
+    }
+
+
+    .mainImg{
+        border: 1px solid #EC5853;
+        width: 94% !important;
+        height: 18.52rem !important;
+    }
+
+    .descriptionFeed{
+        border: 1px solid #EC5853;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        width: 94%;
+    }
+    
+    .css-1lf7cpy-MuiTypography-root{
+        font-size: 1rem !important;
+    }
 }
 
-.socialButton{
-    display: flex;
+@media (min-width:840px){
+    .feedCard{
+        display: flex;
+        width: 31.7rem;
+        height: 40rem;
+        margin: 0.2rem 0rem -16rem 0;
+    }
+    
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 35rem !important;
+    }
+
+    .social{
+        width: 94%;  
+        height: 3.2rem;  
+        background: #EC5853;
+        border: 1px solid #EC5853;
+        box-sizing: border-box;
+        margin-top: 1rem;   
+    }
+
+    .socialButton{
+        display: flex;
+    }
+
+    .socialIcon{
+        display: flex;
+        height: 1.8rem;
+        background-color: #fbf9f7;
+        width: 6.8rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.4rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.1rem;
+        cursor: pointer;
+        font-size: 0.7rem;
+    }
+    
+    .socialIcon svg{
+        background-color: #FBF9F7;
+        margin-right: 0.4rem;
+        height: 1rem;
+    }
+
+    .socialRatingA{
+        display: flex;
+        height: 1.8rem;
+        background-color: #fbf9f7;
+        width: 3.2rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .socialRatingA svg{
+        background-color: #FBF9F7;
+        height: 1rem;
+    }
+
+    .socialRatingB{
+        display: flex;
+        height: 1.8rem;
+        background-color: #fbf9f7;
+        width: 3rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 0.1rem;
+        
+    }
+
+    .socialRatingB svg{
+        background-color: #FBF9F7;
+        height: 1rem;
+    }
+
+
+    .mainImg{
+        width: 94% !important;
+        height: 18.53rem !important;
+    }
+
+    .descriptionFeed{
+        font-size: 1rem;
+        width: 94%;
+    }
 }
 
-.socialIcon{
-    display: flex;
-    height: 2.7rem;
-    background-color: #fbf9f7;
-    width: 9.8rem;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    margin-left: 1rem;
-    justify-items: center;
-    align-items: center;
-    padding: 0 0.4rem;
+@media (min-width:1024px){
+    .feedCard{
+        margin: 0.2rem 0rem -20rem 0;
+    }
+    
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 35rem !important;
+    }
 }
 
-.socialRatingA{
-    display: flex;
-    height: 2.7rem;
-    background-color: #fbf9f7;
-    width: 4.5rem;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    justify-content: center;
-    align-items: center;
-}
+@media (min-width:1200px){
+    *{
+        font-family: 'Karma';
+    };
 
-.socialRatingB{
-    display: flex;
-    height: 2.7rem;
-    background-color: #fbf9f7;
-    width: 4.5rem;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    justify-content: center;
-    align-items: center;
-}
+    .feedSection{
+    
+    }
 
-.socialIcon img{
-    background-color: #FBF9F7;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    width: 4rem;
-    height: 15px;
-}
+    .css-1vq0zqz-MuiPaper-root-MuiCard-root{
+        max-height: 38rem !important;
+    }
 
-.socialIcon svg{
-    background-color: #FBF9F7;
-    margin-right: 1rem;
-}
+    .feedCard{
+        width: 38.5rem;
+        height: 40rem !important;
+        margin: 0.2rem 0rem -12rem 0;
+    }
 
-.mainImg{
-    border: 1px solid #EC5853;
-}
+    .social{
+        width: 95%;    
+        margin-top: 1.5rem;  
+        padding: 0.3rem !important; 
+    }
 
-.descriptionFeed{
-    border: 1px solid #EC5853;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-    font-size: 1rem;
+    .socialIcon{
+        height: 2.2rem;
+        width: 8rem;
+        margin-left: 0.6rem;
+        padding: 0 0.2rem;
+        font-size: 0.8rem;
+    }
+
+    .socialRatingA{
+        height: 2.2rem;
+        width: 4.2rem;
+    }
+
+    .socialRatingB{
+        height: 2.2rem;
+        width: 4.2rem;
+    }
+
+    .socialIcon svg{
+        margin-right: 0.5rem;
+        height: 1.1rem !important;
+    }
+
+    .mainImg{
+        width: 95% !important;
+        height: 23.03rem !important;
+    }
+
+    .descriptionFeed{
+        width: 95%;
+        margin-bottom: 0.5rem;
+    }
 }
