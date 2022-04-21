@@ -82,7 +82,7 @@ export default function InputSearch() {
             <SearchIconWrapper>
               <SearchIcon sx={{ color: '#fff' }} />
             </SearchIconWrapper>
-            <StyledInputBase sx={{ fontSize: '.9rem', fontWeight: 400 }}
+            <StyledInputBase 
               placeholder="Buscar…"
               inputProps={{ 'aria-label': 'search' }}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -93,7 +93,7 @@ export default function InputSearch() {
                 <IconButton 
                 onClick={handleDeleteSearchTerm}
                 >
-                  <HighlightOffIcon sx={{ color: '#fff' }} />
+                  <HighlightOffIcon sx={{ color: '#fff'}} />
                 </IconButton>
               ) : (
                 ""

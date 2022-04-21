@@ -9,7 +9,7 @@
     opacity: 0;
     visibility: hidden;
     z-index: 1000000000000000000;
-    transition: transform .50s ease-in-out,opacity .50s ease-in-out,visibility .50s ease-in-out;
+    transition: transform .20s ease-in-out,opacity .20s ease-in-out,visibility .20s ease-in-out;
 
 }
 
