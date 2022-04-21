@@ -11,6 +11,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Home from "../components/Home/Home";
 import Detail from "../components/DetailPost/Detail";
+import { UserProfile } from "../components/UserProfile/UserProfile";
 
 const theme = createTheme({
   typography: {
@@ -35,13 +36,14 @@ export const AppRouter = () => {
       <>
         <Navbar />
         <main>
-        <Routes>
-          <Route path="/signin" element={<TestAuth />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/:id" element={<Detail />} />
-        </Routes>
+          <Routes>
+            <Route path="/signin" element={<TestAuth />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/:id" element={<Detail />} />
+            <Route path="/me" element={<UserProfile />} />
+          </Routes>
         </main>
       </>
     </ThemeProvider>
