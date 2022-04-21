@@ -12,7 +12,6 @@ import { useUploadPostsVideoMutation } from '../../app/services/images'
 
 import MicrowaveIcon from '@mui/icons-material/Microwave'
 import { IconButton } from '@mui/material'
-import Category from '../Category/Category'
 
 const useStyles = makeStyles(theme => ({
   customButtonPost: {
@@ -135,7 +134,7 @@ export default function CreatePost () {
               onChange={handleChange}
             ></textarea>
           </div>
-          {/* <div className='selectCategory'>
+          <div className='selectCategory'>
             <select>
               <option>Elige una categoría</option>
               <option>Desayunos y meriendas</option>
@@ -147,9 +146,7 @@ export default function CreatePost () {
               <option>Vegetarianas y veganas</option>
               <option>Aptas para celíacos</option>
             </select>
-          </div> */}
-
-          <Category />
+          </div>
 
           <div className='uploadMedia'>
             <div className='uploadImg'>

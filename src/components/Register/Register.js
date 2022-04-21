@@ -78,7 +78,7 @@ const Register = () => {
             errors.username = 'Nombre requerido'
           }
           if (!value.nickname) {
-            errors.nickname = 'Apellido requerido'
+            errors.nickname = 'Nombre de cuenta requerido'
           }
           if (!value.repassword) {
             errors.repassword = 'Confirmar contraseña'
