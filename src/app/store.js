@@ -5,8 +5,10 @@ import { postApi } from "./services/posts";
 import { imageApi } from "./services/images";
 import { commentsApi } from "./services/comments";
 import { followersApi } from "./services/followers";
+import { categoryApi } from "./services/categories";
 
 import authUsers from "./slices/users/authUsersSlice";
+import searcher from "./slices/searcher/searcherSlice";
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +17,10 @@ export const store = configureStore({
     [imageApi.reducerPath]: imageApi.reducer,
     [commentsApi.reducerPath]: commentsApi.reducer,
     [followersApi.reducerPath]: followersApi.reducer,
-    authUsers
+    [categoryApi.reducerPath]: categoryApi.reducer,
+
+    authUsers,
+    searcher
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -23,7 +28,8 @@ export const store = configureStore({
       postApi.middleware,
       imageApi.middleware,
       followersApi.middleware,
-      commentsApi.middleware
+      commentsApi.middleware,
+      categoryApi.middleware
     ),
 });
 

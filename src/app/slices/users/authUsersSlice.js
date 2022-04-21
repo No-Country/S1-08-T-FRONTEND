@@ -79,4 +79,4 @@ export const { logout, loginFromLS } = authUserSlice.actions;
 
 export default authUserSlice.reducer;
 
-export const selectIsAuthenticated = (state) => state.authUsers.isAuthenticated;
+// export const selectIsAuthenticated = (state) => state.authUsers.isAuthenticated;

@@ -1,0 +1,25 @@
+.search {
+    width: 100%;
+    transition: all 300ms ease;
+    transition: transform .20s ease-in-out,opacity .20s ease-in-out,visibility .20s ease-in-out;
+
+}
+
+
+element.style {
+    left: 187.5px;
+}
+._a3gq ._9z-_ {
+    bottom: 0;
+    top: -6px;
+}
+._a3gq ._9z-- {
+    background: rgb(var(--ig-primary-background));
+    border: 1px solid rgb(var(--ig-elevated-background));
+    bottom: -6px;
+    box-shadow: 0 0 5px 1px rgba(var(--web-always-black), .0975);
+    height: 14px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 14px;
+}

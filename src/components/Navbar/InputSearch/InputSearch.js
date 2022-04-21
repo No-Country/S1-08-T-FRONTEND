@@ -1,23 +1,18 @@
-import React from 'react'
-import { styled, alpha} from '@mui/material/styles';
-import { makeStyles } from "@material-ui/styles";
+import React, { useEffect, useState } from 'react'
+import { styled, alpha } from '@mui/material/styles';
 
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { IconButton, useTheme, useMediaQuery} from '@mui/material';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { IconButton, useMediaQuery } from '@mui/material';
+import { addSearchTerm } from '../../../app/slices/searcher/searcherSlice';
+import { useDispatch } from 'react-redux';
+import UsersFound from '../UsersFound/UsersFound';
+import { handleUserFoundModaClose } from '../UsersFound/UsersFoundModal/UsersFoundModal';
 
-import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 
 
-const useStyles = makeStyles(theme => ({
-  customButtonSearch: {
-    color: '#fff',
-    "&:hover, &.Mui-focusVisible": { backgroundColor: "" },
-    margin: '0 2px',
-    padding: "5px",
-    alignItems: "center",
-  }
-}));
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -27,7 +22,7 @@ const Search = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
-  width: '30%',
+  width: '100%',
   [theme.breakpoints.up('sx')]: {
     marginLeft: theme.spacing(1),
     width: 'auto',
@@ -45,7 +40,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
+  color: '#fff',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -61,32 +56,53 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 export default function InputSearch() {
-  const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery('(max-width:820px)');
+
+  const dispatch = useDispatch()
+
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleDeleteSearchTerm = () => {
+    setSearchTerm("");
+    handleUserFoundModaClose()
+  }
+
+  useEffect(() => {
+    dispatch(addSearchTerm({ searchTerm }));
+  }, [dispatch, searchTerm]);
 
   return (
     <>
       {isMobile ? (
-        <IconButton
-          classes={{
-            root: classes.customButtonSearch
-          }}
-        >
-          <SearchIcon />
-        </IconButton>
+        ""
       ) : (
-
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase sx={{ fontSize: '.9rem', fontWeight: 400 }}
-            placeholder="Buscar…"
-            inputProps={{ 'aria-label': 'search' }}
-          />
-        </Search>
+        <div className="search">
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon sx={{ color: '#fff' }} />
+            </SearchIconWrapper>
+            <StyledInputBase 
+              placeholder="Buscar…"
+              inputProps={{ 'aria-label': 'search' }}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              value={searchTerm}
+            />
+            {
+              searchTerm.length > 0 ? (
+                <IconButton 
+                onClick={handleDeleteSearchTerm}
+                >
+                  <HighlightOffIcon sx={{ color: '#fff'}} />
+                </IconButton>
+              ) : (
+                ""
+              )
+            }
+          </Search>
+          <UsersFound />
+        </div>
       )}
-        </>
+    </>
   )
 }

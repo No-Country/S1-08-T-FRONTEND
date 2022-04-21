@@ -1,0 +1,9 @@
+Docuemntacion de uso UserProfileCard:
+
+puedes usar los siguientes props para proveer la data al componente y adaptar su tamaño de letras e imagen
+
+props: 
+    user: data user 
+    captionSize: small, medium, large 
+    nickNameSize: small, medium, large
+    AvatarSize: number // example AvatarSize={50}

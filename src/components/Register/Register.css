@@ -2,6 +2,12 @@ body {
   background: #faf9ec;
 }
 
+.errorMessage {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
 .register-container {
   width: 100vw;
   display: flex;
@@ -79,7 +85,7 @@ body {
   letter-spacing: 2px;
   font-weight: bolder;
   cursor: pointer;
-  background: #EC5853;
+  background: #ec5853;
   width: min(100%, 50%);
   display: flex;
   justify-content: center;
@@ -102,15 +108,14 @@ body {
   margin: 0 1px;
 }
 
-
-@media all and (max-width:720px) {
+@media all and (max-width: 720px) {
   .login-container button {
     display: block;
     font-size: 14px;
     width: 100%;
   }
 
-  .register-div{
+  .register-div {
     width: 80%;
   }
 }
@@ -135,7 +140,7 @@ body {
     font-size: 20px;
   }
 
-  .register-div{
+  .register-div {
     width: 50%;
   }
   .register-container input,

@@ -12,6 +12,8 @@ import Register from "../components/Register/Register";
 import Home from "../components/Home/Home";
 import Detail from "../components/DetailPost/Detail";
 import { UserProfile } from "../components/UserProfile/UserProfile";
+import FollowersScreen from "../components/Follow/FollowersScreen";
+import FollowingScreen from "../components/Follow/FollowingScreen";
 
 const theme = createTheme({
   typography: {
@@ -33,7 +35,7 @@ const theme = createTheme({
 export const AppRouter = () => {
   return (
     <ThemeProvider theme={theme}>
-      <>
+      <div className="body-container">
         <Navbar />
         <main>
           <Routes>
@@ -42,10 +44,12 @@ export const AppRouter = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Home />} />
             <Route path="/:id" element={<Detail />} />
+            <Route path="/followers/:id" element={<FollowersScreen />} />
+            <Route path="/following/:id" element={<FollowingScreen />} />
             <Route path="/me" element={<UserProfile />} />
           </Routes>
         </main>
-      </>
+      </div>
     </ThemeProvider>
   );
 };
