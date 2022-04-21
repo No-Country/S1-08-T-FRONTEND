@@ -1,0 +1,32 @@
+.userFound-modal-container{
+    position: fixed;
+    top: 10;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    /* margin: auto; */
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000000000000000000;
+    transition: transform .50s ease-in-out,opacity .50s ease-in-out,visibility .50s ease-in-out;
+
+}
+
+.userFound-modal-close{
+    visibility: hidden;
+    opacity: 0; 
+  
+  }
+
+.open-result {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 640px) {
+    .userFound-modal-conatiner  {
+        display: none;
+    }
+}
+
