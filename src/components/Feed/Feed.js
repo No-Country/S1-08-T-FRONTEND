@@ -25,7 +25,7 @@ export default function Feed() {
   return (
     <div className="feedContainer">
       <div className="containerPosts">
-        {isLoading && "cargando..."}
+        {/*{isLoading && "cargando..."}*/}
 
         {isError && error.message}
 
