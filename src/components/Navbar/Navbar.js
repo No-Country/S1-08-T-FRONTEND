@@ -44,7 +44,11 @@ export default function Navbar() {
           <Toolbar className='toolBar'>
             <div className='menuLeft'>
               <Link to='/' >
-                <IconButton >
+                <IconButton
+                  style={{ backgroundColor: 'transparent' }}
+                  tooltip="Inicio"
+                  flow="down"
+                >
                   <img alt='' className='logo' src={Logo2} />
                 </IconButton>
               </Link>
@@ -59,6 +63,8 @@ export default function Navbar() {
                 <>
                   {isMobile ?
                     <IconButton
+                      tooltip="Buscar"
+                      flow="down"
                       sx={{ color: '#fff' }}
                     >
                       <SearchIcon />
@@ -69,7 +75,10 @@ export default function Navbar() {
                   }
                   <CreatePost />
                   <Notifications />
-                  <IconButton>
+                  <IconButton
+                    tooltip="Perfil"
+                    flow="down"
+                  >
                     <Avatar
                       sx={{ width: 24, height: 24, border: '1px solid #b1b1b5' }}
                       src={user?.avatar ? user?.avatar : avatarDefault}
