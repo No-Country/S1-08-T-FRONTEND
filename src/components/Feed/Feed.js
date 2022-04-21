@@ -2,12 +2,21 @@ import React, { useState, useEffect } from "react";
 import "./Feed.css";
 import FeedCard from "../FeedCard/FeedCard";
 import { useGetPostsQuery } from "../../app/services/posts";
+import Loading from "../Loading/Loading";
 
 export default function Feed() {
+  const [isLoading, setIsLoading] = useState(true);
+ 
   //importar la data
-  const { data, error, isLoading, isSuccess, isError, refetch } =
+  const { data, error, isSuccess, isError, refetch } =
     useGetPostsQuery();
   const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+  })
 
   useEffect(() => {
     if (data) {
@@ -25,7 +34,7 @@ export default function Feed() {
   return (
     <div className="feedContainer">
       <div className="containerPosts">
-        {/*{isLoading && "cargando..."}*/}
+        {isLoading && <Loading />}
 
         {isError && error.message}
 

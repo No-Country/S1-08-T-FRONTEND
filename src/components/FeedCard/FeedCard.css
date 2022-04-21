@@ -3,7 +3,7 @@
         display: flex;
         width: 22.9rem;
         height: 27.5rem;
-        margin: 2.2rem 0rem -0.5rem 0;
+        margin: 2.2rem 0rem -3rem 0;
         font-family: 'karma';
     }
 
@@ -14,11 +14,22 @@
     .userIntro{
         padding: 0 !important;
     }
-    .avatarFeed{
-        height: 1.5rem !important;
-        width: 1.5rem !important;
-        margin-top: -1em !important;
-        margin-bottom: -1rem !important;
+    
+    .css-1ssile9-MuiCardHeader-avatar{
+        display: flex;
+        align-items: center;
+    }
+
+    .css-7lpzx9-MuiAvatar-root {
+        height: 2rem !important;
+        width: 2rem !important;
+        margin: 0rem 0.2rem 0.2rem 1rem!important; 
+    }
+
+    .css-1qbkelo-MuiCardHeader-content{
+        height: 3.2rem !important;
+        margin-left: 0rem;
+        margin-top: 0.5rem;
     }
 
     .css-111s0v7-MuiTypography-root{
@@ -140,11 +151,27 @@
         max-height: 30rem !important;
     }
 
-    .avatarFeed{
+    .css-1ssile9-MuiCardHeader-avatar{
+        display: flex;
+        align-items: center;
+    }
+
+    .css-7lpzx9-MuiAvatar-root {
+        height: 2rem !important;
+        width: 2rem !important;
+        margin: 0rem 0rem 0.2rem 1rem!important; 
+    }
+
+    .css-1qbkelo-MuiCardHeader-content{
+        height: 3.2rem !important;
+        margin-left: 0rem;
+        margin-top: 0.5rem;
+    }
+
+
+    .userIntro img{
         height: 1.5rem !important;
         width: 1.5rem !important;
-        margin-top: -1em !important;
-        margin-bottom: -1rem !important;
     }
 
     .css-111s0v7-MuiTypography-root{
@@ -260,11 +287,17 @@
         max-height: 35rem !important;
     }
 
-    .avatarFeed{
+    .css-7lpzx9-MuiAvatar-root {
         height: 2.5rem !important;
         width: 2.5rem !important;
+        margin: 0rem 0rem 0.5rem 0.5rem!important; 
     }
 
+    .css-1qbkelo-MuiCardHeader-content{
+        height: 3rem !important;
+        margin-left: 0rem;
+        margin-top: 0.3rem;
+    }
 
     .social{
         width: 94%;  
@@ -363,7 +396,7 @@
         display: flex;
         width: 31.7rem;
         height: 40rem;
-        margin: 0.2rem 0rem -16rem 0;
+        margin: 0.2rem 0rem -7rem 0;
     }
     
     .css-1vq0zqz-MuiPaper-root-MuiCard-root{
@@ -457,7 +490,7 @@
 
 @media (min-width:1024px){
     .feedCard{
-        margin: 0.2rem 0rem -20rem 0;
+        margin: 0.2rem 0rem -7rem 0;
     }
     
     .css-1vq0zqz-MuiPaper-root-MuiCard-root{
@@ -481,7 +514,7 @@
     .feedCard{
         width: 38.5rem;
         height: 40rem !important;
-        margin: 0.2rem 0rem -12rem 0;
+        margin: 0.2rem 0rem 0rem 0;
     }
 
     .social{
