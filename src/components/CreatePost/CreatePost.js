@@ -63,8 +63,8 @@ export default function CreatePost() {
   }
 
   //states post
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState(null);
+  const [description, setDescription] = useState(null);
   const [category, setCategory] = useState(null);
   const [image, setImage] = useState(null); //para que sea una array, deberia tener[]
   const [video, setVideo] = useState(null); //para que sea una array, deberia tener[]
@@ -112,43 +112,53 @@ export default function CreatePost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
+
     if (isAuthenticated) {
-      let imageUrl = image
-      let videoUrl = videoUp
-      imageUrl = image !== null ? await uploadImage(image[0].file) : null;
-      videoUrl = videoUp !== null ? await uploadVideo(videoUp) : null;
+      if (image && title) {
+        const loginToast = toast.loading('Publicando...')
+        setLoading(true);
+        let imageUrl = image
+        let videoUrl = videoUp
+        imageUrl = image !== null ? await uploadImage(image[0].file) : null;
+        videoUrl = videoUp !== null ? await uploadVideo(videoUp) : null;
 
-      const post = {
-        userid: user.id,
-        title: title,
-        description: description,
-        image: imageUrl,
-        video: videoUrl,
-        category: category || 2
-      };
-
-      const loginToast = toast.loading('Iniciando sesión...')
-
-      setLoading(true);
+        const post = {
+          userid: user.id,
+          title: title,
+          description: description,
+          image: imageUrl,
+          video: videoUrl,
+          category: category || 2
+        };
 
 
-      const { data } = await createPost(post);
-      setLoading(false);
-      toast.dismiss(loginToast)
 
-      console.log(data);
 
-      if (data.ok === true) {
-        toast.success(data.msg)
+        const { data } = await createPost(post);
+        setLoading(false);
+        toast.dismiss(loginToast)
 
-        console.log(data.msg)
-        setOpen(false)
-        //refesh state posts
-        handleRefreshfields();
+        console.log(data);
+
+        if (data.ok === true) {
+          toast.success(data.msg)
+
+          console.log(data.msg)
+          setOpen(false)
+          //refesh state posts
+          handleRefreshfields();
+        } else {
+          toast.error(data.msg)
+          console.log(data.msg)
+        }
       } else {
-        toast.error(data.msg)
-        console.log(data.msg)
+        toast.error("Para publicar  debes subir por lo menos una imagen y un titulo")
+        setLoading(false);
       }
+
+    } else {
+      toast.error('Debes iniciar sesion para publicar')
     }
 
   }
@@ -157,6 +167,8 @@ export default function CreatePost() {
   return (
     <div>
       <IconButton
+        tooltip="Publicar"
+        flow="down"
         onClick={handleOpen}
         classes={{
           root: classes.customButtonPost
