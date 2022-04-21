@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { useGetUsersQuery } from '../../../app/services/users';
 import Spinner from '../../Spinner/Spinner';
 import UserFoundCard from './UserFoundCard/UserFoundCard';
+import UsersFoundModal from './UsersFoundModal/UsersFoundModal';
 
 export default function UsersFound() {
   const [userFound, setUserFound] = useState([])
@@ -49,12 +50,13 @@ export default function UsersFound() {
 
   return (
 
-    <div className={`searchBar-dropdown-conatiner ${userFound.length > 0 ? "open-result" : " "}`}>
+    <UsersFoundModal dataOpenResult={userFound}>
         <div className='_9z-- _9z-_'></div>
-      <div className='searchBar-dropdown__content'>
+      <div className='usersFound-content'>
 
         {isLoading && <Spinner />}
         {isError && <p>{error}</p>}
+        {userFound.length === 0 && !isLoading && !isError && <p className='noResults'>No hay resultados</p>}
 
         {
           isSuccess && userFound && userFound.map((user) => {
@@ -65,7 +67,7 @@ export default function UsersFound() {
                    key={user.id}
                     user={user} 
                     captionSize="small"
-                    nickNameSize="medium"
+                    nickNameSize="small"
                     AvatarSize={50}
                     />
                 }
@@ -74,6 +76,6 @@ export default function UsersFound() {
           })
         }
       </div>
-    </div>
+    </UsersFoundModal>
   )
 }

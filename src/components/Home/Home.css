@@ -16,11 +16,14 @@
     .rightSection{
         display: flex;
         flex-direction: column;
-        justify-content: start;
         align-items: flex-start;
         margin:  2rem;
         padding: 2rem;
 
+    }
+
+    .rightSection__scroll{
+        overflow-y: scroll;
     }
 
 

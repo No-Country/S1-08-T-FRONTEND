@@ -5,18 +5,11 @@ import { useGetPostsQuery } from "../../app/services/posts";
 import Loading from "../Loading/Loading";
 
 export default function Feed() {
-  const [isLoading, setIsLoading] = useState(true);
  
   //importar la data
-  const { data, error, isSuccess, isError, refetch } =
+  const { data, error, isSuccess, isError, refetch, isLoading } =
     useGetPostsQuery();
   const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-  })
 
   useEffect(() => {
     if (data) {
