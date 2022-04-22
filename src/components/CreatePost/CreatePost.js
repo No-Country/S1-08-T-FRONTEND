@@ -211,9 +211,7 @@ export default function CreatePost() {
                 />
               </div>
               <div className="uploadVideo">
-           
                 {video !== null ?
-
                   <video
                     className='previewReproducer'
                     width="288"
@@ -223,6 +221,7 @@ export default function CreatePost() {
                     controls
                   />
                   : null
+                  
                 }
 
                 <input
@@ -233,6 +232,7 @@ export default function CreatePost() {
                   accept="video/*"
                   onChange={handleVideo}
                 />
+                <label for="file_video" className='videoLabel'>Elige o arrastra tu video</label>
               </div>
 
 

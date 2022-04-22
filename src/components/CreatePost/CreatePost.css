@@ -560,11 +560,15 @@
         flex-direction: column;
     }
 
-    .videoInput{
+    .videoLabel{ 
         background-color: #EC5853;
         font-size: 0.8rem;
         color: white;
         border-radius: 00.25rem;
+    }
+
+    .videoInput{
+        display: none;    
     }
 
     .previewReproducer{
