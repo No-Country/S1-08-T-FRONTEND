@@ -51,7 +51,7 @@ export default function Category () {
                 <FeedCard post={post} />
               </div>
             ))
-          : swal('No hay posts')}
+          : alert('No hay posts') && navigate('/')}
       </div>
     </div>
   )

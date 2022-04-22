@@ -3,7 +3,7 @@
         display: flex;
         width: 22.9rem;
         height: 27.5rem;
-        margin: 2.2rem 0rem -0.5rem 0;
+        margin: 2.2rem 0rem -3rem 0;
         font-family: 'karma';
     }
 
@@ -14,11 +14,22 @@
     .userIntro{
         padding: 0 !important;
     }
-    .avatarFeed{
-        height: 1.5rem !important;
-        width: 1.5rem !important;
-        margin-top: -1em !important;
-        margin-bottom: -1rem !important;
+    
+    .css-1ssile9-MuiCardHeader-avatar{
+        display: flex;
+        align-items: center;
+    }
+
+    .css-7lpzx9-MuiAvatar-root {
+        height: 2rem !important;
+        width: 2rem !important;
+        margin: 0rem 0.2rem 0.2rem 1rem!important; 
+    }
+
+    .css-1qbkelo-MuiCardHeader-content{
+        height: 3.2rem !important;
+        margin-left: 0rem;
+        margin-top: 0.5rem;
     }
 
     .css-111s0v7-MuiTypography-root{
@@ -52,7 +63,7 @@
         display: flex;
         height: 1.2rem;
         background-color: #fbf9f7;
-        width: 4.5rem;
+        width: 4.9rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         margin-left: 0.4rem;
@@ -83,6 +94,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        border-right: rgba(0, 0, 0, 0.25) 1px solid;
     }
 
     .socialRatingA svg{
@@ -102,7 +114,7 @@
         align-items: center;
         cursor: pointer;
         padding: 0 0rem;
-        
+        border-left: rgba(0, 0, 0, 0.25) 1px solid;
     }
 
     .socialRatingB svg{
@@ -140,11 +152,27 @@
         max-height: 30rem !important;
     }
 
-    .avatarFeed{
+    .css-1ssile9-MuiCardHeader-avatar{
+        display: flex;
+        align-items: center;
+    }
+
+    .css-7lpzx9-MuiAvatar-root {
+        height: 2rem !important;
+        width: 2rem !important;
+        margin: 0rem 0rem 0.2rem 1rem!important; 
+    }
+
+    .css-1qbkelo-MuiCardHeader-content{
+        height: 3.2rem !important;
+        margin-left: 0rem;
+        margin-top: 0.5rem;
+    }
+
+
+    .userIntro img{
         height: 1.5rem !important;
         width: 1.5rem !important;
-        margin-top: -1em !important;
-        margin-bottom: -1rem !important;
     }
 
     .css-111s0v7-MuiTypography-root{
@@ -260,11 +288,17 @@
         max-height: 35rem !important;
     }
 
-    .avatarFeed{
+    .css-7lpzx9-MuiAvatar-root {
         height: 2.5rem !important;
         width: 2.5rem !important;
+        margin: 0rem 0rem 0.5rem 0.5rem!important; 
     }
 
+    .css-1qbkelo-MuiCardHeader-content{
+        height: 3rem !important;
+        margin-left: 0rem;
+        margin-top: 0.3rem;
+    }
 
     .social{
         width: 94%;  
@@ -313,6 +347,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        border-right: rgba(0, 0, 0, 0.25) 1px solid;
     }
 
     .socialRatingA svg{
@@ -332,6 +367,7 @@
         align-items: center;
         cursor: pointer;
         padding: 0 0.1rem;
+        border-left: rgba(0, 0, 0, 0.25) 1px solid;
         
     }
 
@@ -363,7 +399,7 @@
         display: flex;
         width: 31.7rem;
         height: 40rem;
-        margin: 0.2rem 0rem -16rem 0;
+        margin: 0.2rem 0rem -7rem 0;
     }
     
     .css-1vq0zqz-MuiPaper-root-MuiCard-root{
@@ -457,7 +493,7 @@
 
 @media (min-width:1024px){
     .feedCard{
-        margin: 0.2rem 0rem -20rem 0;
+        margin: 0.2rem 0rem -7rem 0;
     }
     
     .css-1vq0zqz-MuiPaper-root-MuiCard-root{
@@ -481,7 +517,7 @@
     .feedCard{
         width: 38.5rem;
         height: 40rem !important;
-        margin: 0.2rem 0rem -12rem 0;
+        margin: 0.2rem 0rem 0rem 0;
     }
 
     .social{
@@ -491,21 +527,16 @@
     }
 
     .socialIcon{
-        height: 2.2rem;
-        width: 8rem;
+        height: 2rem;
+        width: 7.5rem;
         margin-left: 0.6rem;
         padding: 0 0.2rem;
         font-size: 0.8rem;
     }
 
-    .socialRatingA{
-        height: 2.2rem;
-        width: 4.2rem;
-    }
-
-    .socialRatingB{
-        height: 2.2rem;
-        width: 4.2rem;
+    .socialRatingA, .socialRatingB {
+        height: 2rem;
+        width: 3.5rem;
     }
 
     .socialIcon svg{
