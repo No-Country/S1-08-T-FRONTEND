@@ -27,7 +27,7 @@ export default function FeedCard({ post }) {
   return (
     <div className="feedCard">
       <Card sx={{ maxHeight: 620, marginLeft: 2, marginRight: 2, width: 645 }}>
-        <Link to={`/me/${userid}`}>
+        <Link to={`/profile/${userid}`}>
           <CardHeader
             className="userIntro"
             avatar={
