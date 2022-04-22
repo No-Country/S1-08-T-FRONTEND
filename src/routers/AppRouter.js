@@ -11,6 +11,7 @@ import Login from '../components/Login/Login'
 import Register from '../components/Register/Register'
 import Home from '../components/Home/Home'
 import Detail from '../components/DetailPost/Detail'
+import { UserProfile } from '../components/UserProfile/UserProfile'
 import FollowersScreen from '../components/Follow/FollowersScreen'
 import FollowingScreen from '../components/Follow/FollowingScreen'
 import Category from '../components/CategoryList/Category'
@@ -43,9 +44,10 @@ export const AppRouter = () => {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/' element={<Home />} />
-            <Route path='/:id' element={<Detail />} />
-            <Route path='/followers/:id' element={<FollowersScreen />} />
-            <Route path='/following/:id' element={<FollowingScreen />} />
+            <Route path='/post/:id' element={<Detail />} />
+            <Route path='/followers/:userId' element={<FollowersScreen />} />
+            <Route path='/following/:userId' element={<FollowingScreen />} />
+            <Route path='/profile/:userId' element={<UserProfile />} />
             <Route path='/category/:id' element={<Category />} />
           </Routes>
         </main>
