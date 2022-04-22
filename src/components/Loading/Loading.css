@@ -1,0 +1,8 @@
+.loading{
+    margin-top: 5rem !important;
+    margin-left: 5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+}
