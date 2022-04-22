@@ -106,7 +106,7 @@ export default function FeedCard({ post }) {
               </svg>
               GUARDAR
             </button>
-            <Link className="socialIcon" to={`/${post.id}`}>
+            <Link className="socialIcon" to={`/post/${post.id}`}>
               <svg
                 width="25"
                 height="25"
