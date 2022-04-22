@@ -19,7 +19,6 @@
 - Victor Olivera (Frontend)
 - Nicolas Bonder (Frontend)
 - Mauricio Ferreyra (Frontend)
-- Hugo Tatarino (Backend)
 - Brenda Quispe (Full Stack)
 ---
 
