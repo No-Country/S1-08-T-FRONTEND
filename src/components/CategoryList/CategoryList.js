@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useGetAllCategoriesQuery } from '../../app/services/categories'
 import style from './CategoryList.module.css'
-import Category from './Category'
+import { Link } from 'react-router-dom'
 
 function CategoryList () {
   const {
@@ -17,7 +17,10 @@ function CategoryList () {
 
   useEffect(() => {
     if (data) {
-      setcategories(data)
+      setcategories([])
+      data.filter(category => {
+        setcategories(prev => [category, ...prev])
+      })
     }
   }, [data]) // eslint-disable-line
 
@@ -28,7 +31,7 @@ function CategoryList () {
   return (
     <div className={style.categoryList}>
       <div className={style.containerList}>
-        <div>CategoryList</div>
+        <div className={style.titleList}>Category List</div>
 
         <div>
           {isLoading && 'cargando...'}
@@ -37,9 +40,10 @@ function CategoryList () {
 
           {isSuccess &&
             categories &&
-            categories.map((el, i) => (
-              // <div key={category.id}>{category.name}</div>
-              <Category key={i} id={el.id} category={el.name} />
+            categories.map(category => (
+              <div className={style.categoryItem} key={category.id}>
+                <Link to={`/category/${category.name}`}>{category.name}</Link>
+              </div>
             ))}
         </div>
       </div>

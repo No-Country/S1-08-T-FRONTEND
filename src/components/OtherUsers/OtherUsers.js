@@ -1,11 +1,12 @@
 import React from "react";
 import posts from "../postsData";
 import OtherUsersCard from "../OtherUsersCard/OtherUsersCard";
+import './OtherUsers.css';
 
 export default function OtherUsers() {
   return (
     <div className="sugestedUsers">
-      <h2>Usuarios recomendados para ti</h2>
+      <h2 className="otherUsersTitle">Recomendados para ti</h2>
       {/* <OtherUsersCard /> */}
 
       <div>
