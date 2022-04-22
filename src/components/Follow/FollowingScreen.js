@@ -5,9 +5,9 @@ import UserProfileCard from "../UserProfileCard/UserProfileCard";
 import "./Follow.css";
 
 const FollowingScreen = () => {
-  const { userId } = useParams();
+  const { id } = useParams();
   const { data, error, isLoading, isSuccess, isError, refetch } =
-    useGetFollowingQuery(userId);
+    useGetFollowingQuery(id);
   const [followers, setFollowers] = useState([]);
 
   useEffect(() => {
