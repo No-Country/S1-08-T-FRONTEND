@@ -31,7 +31,7 @@ function CategoryList () {
   return (
     <div className={style.categoryList}>
       <div className={style.containerList}>
-        <div className={style.titleList}>Category List</div>
+        <div className={style.titleList}>Lista de Categorias</div>
 
         <div>
           {isLoading && 'cargando...'}

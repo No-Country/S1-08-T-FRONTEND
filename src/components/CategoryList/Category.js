@@ -45,13 +45,17 @@ export default function Category () {
 
         {isError && error.message}
 
-        {isSuccess && posts
-          ? posts.map(post => (
-              <div className={style.containerItems} key={post.id}>
-                <FeedCard post={post} />
-              </div>
-            ))
-          : alert('No hay posts') && navigate('/')}
+        {posts.length === 0 && (
+          <div className={style.noPosts}>No hay posts</div>
+        )}
+
+        {isSuccess &&
+          posts &&
+          posts.map(post => (
+            <div className={style.containerItems} key={post.id}>
+              <FeedCard className={style.colores} post={post} />
+            </div>
+          ))}
       </div>
     </div>
   )

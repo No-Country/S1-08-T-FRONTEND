@@ -10,10 +10,16 @@
 }
 
 .containerItems {
+  text-decoration: none;
   display: inline-flex;
   flex-direction: row;
   width: 37rem;
   height: 38.5rem !important;
   margin: 0;
   padding: 0;
+}
+
+.colores {
+  text-decoration: none;
+  color: rgb(212, 95, 95);
 }
