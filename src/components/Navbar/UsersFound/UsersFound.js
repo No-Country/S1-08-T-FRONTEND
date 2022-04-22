@@ -5,7 +5,9 @@ import { useSelector } from 'react-redux';
 import { useGetUsersQuery } from '../../../app/services/users';
 import Spinner from '../../Spinner/Spinner';
 import UserFoundCard from './UserFoundCard/UserFoundCard';
-import UsersFoundModal from './UsersFoundModal/UsersFoundModal';
+import UsersFoundModal, { handleUserFoundModaClose } from './UsersFoundModal/UsersFoundModal';
+import { Link } from 'react-router-dom';
+import { deleteSearchTerm } from '../../../app/slices/searcher/searcherSlice';
 
 export default function UsersFound() {
   const [userFound, setUserFound] = useState([])
@@ -51,7 +53,7 @@ export default function UsersFound() {
   return (
 
     <UsersFoundModal dataOpenResult={userFound}>
-        <div className='_9z-- _9z-_'></div>
+      <div className='_9z-- _9z-_'></div>
       <div className='usersFound-content'>
 
         {isLoading && <Spinner />}
@@ -63,13 +65,20 @@ export default function UsersFound() {
             return (
               <>
                 {
-                  <UserFoundCard 
-                   key={user.id}
-                    user={user} 
-                    captionSize="small"
-                    nickNameSize="small"
-                    AvatarSize={50}
+                  <Link to={`/profile/${user.id}`} 
+                  onClick={()=>{
+                    deleteSearchTerm()
+                    handleUserFoundModaClose()
+                  }
+                  }>
+                    <UserFoundCard
+                      key={user.id}
+                      user={user}
+                      captionSize="small"
+                      nickNameSize="small"
+                      AvatarSize={50}
                     />
+                  </Link>
                 }
               </>
             )

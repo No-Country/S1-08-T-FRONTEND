@@ -6,6 +6,10 @@
 
 }
 
+.leftSection {
+    min-width: 65%;
+}
+
 
 
 .rightSection {
@@ -41,6 +45,7 @@
     .home {
         display: flex;
         justify-content: center;
+        margin: 0 ;
     }
 
     .rightSection {

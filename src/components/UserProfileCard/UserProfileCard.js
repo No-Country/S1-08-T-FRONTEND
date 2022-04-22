@@ -24,9 +24,9 @@ export default function UserProfileCard({ user, captionSize, nickNameSize, Avata
 
             {(nickname || username) && (
                 <div className="textContainer">
-                    <span onClick={() => navigate(`/user/${linkId}`)} 
+                    <span onClick={() => navigate(`/profile/${linkId}`)} 
                     className={`nickName nickName-${nickNameSize}`}>{nickname}</span>
-                    <span onClick={() => navigate(`/user/${linkId}`)} className={`caption caption-${captionSize}`}>{username}</span>
+                    <span onClick={() => navigate(`/profile/${linkId}`)} className={`caption caption-${captionSize}`}>{username}</span>
                 </div>
             )}
         </div>
