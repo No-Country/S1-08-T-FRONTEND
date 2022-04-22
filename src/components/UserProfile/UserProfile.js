@@ -7,16 +7,21 @@ import TabHeader from "../Tab/TabHeader";
 import { TabContent } from "../Tab/TabContent";
 import TabContainer from "../Tab/TabContext";
 import TabPanel from "../Tab/TabPanel";
+import { useParams } from "react-router-dom";
+import { useGetFollowersQuery } from "../../app/services/followers";
+
 export const UserProfile = () => {
+  const { userId } = useParams();
   let navigate = useNavigate();
-  let ListTabs = [
+  let ListTabs;
+  let ListTabsOwner = [
     {
       id: 1,
       title: "POSTS",
     },
     {
       id: 2,
-      title: "SOBRE MI",
+      title: "INFORMACION",
     },
     {
       id: 3,
@@ -27,14 +32,51 @@ export const UserProfile = () => {
       title: "GUARDADOS",
     },
   ];
+  let ListTabsOther = [
+    {
+      id: 1,
+      title: "POSTS",
+    },
+    {
+      id: 2,
+      title: "INFORMACION",
+    },
+    {
+      id: 3,
+      title: "SEGUIDORES",
+    },
+  ];
   const { token, user } = useSelector((state) => state.authUsers);
-  let { data } = useGetUserQuery(user?.id);
+  let existentUser = userId;
+  if (user) {
+    if (+userId === user.id) {
+      existentUser = user.id;
+      ListTabs = ListTabsOwner;
+    } else {
+      existentUser = userId;
+      ListTabs = ListTabsOther;
+    }
+  }
+  let { data, isLoading } = useGetUserQuery(existentUser);
+  const {
+    data: follData,
+    isLoading: follLoading,
+    refetch: follRefetch,
+  } = useGetFollowersQuery(userId);
+
   useEffect(() => {
     if (!token) {
       navigate("/");
       return null;
     }
   }, [navigate, token]);
+  if (isLoading) {
+    return "Cargando ...";
+  }
+
+  if (follLoading) {
+    return "Cargando ...";
+  }
 
   return (
     <div className="containerProfile">
@@ -56,10 +98,12 @@ export const UserProfile = () => {
             <h1>
               {data?.username} {data?.nickname}
             </h1>
-            <a href="#">1.6K seguidores</a>
-            <div className="userOptions">
-              <button className="buttonOption">Editar Perfil</button>
-            </div>
+            <a href="#">{follData.length} seguidores</a>
+            {+userId === user.id && (
+              <div className="userOptions">
+                <button className="buttonOption">Editar Perfil</button>
+              </div>
+            )}
           </div>
         </div>
         <div className="mainSectionProfile">
@@ -73,7 +117,7 @@ export const UserProfile = () => {
             </ul>
             {ListTabs?.map(({ id, title }) => (
               <TabPanel whenActive={title} key={id}>
-                <TabContent />
+                <TabContent display={userId === existentUser} />
               </TabPanel>
             ))}
           </TabContainer>

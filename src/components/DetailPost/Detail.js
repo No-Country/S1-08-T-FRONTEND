@@ -1,17 +1,42 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetPostQuery } from "../../app/services/posts";
 import { useSelector } from "react-redux";
-import ShareIcon from "@mui/icons-material/Share";
-import CommentIcon from "@mui/icons-material/Comment";
-import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import FormatDate from "../../utils/formatDate";
 import "./Detail.css";
+import {
+  useCreateCommentMutation,
+  useGetCommentsQuery,
+} from "../../app/services/comments";
+import { CommentCard } from "../CommentCard/CommentCard";
 const Detail = () => {
+  const ref = useRef("");
   const navigate = useNavigate();
   const { id } = useParams();
   const { data, loading } = useGetPostQuery(id);
-  const { token } = useSelector((state) => state.authUsers);
+  const { token, user } = useSelector((state) => state.authUsers);
+  const {
+    data: commentsData,
+    error,
+    isLoading,
+    isSuccess,
+    isError,
+    refetch,
+  } = useGetCommentsQuery(id);
+  const [createComment] = useCreateCommentMutation();
+
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+    const comment = {
+      postid: +id,
+      userid: user.id,
+      comment: ref.current.value,
+    };
+    await createComment(comment);
+    ref.current.value = "";
+  };
+
   useEffect(() => {
     if (!token) {
       navigate("/");
@@ -33,17 +58,30 @@ const Detail = () => {
           <div className="containerDetail">
             <div className="user">
               <img src={data?.avatar} alt="avatar" className="avatar" />
-              <p>{data?.username} </p>
+              <Link to={`/${data.userid}/me`}>{data?.username} </Link>
               <hr />
             </div>
             <div className="description">
               <hr />
               <p>
-                <span>@{data?.username}</span>
+                <Link to={`/${data.userid}/me`}>@{data?.username}</Link> {""}
                 {data?.description}
               </p>
               <hr />
             </div>
+            <div>
+              {!commentsData && (
+                <p className="message_not_found">
+                  Todavia no existen comentarios, sé el primero en comentar{" "}
+                </p>
+              )}
+              {!isLoading &&
+                commentsData &&
+                commentsData.map((comment) => (
+                  <CommentCard key={comment.id} {...comment} />
+                ))}
+            </div>
+
             <div className="actions">
               <button>
                 <svg
@@ -90,22 +128,19 @@ const Detail = () => {
               <p className="likesLabel">
                 {data?.likes} <span>Me gusta</span>
               </p>
-              <p className="date">
-                {new Date(data?.created_at)
-                  .toString()
-                  .split(" ")
-                  .slice(0, 3)
-                  .join(" ")}{" "}
-              </p>
+              <p className="date">{FormatDate(data?.created_at)} </p>
             </div>
             <hr />
             <div className="commentSection">
-              <input
-                className="inputComment"
-                type="text"
-                placeholder="añade un comentario"
-              />
-              <button className="buttonPublish">Publicar</button>
+              <form onSubmit={handleSubmit}>
+                <input
+                  ref={ref}
+                  className="inputComment"
+                  type="text"
+                  placeholder="añade un comentario"
+                />
+                <button className="buttonPublish">Publicar</button>
+              </form>
             </div>
           </div>
         </div>

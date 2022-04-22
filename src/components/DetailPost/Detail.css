@@ -13,10 +13,18 @@
   margin-top: 10px;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
 }
 .content {
   max-width: 750px;
   max-height: calc(100vh - 200px);
+}
+.message_not_found {
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  color: #15496d;
+  text-align: center;
 }
 .main_image {
   width: 100%;
@@ -29,20 +37,22 @@
   display: flex;
   flex-direction: column;
   height: calc(100vh - 200px);
-  padding: 25px;
+  padding: 14px;
 }
 hr {
   opacity: 0.3;
 }
 .user {
-  height: 80px;
+  height: 60px;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
+  font-size: 14px;
 }
 .user .avatar {
   display: flex;
-  height: 70px;
+  height: 42px;
+  width: 42px;
   background-color: rgb(168, 124, 124);
   border-radius: 50%;
 }
@@ -72,7 +82,10 @@ hr {
 .likes {
   height: 60px;
   padding: 10px;
-  font-size: 0.9rem;
+  font-size: 14px;
+}
+.likes .date {
+  font-size: 12px;
 }
 .likes .likesLabel {
   font-weight: bold;
