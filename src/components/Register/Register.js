@@ -9,37 +9,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 const Register = () => {
   const [registerexitoso, setRegisterexitoso] = useState(false)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [username, setUsername] = useState('')
-  const [nickname, setNickname] = useState('')
   const [register] = useRegisterMutation()
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-
-  const handleButton = async e => {
-    e.preventDefault()
-
-    const registerToast = toast.loading('Registrando...')
-    setLoading(true)
-
-    const response = await register({
-      email,
-      password,
-      repassword: password,
-      username,
-      nickname
-    })
-
-    setLoading(false)
-    toast.dismiss(registerToast)
-    if (response.error) {
-      toast.error(response.error.data.msg)
-    } else {
-      toast.success('Registro exitoso')
-      navigate('/login')
-    }
-  }
 
   return (
     <>
@@ -85,14 +57,32 @@ const Register = () => {
           }
           return errors
         }}
-        onSubmit={(e, valores, { resetForm }) => {
-          e.preventDefault()
-          resetForm()
+        onSubmit={(valores, { resetForm }) => {
+          //resetForm()
           console.log(valores)
-          setRegisterexitoso(true)
-          setTimeout(() => {
-            setRegisterexitoso(false)
-          }, 3000)
+          const registerToast = toast.loading('Registrando...')
+          setLoading(true)
+
+          const response = register({
+            email: valores.email,
+            password: valores.password,
+            repassword: valores.repassword,
+            username: valores.username,
+            nickname: valores.nickname
+          }).then(res => res)
+
+          setLoading(false)
+          toast.dismiss(registerToast)
+          if (response.error) {
+            toast.error(response.error.data.msg)
+          } else {
+            setRegisterexitoso(true)
+            setTimeout(() => {
+              setRegisterexitoso(false)
+            }, 3000)
+            toast.success('Registro exitoso')
+            navigate('/login')
+          }
         }}
       >
         {({ errors }) => (
@@ -164,7 +154,6 @@ const Register = () => {
                   <button
                     className='register-button'
                     type='submit'
-                    onClick={handleButton}
                     disabled={loading}
                   >
                     Registrarse
