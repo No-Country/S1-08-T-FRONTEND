@@ -14,13 +14,8 @@ import Detail from "../components/DetailPost/Detail";
 import { UserProfile } from "../components/UserProfile/UserProfile";
 import FollowersScreen from "../components/Follow/FollowersScreen";
 import FollowingScreen from "../components/Follow/FollowingScreen";
-<<<<<<< HEAD
-
 import ErrorPage from "../components/ErrorPage/ErrorPage";
-=======
 import Category from "../components/CategoryList/Category"
-
->>>>>>> 93a9550fb3c3a5268cdf39f82de4533cc32cc583
 
 const theme = createTheme({
   typography: {
