@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-
 import {useGetFollowersQuery} from "../../app/services/followers";
 import {useParams} from "react-router-dom";
 import UserProfileCard from "../UserProfileCard/UserProfileCard";
+import Loading from "../Loading/Loading";
 import "./Follow.css";
 
 const FollowersScreen = () => {
@@ -25,7 +25,7 @@ const FollowersScreen = () => {
     <>
       <p className="follow-title">Seguidores</p>
       <div className="follow-container">
-      {isLoading && <h2 style={{textAlign: "center"}}>Cargando..</h2>}
+      {isLoading && <Loading />}
       {isError && error.message}
       {isSuccess &&
         followers &&
