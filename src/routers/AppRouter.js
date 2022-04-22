@@ -42,11 +42,12 @@ export const AppRouter = () => {
             <Route path="/signin" element={<TestAuth />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+              
             <Route path="/" element={<Home />} />
-            <Route path="/:id" element={<Detail />} />
+            <Route path="/post/:id" element={<Detail />} />
             <Route path="/followers/:id" element={<FollowersScreen />} />
             <Route path="/following/:id" element={<FollowingScreen />} />
-            <Route path="/:userId/me" element={<UserProfile />} />
+            <Route path="/me/:userId" element={<UserProfile />} />
           </Routes>
         </main>
       </div>
