@@ -5,7 +5,7 @@ import './ErrorPage.css';
 export default function ErrorPage(){
    return(
    <div className="errorPage">
-       <img className="errorPhoto" src={ {sushi}}/>
+       <img className="errorPhoto" src={sushi}/>
            
 
         <div className="errorMessage">
