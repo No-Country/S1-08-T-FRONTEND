@@ -4,18 +4,17 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 // import Typography from '@mui/material/Typography';
-import Avatar from "@mui/material/Avatar";
-import avatarDefault from "../../Assets/images/avatar-chef.jpg";
-
-import Logo2 from "./logo2.png";
+import Avatar from '@mui/material/Avatar';
+import avatarDefault from '../../Assets/images/avatar-chef.jpg';
+import Logo2 from './logo2.png';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { logout } from "../../app/slices/users/authUsersSlice";
-import CreatePost from "../CreatePost/CreatePost";
-import Notifications from "../Notifications/Notifications";
-import InputSearch from "./InputSearch/InputSearch";
-import { IconButton, useMediaQuery } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { logout } from '../../app/slices/users/authUsersSlice';
+import CreatePost from '../CreatePost/CreatePost';
+import Notifications from '../Notifications/Notifications';
+import InputSearch from './InputSearch/InputSearch';
+import { IconButton, useMediaQuery } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Navbar() {
   const isMobile = useMediaQuery("(max-width:820px)");
