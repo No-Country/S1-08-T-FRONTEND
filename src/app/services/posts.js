@@ -46,6 +46,9 @@ export const postApi = createApi({
         method: "DELETE",
       }),
     }),
+    getPostByUser: builder.query({
+      query: (id) => `userPosts/${id}`,
+    }),
   }),
 });
 
@@ -56,4 +59,5 @@ export const {
   useUpdatePostMutation,
   useDeletePostMutation,
   useUpdatePostLikesMutation,
+  useGetPostByUserQuery,
 } = postApi;

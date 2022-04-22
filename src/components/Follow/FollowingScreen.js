@@ -5,8 +5,9 @@ import UserProfileCard from "../UserProfileCard/UserProfileCard";
 import "./Follow.css";
 
 const FollowingScreen = () => {
-  const {id} = useParams();
-  const {data, error, isLoading, isSuccess, isError, refetch} = useGetFollowingQuery(id);
+  const { id } = useParams();
+  const { data, error, isLoading, isSuccess, isError, refetch } =
+    useGetFollowingQuery(id);
   const [followers, setFollowers] = useState([]);
 
   useEffect(() => {
@@ -17,7 +18,7 @@ const FollowingScreen = () => {
 
   useEffect(() => {
     refetch();
-  }, []); 
+  }, []);
 
   return (
     <>
@@ -41,7 +42,7 @@ const FollowingScreen = () => {
           ))}
       </div>   
     </>
-  )
-}
+  );
+};
 
 export default FollowingScreen;

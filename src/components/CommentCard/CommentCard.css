@@ -1,0 +1,32 @@
+.user_comment {
+  width: 100%;
+  display: flex;
+  gap: 14px;
+  padding: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.user_comment .avatar_comment {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: red;
+  object-fit: cover;
+}
+.comment_detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.comment_extrainfo {
+  margin-top: 2px;
+  font-size: 12px;
+  display: flex;
+  gap: 10px;
+  vertical-align: middle;
+}
+.comment_extrainfo button {
+  font-size: 12px;
+}
