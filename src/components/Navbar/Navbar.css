@@ -15,16 +15,16 @@
     background: linear-gradient(to right, #FF6961, #EC5853);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     z-index: -1;
-  transition: all 300ms ease;
+    transition: all .20s ease-in-out;
 
 }
 
 .loginButton {
     color: #fff;
     background-color: transparent;
-    border:.8px solid #fff;
+    border: .8px solid #fff;
     font-size: min(10vw, 70%);
     font-weight: 600;
     font-family: roboto;
@@ -60,7 +60,7 @@
     margin: 0rem .5rem;
     text-align: center;
     border: none;
-    border-radius:3px;
+    border-radius: 3px;
 }
 
 
@@ -81,9 +81,9 @@
     margin-left: -130px;
 }
 
- @media screen and (max-width: 820px) {
+@media screen and (max-width: 820px) {
     .toolBar {
-        justify-content:space-between;
+        justify-content: space-between;
 
     }
 }

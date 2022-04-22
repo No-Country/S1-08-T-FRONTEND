@@ -20,6 +20,8 @@ export default function Notifications() {
     return (
         <>
             <IconButton
+                tooltip="Notificaciones"
+                flow="down"
                 classes={{
                     root: classes.customButtonNotifications
                 }}

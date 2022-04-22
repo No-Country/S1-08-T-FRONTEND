@@ -3,10 +3,12 @@ import { styled, alpha } from '@mui/material/styles';
 
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { useMediaQuery } from '@mui/material';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { IconButton, useMediaQuery } from '@mui/material';
 import { addSearchTerm } from '../../../app/slices/searcher/searcherSlice';
 import { useDispatch } from 'react-redux';
 import UsersFound from '../UsersFound/UsersFound';
+import { handleUserFoundModaClose } from '../UsersFound/UsersFoundModal/UsersFoundModal';
 
 
 
@@ -38,7 +40,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
+  color: '#fff',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
@@ -61,6 +63,11 @@ export default function InputSearch() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
+  const handleDeleteSearchTerm = () => {
+    setSearchTerm("");
+    handleUserFoundModaClose()
+  }
+
   useEffect(() => {
     dispatch(addSearchTerm({ searchTerm }));
   }, [dispatch, searchTerm]);
@@ -71,18 +78,30 @@ export default function InputSearch() {
         ""
       ) : (
         <div className="search">
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase sx={{ fontSize: '.9rem', fontWeight: 400 }}
-            placeholder="Buscar…"
-            inputProps={{ 'aria-label': 'search' }}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </Search>
-        <UsersFound/>
-      </div>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon sx={{ color: '#fff' }} />
+            </SearchIconWrapper>
+            <StyledInputBase 
+              placeholder="Buscar…"
+              inputProps={{ 'aria-label': 'search' }}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              value={searchTerm}
+            />
+            {
+              searchTerm.length > 0 ? (
+                <IconButton 
+                onClick={handleDeleteSearchTerm}
+                >
+                  <HighlightOffIcon sx={{ color: '#fff'}} />
+                </IconButton>
+              ) : (
+                ""
+              )
+            }
+          </Search>
+          <UsersFound />
+        </div>
       )}
     </>
   )

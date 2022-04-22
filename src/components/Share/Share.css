@@ -1,0 +1,346 @@
+@media (max-width:640px){
+    .MuiModal-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;    
+    }
+
+    .shareButton{
+        display: flex;
+        height: 1.2rem;
+        background-color: #fbf9f7;
+        width: 4.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.4rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0rem;
+        cursor: pointer;
+        font-size: 0.5rem;
+    }
+
+    .shareButton svg{
+        background-color: #FBF9F7;
+        margin-right: 0rem;
+        height: 0.7rem;
+    }
+
+    .shareModal{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        height: 25.5vh;
+        background-color: #fbf9f7;
+        font-family: 'Karma';
+        margin: auto;
+        border-radius: 0.25rem;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .shareSection{
+        display: flex;
+    }
+
+    .leftImage{
+        width: 60%;
+    }
+
+    .leftImage img{
+        width: 100%;
+        height: auto;
+    }
+
+    .socialSection{
+        background-color: #EC5853;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialSection h1{
+        display: flex;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        padding: 0.2rem;
+        align-items: center;
+        text-align: center;
+    } 
+
+    .SocialIcons{
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+        height: 1.8rem;
+        width: 1.8rem;
+    }
+    .SocialIcons svg:hover{
+        fill: #000;
+    }
+}
+
+@media (min-width:640px){
+    .shareButton{
+        height: 1.2rem;
+        width: 6rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.6rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.4rem;
+        cursor: pointer;
+        font-size: 0.6rem;
+    }
+
+    .shareButton svg{
+        background-color: #FBF9F7;
+        margin-right: 0.6rem;
+        height: 0.8rem;
+    }
+
+    .shareModal{
+        width: 85%;
+        height: 75vh;
+    }
+
+    .shareSection{
+        width: 100%;
+        height: 100%;
+    }
+
+    .leftImage{
+        width: 65%;
+    }
+
+    .shareImage{
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .socialSection h1{
+        font-size: 1.3rem;
+    } 
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+        height: 2.2rem;
+        width: 2.2rem;
+    }
+}
+
+@media (min-width:768px){
+    .MuiModal-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;    
+    }
+
+    .shareButton{
+        display: flex;
+        height: 2rem;
+        background-color: #fbf9f7;
+        width: 6.5rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.5rem;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0.4rem;
+        cursor: pointer;
+        font-size: 0.7rem;
+    }
+
+    .shareButton svg{
+        background-color: #FBF9F7;
+        margin-right: 0.6rem;
+        height: 1rem;
+    }
+
+    .shareModal{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 37vh;
+        background-color: #fbf9f7;
+        font-family: 'Karma';
+        margin: auto;
+        border-radius: 0.25rem;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .shareSection{
+        display: flex;
+    }
+
+    .leftImage{
+        width: 90%;
+    }
+
+    .leftImage img{
+        width: 100%;
+        height: auto;
+    }
+
+    .socialSection{
+        background-color: #EC5853;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialSection h1{
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    } 
+
+    .SocialIcons{
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .SocialIcons svg:hover{
+        fill: #000;
+    }
+}
+
+@media (min-width:840px){
+    .shareButton{
+        height: 1.8rem;
+        width: 6.8rem;
+        margin-left: 0.6rem;
+        padding: 0 0.4rem;
+        font-size: 0.7rem;
+    }
+
+    .shareButton svg{
+        margin-right: 0.4rem;
+        height: 1rem;
+    }
+
+    .shareModal{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 48vh;
+    }
+
+    .socialSection h1{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    } 
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+        height: 2.8rem;
+        width: 2.8rem;
+    }
+
+}
+
+@media (min-width:1200px){
+    .MuiModal-root{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: smooth;    
+    }
+
+    .shareButton{
+        display: flex;
+        height: 2.2rem;
+        background-color: #fbf9f7;
+        width: 8rem;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-left: 0.6rem;
+        justify-items: center;
+        align-items: center;
+        padding: 0 0.4rem;
+        cursor: pointer;
+        font-size: 0.8rem;
+    }
+
+    .shareButton svg{
+        background-color: #FBF9F7;
+        margin-right: 0.5rem;
+    }
+
+    .shareModal{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 60vh;
+        background-color: #fbf9f7;
+        font-family: 'Karma';
+        margin: auto;
+        border-radius: 0.25rem;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .shareSection{
+        display: flex;
+    }
+
+    .leftImage{
+        width: 100%;
+    }
+
+    .leftImage img{
+        width: 100%;
+        height: auto;
+    }
+
+    .socialSection{
+        background-color: #EC5853;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialSection h1{
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    } 
+
+    .SocialIcons{
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .SocialIcons svg{
+        transition: all ease-in 0.3s;
+    }
+    .SocialIcons svg:hover{
+        fill: #000;
+    }
+}

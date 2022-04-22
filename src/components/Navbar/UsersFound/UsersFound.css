@@ -1,22 +1,6 @@
-.searchBar-dropdown-conatiner {
-  position: fixed;
-  top: 10;
-  left: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  /* margin: auto; */
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000000000000000000;
-}
 
-.open-result {
-  opacity: 1;
-  visibility: visible;
-}
 
-.searchBar-dropdown__content {
+.usersFound-content {
   position: relative;
   font-size: 14px;
   background-color: #fff;
@@ -28,6 +12,18 @@
   margin-top: 30px;
   transition: all 300ms ease;
   overflow: scroll;
+
+}
+
+.noResults{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #b1b1b5;
+  transition: all 300ms ease;
 
 }
 
@@ -47,8 +43,3 @@
   width: 20px;
 }
 
-@media screen and (max-width: 640px) {
-  .searchBar-dropdown-conatiner {
-    display: none;
-  }
-}
