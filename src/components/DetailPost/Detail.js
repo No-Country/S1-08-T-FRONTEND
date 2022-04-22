@@ -58,13 +58,13 @@ const Detail = () => {
           <div className="containerDetail">
             <div className="user">
               <img src={data?.avatar} alt="avatar" className="avatar" />
-              <Link to={`/${data.userid}/me`}>{data?.username} </Link>
+              <Link to={`/me/${data.userid}`}>{data?.username} </Link>
               <hr />
             </div>
             <div className="description">
               <hr />
               <p>
-                <Link to={`/${data.userid}/me`}>@{data?.username}</Link> {""}
+                <Link to={`/me/${data.userid}`}>@{data?.username}</Link> {""}
                 {data?.description}
               </p>
               <hr />
