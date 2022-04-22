@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import {useGetFollowingQuery} from "../../app/services/followers";
 import {useParams} from "react-router-dom";
-import CardFollow from "./CardFollow";
+import UserProfileCard from "../UserProfileCard/UserProfileCard";
+import "./Follow.css";
 
 const FollowingScreen = () => {
-  const {id} = useParams();
-  const {data, error, isLoading, isSuccess, isError, refetch} = useGetFollowingQuery(id);
+  const { id } = useParams();
+  const { data, error, isLoading, isSuccess, isError, refetch } =
+    useGetFollowingQuery(id);
   const [followers, setFollowers] = useState([]);
 
   useEffect(() => {
@@ -16,24 +18,31 @@ const FollowingScreen = () => {
 
   useEffect(() => {
     refetch();
-  }, []); 
+  }, []);
 
   return (
     <>
-      <h2 style={{margin: "4rem 0 0 2rem", color: "#EC5853", fontSize: "2rem"}}>Seguidos</h2>
-      {isLoading && <h1 style={{textAlign: "center"}}>Cargando..</h1>}
-      {isError && error.message}
-      {isSuccess &&
-        followers &&
-        followers.map((follower) => (
-          <CardFollow
-            key={follower.followerID}
-            follower={follower}
-            linkId={follower.followerID}
-          />
-        ))}
+      <p className="follow-title">Seguidos</p>
+      <div className="follow-container">
+        {isLoading && <h3 style={{ textAlign: "center" }}>Cargando..</h3>}
+        {isError && error.message}
+        {isSuccess &&
+          followers &&
+          followers.map((follower) => (
+            <div className="follow-profile">
+              <UserProfileCard
+                AvatarSize={80}
+                key={follower.followerId}
+                user={follower}
+                linkId={follower.userid}
+                captionSize="medium"
+                nickNameSize="medium"
+              />
+            </div>
+          ))}
+      </div>   
     </>
-  )
-}
+  );
+};
 
 export default FollowingScreen;

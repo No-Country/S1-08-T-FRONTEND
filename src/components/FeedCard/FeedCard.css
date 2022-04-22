@@ -94,6 +94,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        border-right: rgba(0, 0, 0, 0.25) 1px solid;
     }
 
     .socialRatingA svg{
@@ -113,7 +114,7 @@
         align-items: center;
         cursor: pointer;
         padding: 0 0rem;
-        
+        border-left: rgba(0, 0, 0, 0.25) 1px solid;
     }
 
     .socialRatingB svg{
@@ -346,6 +347,7 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        border-right: rgba(0, 0, 0, 0.25) 1px solid;
     }
 
     .socialRatingA svg{
@@ -365,6 +367,7 @@
         align-items: center;
         cursor: pointer;
         padding: 0 0.1rem;
+        border-left: rgba(0, 0, 0, 0.25) 1px solid;
         
     }
 

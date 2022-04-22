@@ -61,8 +61,8 @@ export default function CreatePost() {
   }
 
   //states post
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState(null);
+  const [description, setDescription] = useState(null);
   const [category, setCategory] = useState(null);
   const [image, setImage] = useState(null); //para que sea una array, deberia tener[]
   const [video, setVideo] = useState(null); //para que sea una array, deberia tener[]
@@ -109,43 +109,53 @@ export default function CreatePost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
+
     if (isAuthenticated) {
-      let imageUrl = image
-      let videoUrl = videoUp
-      imageUrl = image !== null ? await uploadImage(image[0].file) : null;
-      videoUrl = videoUp !== null ? await uploadVideo(videoUp) : null;
+      if (image && title) {
+        const loginToast = toast.loading('Publicando...')
+        setLoading(true);
+        let imageUrl = image
+        let videoUrl = videoUp
+        imageUrl = image !== null ? await uploadImage(image[0].file) : null;
+        videoUrl = videoUp !== null ? await uploadVideo(videoUp) : null;
 
-      const post = {
-        userid: user.id,
-        title: title,
-        description: description,
-        image: imageUrl,
-        video: videoUrl,
-        category: category || 2
-      };
-
-      const loginToast = toast.loading('Iniciando sesión...')
-
-      setLoading(true);
+        const post = {
+          userid: user.id,
+          title: title,
+          description: description,
+          image: imageUrl,
+          video: videoUrl,
+          category: category || 2
+        };
 
 
-      const { data } = await createPost(post);
-      setLoading(false);
-      toast.dismiss(loginToast)
 
-      console.log(data);
 
-      if (data.ok === true) {
-        toast.success(data.msg)
+        const { data } = await createPost(post);
+        setLoading(false);
+        toast.dismiss(loginToast)
 
-        console.log(data.msg)
-        setOpen(false)
-        //refesh state posts
-        handleRefreshfields();
+        console.log(data);
+
+        if (data.ok === true) {
+          toast.success(data.msg)
+
+          console.log(data.msg)
+          setOpen(false)
+          //refesh state posts
+          handleRefreshfields();
+        } else {
+          toast.error(data.msg)
+          console.log(data.msg)
+        }
       } else {
-        toast.error(data.msg)
-        console.log(data.msg)
+        toast.error("Para publicar  debes subir por lo menos una imagen y un titulo")
+        setLoading(false);
       }
+
+    } else {
+      toast.error('Debes iniciar sesion para publicar')
     }
 
   }
@@ -154,6 +164,8 @@ export default function CreatePost() {
   return (
     <div>
       <IconButton
+        tooltip="Publicar"
+        flow="down"
         onClick={handleOpen}
         classes={{
           root: classes.customButtonPost
@@ -206,7 +218,8 @@ export default function CreatePost() {
                   allowMultiple={false}
                   maxFiles={1}
                   name="imagePost"
-                  labelIdle="Elige o arrastra tus imágenes"
+                  id='file_img'
+                  labelIdle="Elige o arrastra tus imágenes <span><img></img></span> "
                   className='imageInput'
                 />
               </div>
@@ -232,7 +245,7 @@ export default function CreatePost() {
                   accept="video/*"
                   onChange={handleVideo}
                 />
-                <label for="file_video" className='videoLabel'>Elige o arrastra tu video</label>
+                <label for="file_video" className='videoLabel'>Elige o arrastra tu video <svg height='25' width='25' fill='#fff' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M384 112v288c0 26.51-21.49 48-48 48h-288c-26.51 0-48-21.49-48-48v-288c0-26.51 21.49-48 48-48h288C362.5 64 384 85.49 384 112zM576 127.5v256.9c0 25.5-29.17 40.39-50.39 25.79L416 334.7V177.3l109.6-75.56C546.9 87.13 576 102.1 576 127.5z"/></svg></label>
               </div>
 
 

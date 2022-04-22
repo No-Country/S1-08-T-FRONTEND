@@ -1,6 +1,6 @@
 import React from "react";
 import "./FeedCard.css";
-import Share from '../Share/Share';
+import Share from "../Share/Share";
 
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";

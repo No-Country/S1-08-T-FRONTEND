@@ -97,14 +97,17 @@
 
     .selectCategory{
         font-family: 'karma';
-        width: 13rem;
+        width: 14.5rem;
         border: none;
         border-radius: 0.25rem;
         background: #e8e8e8;
         margin: 0rem 0 0.5rem 0;
         font-size: 0.8rem;
+        color: white;
+        padding: 0.2rem;
+        background-color: #EC5853;
     }
-
+ 
     .uploadMedia{
         width: 15rem !important;
         height: 13.5rem !important;
@@ -174,7 +177,18 @@
     }
 
     .videoInput{
-        margin: 1rem;
+        display: none;    
+    }
+
+    .videoLabel{ 
+        background-color: #EC5853;
+        font-size: 0.8rem;
+        color: white;
+        border-radius: 00.25rem;
+    }
+
+    .videoLabel svg{
+        margin-left: 0.5rem;
     }
 
     .previewReproducer{
@@ -388,6 +402,9 @@
         background: #e8e8e8;
         margin: 0rem 0 0.5rem 0;
         font-size: 0.8rem;
+        color: white;
+        padding: 0.2rem;
+        background-color: #EC5853;
     }
 
     .uploadMedia{
@@ -423,7 +440,7 @@
         padding: 0.8rem;
         width: 13.5rem;
         height: 2.5rem;
-        margin: 17rem 0 1rem 0;
+        margin: 18rem 0 1rem 0;
         font-size: 1.125rem;
         background: #EC5853;
         color: #fbf9f7;
@@ -443,8 +460,19 @@
         width: 16.5rem !important;
     }
 
+    .videoLabel{ 
+        background-color: #EC5853;
+        font-size: 0.8rem;
+        color: white;
+        border-radius: 00.25rem;
+    }
+    
+    .videoLabel svg{
+        margin-left: 0.5rem;
+    }
+
     .videoInput{
-        margin: 1rem;
+        display: none;    
     }
 
     .previewReproducer{
@@ -565,6 +593,11 @@
         font-size: 0.8rem;
         color: white;
         border-radius: 00.25rem;
+        width: 18.15rem !important;
+    }
+    
+    .videoLabel svg{
+        margin-left: 0.5rem;
     }
 
     .videoInput{
