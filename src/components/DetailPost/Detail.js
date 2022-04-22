@@ -14,7 +14,7 @@ const Detail = () => {
   const ref = useRef("");
   const navigate = useNavigate();
   const { id } = useParams();
-  const { data, loading } = useGetPostQuery(id);
+  const { data, isLoading:loading } = useGetPostQuery(id);
   const { token, user } = useSelector((state) => state.authUsers);
   const {
     data: commentsData,

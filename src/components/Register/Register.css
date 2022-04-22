@@ -148,3 +148,13 @@ body {
     font-size: 14px;
   }
 }
+
+.registerExitoso {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+  color: #ec5853;
+}
