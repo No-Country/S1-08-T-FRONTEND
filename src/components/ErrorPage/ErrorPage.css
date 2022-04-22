@@ -1,0 +1,28 @@
+.errorPage{
+    margin-top: 10rem;
+    display: flex;
+    background-color: #EC5853;
+}
+
+.errorPhoto{
+    width: 50%;
+}
+
+.errorTitle{
+    font-size: 2rem;
+    color: #fbf9f7;
+    font-weight: 600;
+}
+
+.errorMessage h2, .errorMessage p{
+    color: #fbf9f7;
+}
+
+.errorMessage h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.errorMessage p{
+font-size: 1.2rem;
+}

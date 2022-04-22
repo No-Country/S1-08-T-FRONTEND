@@ -14,6 +14,7 @@ import Detail from "../components/DetailPost/Detail";
 import { UserProfile } from "../components/UserProfile/UserProfile";
 import FollowersScreen from "../components/Follow/FollowersScreen";
 import FollowingScreen from "../components/Follow/FollowingScreen";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const theme = createTheme({
   typography: {
@@ -42,6 +43,7 @@ export const AppRouter = () => {
             <Route path="/signin" element={<TestAuth />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/error" element={<ErrorPage />} />
               
             <Route path="/" element={<Home />} />
             <Route path="/post/:id" element={<Detail />} />
