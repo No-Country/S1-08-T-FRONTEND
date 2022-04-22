@@ -47,7 +47,7 @@ export const AppRouter = () => {
             <Route path="/post/:id" element={<Detail />} />
             <Route path="/followers/:id" element={<FollowersScreen />} />
             <Route path="/following/:id" element={<FollowingScreen />} />
-            <Route path="/me/:userId" element={<UserProfile />} />
+            <Route path="/profile/:userId" element={<UserProfile />} />
           </Routes>
         </main>
       </div>
