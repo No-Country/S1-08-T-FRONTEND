@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: 'poppins', sans-serif !important;
 }
+body{
+  min-width: fit-content;
+}
 
 .body-container{
  position: relative;

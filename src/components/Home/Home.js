@@ -5,6 +5,7 @@ import OtherUsers from '../OtherUsers/OtherUsers'
 import './Home.css'
 import CategoryList from '../CategoryList/CategoryList'
 import Profile from './Profile/Profile'
+import Sticky from 'react-sticky-el'
 
 
 export default function Home () {
@@ -13,14 +14,15 @@ export default function Home () {
       <div className='leftSection'>
         <Feed />
       </div>
+      <Sticky topOffset={-80}>
       <div className='rightSection'>
-        <div className='rightSection__scroll'>
         <Profile />
         <OtherUsers />
         <CategoryList />
         <Footer />
         </div>
-      </div>
+      </Sticky>
+
     </div>
   )
 }

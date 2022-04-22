@@ -14,6 +14,7 @@ import Detail from "../components/DetailPost/Detail";
 import { UserProfile } from "../components/UserProfile/UserProfile";
 import FollowersScreen from "../components/Follow/FollowersScreen";
 import FollowingScreen from "../components/Follow/FollowingScreen";
+import Searcher from "../components/Searcher/Searcher";
 
 const theme = createTheme({
   typography: {
@@ -45,9 +46,10 @@ export const AppRouter = () => {
               
             <Route path="/" element={<Home />} />
             <Route path="/post/:id" element={<Detail />} />
-            <Route path="/followers/:id" element={<FollowersScreen />} />
-            <Route path="/following/:id" element={<FollowingScreen />} />
+            <Route path="/followers/:userId" element={<FollowersScreen />} />
+            <Route path="/following/:userId" element={<FollowingScreen />} />
             <Route path="/profile/:userId" element={<UserProfile />} />
+            <Route path="/search" element={<Searcher/>} />         
           </Routes>
         </main>
       </div>

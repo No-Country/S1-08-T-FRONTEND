@@ -54,6 +54,7 @@ export default function Navbar() {
               {isAuthenticated && (
                 <>
                   {isMobile ? (
+                  <Link to='/search' >
                     <IconButton
                       tooltip="Buscar"
                       flow="down"
@@ -61,6 +62,7 @@ export default function Navbar() {
                     >
                       <SearchIcon />
                     </IconButton>
+                  </Link>
                   ) : (
                     ""
                   )}
