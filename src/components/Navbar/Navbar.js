@@ -66,7 +66,7 @@ export default function Navbar() {
                   )}
                   <CreatePost />
                   <Notifications />
-                  <Link to={`/${user.id}/me`}>
+                  <Link to={`/me/${user.id}`}>
                     <IconButton tooltip="Perfil" flow="down">
                       <Avatar
                         sx={{
