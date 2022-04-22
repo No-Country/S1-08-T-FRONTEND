@@ -2,8 +2,7 @@ import React from 'react'
 import './UserProfileCard.css'
 import Avatar from '@mui/material/Avatar';
 import avatarDefault from '../../Assets/images/avatar-chef.jpg';
-
-
+import { useNavigate } from 'react-router-dom';
 
 /*
 props: 
@@ -13,8 +12,8 @@ props:
     AvatarSize: number // example AvatarSize={50}
 */
 
-export default function UserProfileCard({ user, captionSize, nickNameSize, AvatarSize }) {
-
+export default function UserProfileCard({ user, captionSize, nickNameSize, AvatarSize, linkId }) {
+    const navigate = useNavigate();
     const { username, nickname, avatar } = user;
     return (
         <div className="profile">
@@ -25,8 +24,9 @@ export default function UserProfileCard({ user, captionSize, nickNameSize, Avata
 
             {(nickname || username) && (
                 <div className="textContainer">
-                    <span className={`nickName nickName-${nickNameSize}`}>{nickname}</span>
-                    <span className={`caption caption-${captionSize}`}>{username}</span>
+                    <span onClick={() => navigate(`/user/${linkId}`)} 
+                    className={`nickName nickName-${nickNameSize}`}>{nickname}</span>
+                    <span onClick={() => navigate(`/user/${linkId}`)} className={`caption caption-${captionSize}`}>{username}</span>
                 </div>
             )}
         </div>
