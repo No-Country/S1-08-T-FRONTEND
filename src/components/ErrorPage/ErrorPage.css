@@ -49,13 +49,6 @@
 }
 
 @media (min-width:640px){
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: 'poppins', sans-serif !important;
-    }
-
     .errorPage{
         display: flex;
         background-color: #EC5853;
