@@ -31,7 +31,7 @@
     margin-top: 10rem;
     max-width: 500px;
     color: #4b4848;
-    overflow: auto;
+    overflow-y: auto;
     max-height: 26rem;
 }
 

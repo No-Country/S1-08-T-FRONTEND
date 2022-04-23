@@ -103,6 +103,14 @@
     .descriptionFeed{
         max-height: 3.5rem;
     }
+
+    .shareButton {
+        font-size: 0.5rem !important;
+        font-weight: 700 !important;
+        padding: 5px !important;
+        box-shadow: none !important;
+    
+    }
 }
 
 @media (min-width:640px){
@@ -153,6 +161,14 @@
         transition: all ease-in 0.3s;
         height: 2.2rem;
         width: 2.2rem;
+    }
+    .shareButton {
+        font-size: 0.5rem !important;
+        font-weight: 700 !important;
+        padding: 2px !important;
+        box-shadow: none !important;
+        background-color: #fff !important;
+    
     }
 }
 
@@ -241,6 +257,14 @@
 
     .SocialIcons svg:hover{
         fill: #000;
+    }
+
+    .shareButton {
+        font-size: 0.6rem !important;
+        font-weight: 800 !important;
+        padding: 5px !important;
+        box-shadow: none !important;
+    
     }
 }
 

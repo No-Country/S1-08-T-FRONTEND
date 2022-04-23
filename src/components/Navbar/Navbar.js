@@ -15,8 +15,12 @@ import Notifications from '../Notifications/Notifications';
 import InputSearch from './InputSearch/InputSearch';
 import { IconButton, useMediaQuery } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  let location = useLocation();
+  const searchLocation = location.pathname === "/search"? true : false;
+
   const isMobile = useMediaQuery("(max-width:820px)");
 
   const { user, isAuthenticated } = useSelector((state) => state.authUsers);
@@ -53,12 +57,12 @@ export default function Navbar() {
             <div className="menuRight">
               {isAuthenticated && (
                 <>
-                  {isMobile ? (
+                  {isMobile && !searchLocation ? (
                   <Link to='/search' >
                     <IconButton
                       tooltip="Buscar"
                       flow="down"
-                      sx={{ color: "#fff" }}
+                      sx={{ color: "#fff !important" }}
                     >
                       <SearchIcon />
                     </IconButton>

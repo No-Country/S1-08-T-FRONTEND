@@ -64,9 +64,9 @@ export default function FeedCard({ post }) {
           avatar={
             <Avatar sx={{ border: '1px solid #b1b1b5'}} src={avatar ? avatar: avatarDefault } aria-label="recipe" alt={description}/>
         }
-          titleTypographyProps={{ marginBottom: 0.1, fontWeight: "bold", fontSize: "1.2rem" }}
+          titleTypographyProps={{ variant: "h6", marginBottom: -1, fontWeight: "bold" }}
           title={username}
-          subheaderTypographyProps={{ fontWeight: "bold" , fontSize: "0.7rem"}}
+          subheaderTypographyProps={{ variant: "subtitle2" }}
           subheader={`Publicado el ${TimeElapsed()} `}
         />
         <CardMedia
@@ -120,7 +120,7 @@ export default function FeedCard({ post }) {
               </svg>
             </button>
               <Share /> 
-            <Link className="socialIcon" to={`/${post.id}`}>
+            <Link className="socialIcon" to={`/post/${post.id}`}>
               <svg
                 width="17"
                 height="17"

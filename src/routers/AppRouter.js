@@ -20,36 +20,37 @@ import Searcher from "../components/Searcher/Searcher";
 
 const theme = createTheme({
   typography: {
-    fontFamily: ["Roboto", "karma"].join(","),
+    fontFamily: ['Roboto', 'karma'].join(',')
   },
   palette: {
     primary: {
-      main: lightBlue[500],
+      main: lightBlue[500]
     },
     alert: {
-      main: purple[400],
+      main: purple[400]
     },
     secondary: {
-      main: red[400],
-    },
-  },
-});
+      main: red[400]
+    }
+  }
+})
 
 export const AppRouter = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="body-container">
+      <div className='body-container'>
         <Navbar />
+        <div className='intersetion'></div>
         <main>
           <Routes>
-            <Route path="/signin" element={<TestAuth />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />            
-            <Route path="/" element={<Home />} />
-            <Route path="/post/:id" element={<Detail />} />
-            <Route path="/followers/:userId" element={<FollowersScreen />} />
-            <Route path="/following/:userId" element={<FollowingScreen />} />
-            <Route path="/profile/:userId" element={<UserProfile />} />
+            <Route path='/signin' element={<TestAuth />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/post/:id' element={<Detail />} />
+            <Route path='/followers/:userId' element={<FollowersScreen />} />
+            <Route path='/following/:userId' element={<FollowingScreen />} />
+            <Route path='/profile/:userId' element={<UserProfile />} />
             <Route path='/category/:id' element={<Category />} />
             <Route path="/search" element={<Searcher/>} />         
             <Route path="*" element={<ErrorPage />} />       
@@ -57,5 +58,5 @@ export const AppRouter = () => {
         </main>
       </div>
     </ThemeProvider>
-  );
-};
+  )
+}

@@ -11,7 +11,7 @@
   margin: auto;
   margin-top: 80px;
   transition: all 300ms ease;
-  overflow: scroll;
+  overflow-y: scroll;
   color: #4b4848;
 }
 

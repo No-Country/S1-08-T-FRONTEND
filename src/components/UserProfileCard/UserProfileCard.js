@@ -18,16 +18,16 @@ export default function UserProfileCard({ user, captionSize, nickNameSize, Avata
     return (
         <div className="profile">
             <Avatar
-                onClick={() => navigate(`/profile/${linkId}`)}
+                onClick={() => navigate(`/profile/${user.id}`)}
                 sx={{ width: AvatarSize, height: AvatarSize, border: '1px solid #b1b1b5' }}
                 src={avatar ? avatar : avatarDefault}
                 aria-label="recipe" />
 
             {(nickname || username) && (
                 <div className="textContainer">
-                    <span onClick={() => navigate(`/profile/${linkId}`)}
+                    <span onClick={() => navigate(`/profile/${user.id}`)}
                         className={`nickName nickName-${nickNameSize}`}>{nickname}</span>
-                    <span onClick={() => navigate(`/profile/${linkId}`)} className={`caption caption-${captionSize}`}>{username}</span>
+                    <span onClick={() => navigate(`/profile/${user.id}`)} className={`caption caption-${captionSize}`}>{username}</span>
                 </div>
             )}
         </div>

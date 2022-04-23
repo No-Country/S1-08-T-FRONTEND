@@ -9,6 +9,8 @@ import { categoryApi } from "./services/categories";
 
 import authUsers from "./slices/users/authUsersSlice";
 import searcher from "./slices/searcher/searcherSlice";
+import posts from "./slices/posts/postsSlice";
+import users from "./slices/users/usersSlice";
 
 export const store = configureStore({
   reducer: {
@@ -20,7 +22,9 @@ export const store = configureStore({
     [categoryApi.reducerPath]: categoryApi.reducer,
 
     authUsers,
-    searcher
+    searcher,
+    users,
+    posts
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

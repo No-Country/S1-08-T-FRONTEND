@@ -24,6 +24,10 @@
  border-radius: 1rem;
  margin: 1rem;
  background: #f6eded;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-between;
 }
 
 .follow-profile img {

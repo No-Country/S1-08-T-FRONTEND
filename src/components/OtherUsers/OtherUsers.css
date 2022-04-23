@@ -8,3 +8,11 @@
     color: #99999c;
     text-align: start;
 }
+
+.otherUsers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em 0;
+}

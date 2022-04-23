@@ -18,9 +18,7 @@ function CategoryList () {
   useEffect(() => {
     if (data) {
       setcategories([])
-      data.filter(category => {
-        setcategories(prev => [category, ...prev])
-      })
+      data.filter(category => setcategories(prev => [category, ...prev]))
     }
   }, [data]) // eslint-disable-line
 
@@ -31,7 +29,7 @@ function CategoryList () {
   return (
     <div className={style.categoryList}>
       <div className={style.containerList}>
-        <div className={style.titleList}>Category List</div>
+        <div className={style.titleList}>Lista de Categorias</div>
 
         <div>
           {isLoading && 'cargando...'}
