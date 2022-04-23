@@ -1,6 +1,10 @@
-.btn .tooltip{
-  font-size: 0.5rem;
-  font-weight: 600;
+.user a{
+  text-decoration: none;
+  color: black;
+}
+
+.description a{
+  text-decoration: none;
   color: black;
 }
 

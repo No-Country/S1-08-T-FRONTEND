@@ -10,6 +10,7 @@ import TabPanel from "../Tab/TabPanel";
 import { useParams } from "react-router-dom";
 import { useGetFollowersQuery } from "../../app/services/followers";
 import avatarDefault from '../../Assets/images/avatar-chef.jpg';
+import sushi from './sushi.jpg';
 
 export const UserProfile = () => {
   const { userId } = useParams();
@@ -83,7 +84,7 @@ export const UserProfile = () => {
     <div className="containerProfile">
       <div className="backgroundImage">
         <img
-          src="https://farm4.staticflickr.com/3867/14941333932_d2af5b6731.jpg"
+          src={sushi}
           alt="portrait"
           className="imagePortrait"
         />
