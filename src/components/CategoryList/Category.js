@@ -53,7 +53,7 @@ export default function Category () {
           posts &&
           posts.map(post => (
             <div className={style.containerItems} key={post.id}>
-              <FeedCard className={style.colores} post={post} />
+              <FeedCard post={post} />
             </div>
           ))}
       </div>
