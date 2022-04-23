@@ -18,9 +18,7 @@ function CategoryList () {
   useEffect(() => {
     if (data) {
       setcategories([])
-      data.filter(category => {
-        setcategories(prev => [category, ...prev])
-      })
+      data.filter(category => setcategories(prev => [category, ...prev]))
     }
   }, [data]) // eslint-disable-line
 
