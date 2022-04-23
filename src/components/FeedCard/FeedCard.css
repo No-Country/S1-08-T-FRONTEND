@@ -130,8 +130,6 @@
     }
 
     .descriptionFeed{
-        border: 1px solid #EC5853;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         width: 92.5%;
     }
 
@@ -266,8 +264,6 @@
     }
 
     .descriptionFeed{
-        border: 1px solid #EC5853;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         width: 92.5%;
     }
 
@@ -384,8 +380,6 @@
     }
 
     .descriptionFeed{
-        border: 1px solid #EC5853;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         width: 94%;
     }
     
@@ -553,4 +547,5 @@
         width: 95%;
         margin-bottom: 0.5rem;
     }
+   
 }
