@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import style from './Category.module.css'
 import FeedCard from '../FeedCard/FeedCard'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useGetPostsQuery } from '../../app/services/posts'
-import swal from 'sweetalert'
 
 export default function Category () {
   //importar la data
-  const navigate = useNavigate()
   const { id } = useParams()
   console.log(id)
   const {
@@ -45,13 +43,20 @@ export default function Category () {
 
         {isError && error.message}
 
-        {isSuccess && posts
-          ? posts.map(post => (
-              <div className={style.containerItems} key={post.id}>
-                <FeedCard post={post} />
-              </div>
-            ))
-          : alert('No hay posts') && navigate('/')}
+        {posts.length === 0 && (
+          <div className={style.noPosts}>
+            {' '}
+            <Link to={'/'}>No hay Posts</Link>{' '}
+          </div>
+        )}
+
+        {isSuccess &&
+          posts &&
+          posts.map(post => (
+            <div className={style.containerItems} key={post.id}>
+              <FeedCard post={post} />
+            </div>
+          ))}
       </div>
     </div>
   )
