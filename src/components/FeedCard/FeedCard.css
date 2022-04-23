@@ -1,3 +1,21 @@
+.socialIcon , .socialButton ,  .socialRatingB, .socialRatingA{
+    font-size: 0.6rem !important;
+    font-weight: 800 !important;
+    padding: 5px !important;
+    box-shadow: none !important;
+
+}
+
+.social {
+    border: none !important;
+}
+
+.MuiCardMedia-root{
+border: #b1b1b5 solid 1px   !important;
+}
+
+
+
 @media (max-width:640px){
     .feedCard{
         display: flex;
@@ -130,8 +148,6 @@
     }
 
     .descriptionFeed{
-        border: 1px solid #EC5853;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         width: 92.5%;
     }
 
@@ -266,8 +282,6 @@
     }
 
     .descriptionFeed{
-        border: 1px solid #EC5853;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         width: 92.5%;
     }
 
@@ -384,8 +398,6 @@
     }
 
     .descriptionFeed{
-        border: 1px solid #EC5853;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
         width: 94%;
     }
     
@@ -553,4 +565,5 @@
         width: 95%;
         margin-bottom: 0.5rem;
     }
+   
 }

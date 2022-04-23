@@ -4,14 +4,16 @@
   box-sizing: border-box;
   font-family: 'poppins', sans-serif !important;
 }
-body{
+
+body {
   min-width: fit-content;
+  background-color: #f8f5f3;
+  overflow-x: hidden !important;
+
 }
 
-.body-container{
- position: relative;
- overflow-x: hidden;
-
+.body-container {
+  position: relative;
 }
 
 main {
@@ -30,14 +32,17 @@ a:hover {
 
 /* START TOOLTIP STYLES */
 [tooltip] {
-  position: relative; /* opinion 1 */
+  position: relative;
+  /* opinion 1 */
 }
 
 /* Applies to all tooltips */
 [tooltip]::before,
 [tooltip]::after {
-  text-transform: none; /* opinion 2 */
-  font-size: .4em; /* opinion 3 */
+  text-transform: none;
+  /* opinion 2 */
+  font-size: .4em;
+  /* opinion 3 */
   line-height: 1;
   user-select: none;
   pointer-events: none;
@@ -45,18 +50,23 @@ a:hover {
   display: none;
   opacity: 0;
 }
+
 [tooltip]::before {
   content: '';
-  border: 5px solid transparent; /* opinion 4 */
-  z-index: 1001; /* absurdity 1 */
+  border: 5px solid transparent;
+  /* opinion 4 */
+  z-index: 1001;
+  /* absurdity 1 */
 }
+
 [tooltip]::after {
-  content: attr(tooltip); /* magic! */
-  
+  content: attr(tooltip);
+  /* magic! */
+
   /* most of the rest of this is opinion */
   font-family: Helvetica, sans-serif;
   text-align: center;
-  
+
   /* 
     Let the content set the size of the tooltips 
     but this will also keep them from being obnoxious
@@ -71,7 +81,8 @@ a:hover {
   box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
   background: #fff;
   color: #b1b1b5;
-  z-index: 1000; /* absurdity 2 */
+  z-index: 1000;
+  /* absurdity 2 */
 }
 
 /* Make the tooltips respond to hover */
@@ -94,10 +105,12 @@ a:hover {
   border-bottom-width: 0;
   border-top-color: #333;
 }
+
 [tooltip]:not([flow])::after,
 [tooltip][flow^="up"]::after {
   bottom: calc(100% + 5px);
 }
+
 [tooltip]:not([flow])::before,
 [tooltip]:not([flow])::after,
 [tooltip][flow^="up"]::before,
@@ -112,9 +125,11 @@ a:hover {
   border-top-width: 0;
   border-bottom-color: #fff;
 }
+
 [tooltip][flow^="down"]::after {
   top: calc(100% + 5px);
 }
+
 [tooltip][flow^="down"]::before,
 [tooltip][flow^="down"]::after {
   left: 50%;
@@ -129,6 +144,7 @@ a:hover {
   left: calc(0em - 5px);
   transform: translate(-.5em, -50%);
 }
+
 [tooltip][flow^="left"]::after {
   top: 50%;
   right: calc(100% + 5px);
@@ -143,6 +159,7 @@ a:hover {
   right: calc(0em - 5px);
   transform: translate(.5em, -50%);
 }
+
 [tooltip][flow^="right"]::after {
   top: 50%;
   left: calc(100% + 5px);
@@ -164,7 +181,7 @@ a:hover {
   }
 }
 
-/* FX All The Things */ 
+/* FX All The Things */
 [tooltip]:not([flow]):hover::before,
 [tooltip]:not([flow]):hover::after,
 [tooltip][flow^="up"]:hover::before,
