@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import style from './Category.module.css'
 import FeedCard from '../FeedCard/FeedCard'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useGetPostsQuery } from '../../app/services/posts'
 
 export default function Category () {
@@ -44,7 +44,10 @@ export default function Category () {
         {isError && error.message}
 
         {posts.length === 0 && (
-          <div className={style.noPosts}>No hay posts</div>
+          <div className={style.noPosts}>
+            {' '}
+            <Link to={'/'}>No hay Posts</Link>{' '}
+          </div>
         )}
 
         {isSuccess &&
