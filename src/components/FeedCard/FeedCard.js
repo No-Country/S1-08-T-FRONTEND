@@ -64,7 +64,7 @@ export default function FeedCard({ post }) {
           avatar={
             <Avatar sx={{ border: '1px solid #b1b1b5'}} src={avatar ? avatar: avatarDefault } aria-label="recipe" alt={description}/>
         }
-          titleTypographyProps={{ variant: "h5", marginBottom: -1 }}
+          titleTypographyProps={{ variant: "h6", marginBottom: -1, fontWeight: "bold" }}
           title={username}
           subheaderTypographyProps={{ variant: "subtitle2" }}
           subheader={`Publicado el ${TimeElapsed()} `}
@@ -101,8 +101,8 @@ export default function FeedCard({ post }) {
           <div className="socialButton">
             <button className="socialRatingA">
               <svg
-                width="22"
-                height="22"
+                width="20"
+                height="20"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 640 512"
               >
@@ -111,8 +111,8 @@ export default function FeedCard({ post }) {
             </button>
             <button className="socialRatingB">
               <svg
-                width="22"
-                height="22"
+                width="20"
+                height="20"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 320 512"
               >
@@ -120,10 +120,10 @@ export default function FeedCard({ post }) {
               </svg>
             </button>
               <Share /> 
-            <Link className="socialIcon" to={`/${post.id}`}>
+            <Link className="socialIcon" to={`/post/${post.id}`}>
               <svg
-                width="25"
-                height="25"
+                width="17"
+                height="17"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
               >
@@ -149,9 +149,8 @@ export default function FeedCard({ post }) {
           }}
         >
           <Typography
-            sx={{ fontSize: "1.1rem" }}
+            sx={{ fontSize: "1.3rem" , color: "#000", }}
             variant="body2"
-            color="text.secondary"
           >
             {description}
           </Typography>

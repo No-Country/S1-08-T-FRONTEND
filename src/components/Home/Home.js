@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Footer from '../Footer/Footer';
 import Feed from '../Feed/Feed';
 import OtherUsers from '../OtherUsers/OtherUsers';
@@ -14,13 +14,12 @@ export default function Home () {
         <Feed />
       </div>
       <div className='rightSection'>
-        <div className='rightSection__scroll'>
         <Profile />
         <OtherUsers />
         <CategoryList />
         <Footer />
         </div>
-      </div>
+
     </div>
   )
 }

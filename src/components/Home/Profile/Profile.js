@@ -15,6 +15,7 @@ export default function Profile() {
                         captionSize="medium"
                         nickNameSize="medium"
                         AvatarSize={100}
+                        linkId={user.id}
                     />
                 </div>
             }

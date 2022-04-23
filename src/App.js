@@ -1,10 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { loginFromLS } from './app/slices/users/authUsersSlice'
 import { AppRouter } from './routers/AppRouter'
 import { Toaster } from 'react-hot-toast'
+import Loading from './components/Loading/Loading'
 
-function App () {
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+  }, [])
+
+
   const dispatch = useDispatch()
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -16,8 +26,14 @@ function App () {
   }, [dispatch])
   return (
     <>
+      {isLoading ? (
+        <Loading/>
+      ) : (
+        <>
       <AppRouter />
       <Toaster />
+      </>
+      )}
     </>
   );
 }

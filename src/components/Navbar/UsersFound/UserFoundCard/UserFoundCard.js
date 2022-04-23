@@ -2,8 +2,10 @@ import React from 'react'
 import './UserFoundCard.css'
 import Avatar from '@mui/material/Avatar';
 import avatarDefault from '../../../../Assets/images/avatar-chef.jpg';
+import { useNavigate } from 'react-router-dom';
 
-export default function UserFoundCard({ user, captionSize, nickNameSize, AvatarSize}) {
+export default function UserFoundCard({ user, captionSize, nickNameSize, AvatarSize,linkId}) {
+    const navigate = useNavigate();
 
     const { username, nickname, avatar } = user;
     return (
@@ -15,8 +17,9 @@ export default function UserFoundCard({ user, captionSize, nickNameSize, AvatarS
 
             {(nickname || username) && (
                 <div className="textContainer">
-                    <span className={`nickName nickName-${nickNameSize}`}>{nickname}</span>
-                    <span className={`caption caption-${captionSize}`}>{username}</span>
+                    <span onClick={() => navigate(`/profile/${linkId}`)} 
+                    className={`nickName nickName-${nickNameSize}`}>{nickname}</span>
+                    <span onClick={() => navigate(`/profile/${linkId}`)} className={`caption caption-${captionSize}`}>{username}</span>
                 </div>
             )}
         </div>

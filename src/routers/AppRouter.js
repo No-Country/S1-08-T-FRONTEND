@@ -1,21 +1,22 @@
 //Se divide entre rutas publicas y las privadas
 
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { createTheme } from '@mui/material/styles'
-import { ThemeProvider } from '@mui/material/styles'
-import { purple, lightBlue, red } from '@mui/material/colors'
-import Navbar from '../components/Navbar/Navbar'
-import TestAuth from '../app/slices/users/TestAuth'
-import Login from '../components/Login/Login'
-import Register from '../components/Register/Register'
-import Home from '../components/Home/Home'
-import Detail from '../components/DetailPost/Detail'
-import { UserProfile } from '../components/UserProfile/UserProfile'
-import FollowersScreen from '../components/Follow/FollowersScreen'
-import FollowingScreen from '../components/Follow/FollowingScreen'
-import ErrorPage from '../components/ErrorPage/ErrorPage'
-import Category from '../components/CategoryList/Category'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import { purple, lightBlue, red } from "@mui/material/colors";
+import Navbar from "../components/Navbar/Navbar";
+import TestAuth from "../app/slices/users/TestAuth";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
+import Home from "../components/Home/Home";
+import Detail from "../components/DetailPost/Detail";
+import { UserProfile } from "../components/UserProfile/UserProfile";
+import FollowersScreen from "../components/Follow/FollowersScreen";
+import FollowingScreen from "../components/Follow/FollowingScreen";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
+import Category from "../components/CategoryList/Category"
+import Searcher from "../components/Searcher/Searcher";
 
 const theme = createTheme({
   typography: {
@@ -39,6 +40,7 @@ export const AppRouter = () => {
     <ThemeProvider theme={theme}>
       <div className='body-container'>
         <Navbar />
+        <div className='intersetion'></div>
         <main>
           <Routes>
             <Route path='/signin' element={<TestAuth />} />
@@ -50,7 +52,8 @@ export const AppRouter = () => {
             <Route path='/following/:userId' element={<FollowingScreen />} />
             <Route path='/profile/:userId' element={<UserProfile />} />
             <Route path='/category/:id' element={<Category />} />
-            <Route path='*' element={<ErrorPage />} />
+            <Route path="/search" element={<Searcher/>} />         
+            <Route path="*" element={<ErrorPage />} />       
           </Routes>
         </main>
       </div>

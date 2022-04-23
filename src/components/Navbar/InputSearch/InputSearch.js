@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { styled, alpha } from '@mui/material/styles';
+import { useLocation } from "react-router-dom";
 
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
@@ -16,6 +17,7 @@ import { handleUserFoundModaClose } from '../UsersFound/UsersFoundModal/UsersFou
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
+  zIndex: 10000,
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
@@ -56,6 +58,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 export default function InputSearch() {
+  let location = useLocation();
+
+  const locationSearch = location.pathname === "/search"? true: false;
+
   const isMobile = useMediaQuery('(max-width:820px)');
 
   const dispatch = useDispatch()
@@ -74,7 +80,7 @@ export default function InputSearch() {
 
   return (
     <>
-      {isMobile ? (
+      {isMobile || locationSearch ? (
         ""
       ) : (
         <div className="search">
@@ -93,7 +99,7 @@ export default function InputSearch() {
                 <IconButton 
                 onClick={handleDeleteSearchTerm}
                 >
-                  <HighlightOffIcon sx={{ color: '#fff'}} />
+                  <HighlightOffIcon sx={{ color: '#fff', float: "right"}} />
                 </IconButton>
               ) : (
                 ""

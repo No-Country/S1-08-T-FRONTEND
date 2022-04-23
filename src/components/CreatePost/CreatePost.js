@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './CreatePost.css'
-import camera from './camera.png';
+import { useNavigate } from 'react-router-dom';
+
 
 //toast
 import toast from 'react-hot-toast'
@@ -40,7 +41,9 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function CreatePost () {
+export default function CreatePost() {
+  const navigate = useNavigate();
+
   const classes = useStyles()
 
   //state global auth
@@ -145,9 +148,13 @@ export default function CreatePost () {
           toast.success(data.msg)
 
           console.log(data.msg)
+          window.location.reload(false);
+          navigate("/")
           setOpen(false)
           //refesh state posts
           handleRefreshfields()
+          window.location.reload(false);
+          navigate("/")
         } else {
           toast.error(data.msg)
           console.log(data.msg)
@@ -186,7 +193,7 @@ export default function CreatePost () {
             <div className='createPostTitle'>
               <h2>Crea tu post</h2>
               <IconButton className='closeButtonContainer' onClick={() => setOpen(false)}>
-                <CloseIcon className='closeButton'/>
+                <CloseIcon className='closeButton' />
               </IconButton>
             </div>
             <div className='descriptions'>
@@ -207,7 +214,7 @@ export default function CreatePost () {
               ></textarea>
             </div>
             <div className='selectDiv'>
-              <select  className='selectCategory' onChange={handleChange}>
+              <select className='selectCategory' onChange={handleChange}>
                 <option disabled>Elige una categoría</option>
                 <>
                   {isLoading && <option disabled>Loading...</option>}
@@ -236,7 +243,7 @@ export default function CreatePost () {
                   labelIdle="Elige o arrastra tus imágenes <svg height='25' width='25' fill='#fff' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M194.6 32H317.4C338.1 32 356.4 45.22 362.9 64.82L373.3 96H448C483.3 96 512 124.7 512 160V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V160C0 124.7 28.65 96 64 96H138.7L149.1 64.82C155.6 45.22 173.9 32 194.6 32H194.6zM256 384C309 384 352 341 352 288C352 234.1 309 192 256 192C202.1 192 160 234.1 160 288C160 341 202.1 384 256 384z'/></svg>"
                   className='imageInput'
                 />
-                
+
               </div>
               <div className="uploadVideo">
                 {video !== null ?
@@ -248,7 +255,7 @@ export default function CreatePost () {
                     id='video_player'
                     controls
                   />
-                  : null                  
+                  : null
                 }
                 <input
                   className='videoInput'
@@ -258,7 +265,7 @@ export default function CreatePost () {
                   accept='video/*'
                   onChange={handleVideo}
                 />
-                <label for="file_video" className='videoLabel'>Elige o arrastra tu video <svg height='25' width='25' fill='#fff' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M384 112v288c0 26.51-21.49 48-48 48h-288c-26.51 0-48-21.49-48-48v-288c0-26.51 21.49-48 48-48h288C362.5 64 384 85.49 384 112zM576 127.5v256.9c0 25.5-29.17 40.39-50.39 25.79L416 334.7V177.3l109.6-75.56C546.9 87.13 576 102.1 576 127.5z"/></svg></label>
+                <label for="file_video" className='videoLabel'>Elige o arrastra tu video <svg height='25' width='25' fill='#fff' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M384 112v288c0 26.51-21.49 48-48 48h-288c-26.51 0-48-21.49-48-48v-288c0-26.51 21.49-48 48-48h288C362.5 64 384 85.49 384 112zM576 127.5v256.9c0 25.5-29.17 40.39-50.39 25.79L416 334.7V177.3l109.6-75.56C546.9 87.13 576 102.1 576 127.5z" /></svg></label>
               </div>
             </div>
 
