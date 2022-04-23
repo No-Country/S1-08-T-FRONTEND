@@ -10,7 +10,7 @@ import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
-import avatarDefault from "../../Assets/images/avatar-chef.jpg";
+import avatarDefault from '../../Assets/images/avatar-chef.jpg';
 
 export default function FeedCard({ post }) {
   const {
@@ -22,28 +22,53 @@ export default function FeedCard({ post }) {
     created_at,
     category,
     likes,
-  } = post;
+  } = post;  
+
+  /*const showTime = `${current.getDate()}/${current.getMonth()+1}` + ' - ' + current.getHours() 
+        + ':' + current.getMinutes();*/
+
+        function TimeElapsed() {
+          function CreatedTime(){
+            const unixTime = new Date(created_at);
+            const date = new Date(unixTime);
+            return( date.getDate()+
+            "/"+(date.getMonth()+1)+
+            "/"+date.getFullYear()+
+            " a las "+date.getHours()+
+            ":"+date.getMinutes()
+            );
+          }
+          return (CreatedTime());
+
+        /* function CurrentTime(){
+            const current = new Date();
+            const date = new Date(current);
+            return( date.getdate()+
+            "/"+(date.getMonth()+1)+
+            "/"+date.getFullYear()+
+            " "+date.getHours()+
+            ":"+date.getMinutes()
+            );
+          }
+          return (CurrentTime());*/
+
+          //return (CurrentTime() - CreatedTime());*/
+        };
+ 
 
   return (
     <div className="feedCard">
       <Card sx={{ maxHeight: 620, marginLeft: 2, marginRight: 2, width: 645 }}>
-        <Link to={`/profile/${userid}`}>
-          <CardHeader
-            className="userIntro"
-            avatar={
-              <Avatar
-                sx={{ border: "1px solid #b1b1b5" }}
-                src={avatar ? avatar : avatarDefault}
-                aria-label="recipe"
-                alt={description}
-              />
-            }
-            titleTypographyProps={{ variant: "h5", marginBottom: -1 }}
-            title={username}
-            subheaderTypographyProps={{ variant: "subtitle2" }}
-            subheader={description}
-          />
-        </Link>
+        <CardHeader
+          className="userIntro"
+          avatar={
+            <Avatar sx={{ border: '1px solid #b1b1b5'}} src={avatar ? avatar: avatarDefault } aria-label="recipe" alt={description}/>
+        }
+          titleTypographyProps={{ variant: "h5", marginBottom: -1 }}
+          title={username}
+          subheaderTypographyProps={{ variant: "subtitle2" }}
+          subheader={`Publicado el ${TimeElapsed()} `}
+        />
         <CardMedia
           component="img"
           image={image}
@@ -94,19 +119,8 @@ export default function FeedCard({ post }) {
                 <path d="M232 464h-40.01v-117.3c68.52-15.88 118-79.86 111.4-154.1L287.5 14.5C286.8 6.25 279.9 0 271.8 0H48.23C40.1 0 33.22 6.25 32.47 14.5L16.6 192.6c-6.625 74.25 42.88 138.2 111.4 154.2V464H87.98c-22.13 0-40.01 17.88-40.01 40c0 4.375 3.625 8 8.002 8h208c4.377 0 8.002-3.625 8.002-8C272 481.9 254.1 464 232 464zM180.4 300.2c-13.64 3.16-27.84 3.148-41.48-.0371C91.88 289.2 60.09 245.2 64.38 197.1L77.7 48h164.6L255.6 197.2c4.279 48.01-27.5 91.93-74.46 102.8L180.4 300.2z" />
               </svg>
             </button>
-            <Share />
-            <button className="socialIcon">
-              <svg
-                width="25"
-                height="25"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path d="M384 0H96C60.65 0 32 28.65 32 64v384c0 35.35 28.65 64 64 64h288c35.35 0 64-28.65 64-64V64C448 28.65 419.3 0 384 0zM240 128c35.35 0 64 28.65 64 64s-28.65 64-64 64c-35.34 0-64-28.65-64-64S204.7 128 240 128zM336 384h-192C135.2 384 128 376.8 128 368C128 323.8 163.8 288 208 288h64c44.18 0 80 35.82 80 80C352 376.8 344.8 384 336 384zM496 64H480v96h16C504.8 160 512 152.8 512 144v-64C512 71.16 504.8 64 496 64zM496 192H480v96h16C504.8 288 512 280.8 512 272v-64C512 199.2 504.8 192 496 192zM496 320H480v96h16c8.836 0 16-7.164 16-16v-64C512 327.2 504.8 320 496 320z" />
-              </svg>
-              GUARDAR
-            </button>
-            <Link className="socialIcon" to={`/post/${post.id}`}>
+              <Share /> 
+            <Link className="socialIcon" to={`/${post.id}`}>
               <svg
                 width="25"
                 height="25"
