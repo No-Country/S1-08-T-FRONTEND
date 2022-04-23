@@ -46,68 +46,92 @@
     .errorMessage p{
     font-size: 1.2rem;
     }
+
+    .problemImg{
+        height: 10rem;
+        width: auto;
+        margin-top: 3rem;
+    }
 }
 
 @media (min-width:640px){
     .errorPage{
+        height: 130vh;
         display: flex;
         background-color: #EC5853;
-    }
-
-    .errorPhoto{
-        width: auto;
-        margin-top: 3rem;
-        height: 100vh;
     }
 
     .errorMessage{
         display: flex;
         flex-direction: column;
-        margin: 8rem auto 0 auto;
+        margin: 5rem auto 0 auto;
         align-items: center;
     }
 
     .errorTitle{
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-bottom: 1rem;
         color: #fbf9f7;
         font-weight: 600;
     }
-
 
     .errorMessage h2, .errorMessage p{
         color: #fbf9f7;
     }
 
     .errorMessage h2{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         margin-bottom: 0.5rem;
         font-weight: 600;
     }
 
     .errorMessage p{
-    font-size: 1.2rem;
+    font-size: 1rem;
+    }
+
+    .problemImg{
+        height: 6rem;
+        width: auto;
+        margin-top: 2rem;
     }
 }
 
+@media (min-width:768px){
+    .errorPhoto{
+        display: none;
+    }
+
+    .errorMessage{
+        margin-top: 8rem;
+    }
+
+    .errorTitle{
+        font-size: 3rem;
+    }
+
+    .errorMessage h2{
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .errorMessage p{
+    font-size: 1.2rem;
+    }
+
+    .problemImg{
+        height: 10rem;
+        width: auto;
+        margin-top: 4rem;
+    }
+}
 
 @media (min-width:1024px){
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: 'poppins', sans-serif !important;
-    }
-
-    .errorPage{
-        display: flex;
-        background-color: #EC5853;
-    }
-
     .errorPhoto{
         width: auto;
         margin-top: 3rem;
-        height: 100vh;
+        height: 123.2vh;
+        display: flex;
     }
 
     .errorMessage{
@@ -137,5 +161,11 @@
 
     .errorMessage p{
     font-size: 1.2rem;
+    }
+
+    .problemImg{
+        height: 10rem;
+        width: auto;
+        margin-top: 3rem;
     }
 }
