@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useGetAllCategoriesQuery } from '../../app/services/categories'
 import style from './CategoryList.module.css'
 import { Link } from 'react-router-dom'
+import LoadingCategory from './LoadingCategory/LoadingCategory'
 
 function CategoryList () {
   const {
@@ -32,7 +33,7 @@ function CategoryList () {
         <div className={style.titleList}>Lista de Categorias</div>
 
         <div>
-          {isLoading && 'cargando...'}
+          {isLoading && <LoadingCategory/>}
 
           {isError && error.message}
 
@@ -40,7 +41,7 @@ function CategoryList () {
             categories &&
             categories.map(category => (
               <div className={style.categoryItem} key={category.id}>
-                <Link to={`/category/${category.name}`}>{category.name}</Link>
+                <Link to={`/category/${category.name.replace(/ /g, " ")}`}>{category.name}</Link>
               </div>
             ))}
         </div>

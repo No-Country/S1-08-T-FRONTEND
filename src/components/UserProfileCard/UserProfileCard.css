@@ -15,6 +15,7 @@
     flex-direction: column;
     margin-left: 1em;
     min-width: 180px;
+    text-transform: capitalize;
 }
 
 .nickName {
