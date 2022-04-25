@@ -64,7 +64,7 @@ export default function FeedCard({ post }) {
           avatar={
             <Avatar sx={{ border: '1px solid #b1b1b5'}} src={avatar ? avatar: avatarDefault } aria-label="recipe" alt={description}/>
         }
-          titleTypographyProps={{ variant: "h6", marginBottom: -1, fontWeight: "bold" }}
+          titleTypographyProps={{ variant: "h6", marginBottom: -1, fontWeight: "bold", textTransform: "capitalize" }}
           title={username}
           subheaderTypographyProps={{ variant: "subtitle2" }}
           subheader={`Publicado el ${TimeElapsed()} `}

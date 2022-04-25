@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { loginFromLS } from './app/slices/users/authUsersSlice'
 import { AppRouter } from './routers/AppRouter'
 import { Toaster } from 'react-hot-toast'
-import Loading from './components/Loading/Loading'
+import LoadingApp from './components/Loading/LoadingApp/LoadingApp'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       {isLoading ? (
-        <Loading/>
+        <LoadingApp/>
       ) : (
         <>
       <AppRouter />

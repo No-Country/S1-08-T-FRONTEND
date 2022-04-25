@@ -3,6 +3,7 @@ import "./Feed.css";
 import FeedCard from "../FeedCard/FeedCard";
 import { useGetPostsQuery } from "../../app/services/posts";
 import Loading from "../Loading/Loading";
+import FeedLoading from "./FeedLoading/FeedLoading";
 
 export default function Feed() {
  
@@ -27,7 +28,7 @@ export default function Feed() {
   return (
     <div className="feedContainer">
       <div className="containerPosts">
-        {isLoading && <Loading />}
+        {isLoading && <FeedLoading />}
 
         {isError && error.message}
 
