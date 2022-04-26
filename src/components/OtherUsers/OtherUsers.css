@@ -1,0 +1,30 @@
+
+.sugestedUsers{
+    margin: 3em 0;
+}
+
+.sugestedUsers__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.otherUsersTitle{
+    font-size: 1.1rem;
+    color: #6c6a6a;
+    text-align: start;
+}
+.otherUsersAll{
+    font-size: 1.1rem;
+    color: #000;
+    text-align: end;
+}
+
+.otherUsers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: .1em 0;
+}

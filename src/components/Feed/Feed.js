@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
-import FeedCard from "../FeedCard/FeedCard";
-import { useGetPostsQuery } from "../../app/services/posts";
 import "./Feed.css";
+import FeedCard from "../FeedCard/FeedCard";
+import { useGetPostsStateMutation } from "../../app/services/posts";
+import FeedLoading from "./FeedLoading/FeedLoading";
+import { useSelector } from "react-redux";
 
 export default function Feed() {
+ 
   //importar la data
-  const { data, error, isLoading, isSuccess, isError, refetch } =
-    useGetPostsQuery();
+  const { data, loading: isLoading , error} = useSelector((state) => state.posts.posts);
+  const [getGetPostsState] = useGetPostsStateMutation();
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -19,20 +22,20 @@ export default function Feed() {
   }, [data]); // eslint-disable-line
 
   useEffect(() => {
-    refetch();
+    getGetPostsState();
   }, []); // eslint-disable-line
 
   return (
     <div className="feedContainer">
       <div className="containerPosts">
-        {isLoading && "cargando..."}
+        {isLoading && <FeedLoading />}
 
-        {isError && error.message}
+        {error && error.message}
 
-        {isSuccess &&
+        {!isLoading &&
           posts &&
           posts.map((post) => (
-            <div key={post.id}>
+            <div className="feedCardContainer" key={post.id}>
               <FeedCard post={post} />
             </div>
           ))}

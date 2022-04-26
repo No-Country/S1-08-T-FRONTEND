@@ -1,0 +1,10 @@
+.OtherUsersAll__container {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.OtherUsersAll__users {
+    max-width: 700px;
+    margin: 10rem auto;
+}

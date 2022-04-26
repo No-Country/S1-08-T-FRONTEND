@@ -18,6 +18,15 @@ export const postApi = createApi({
     getPost: builder.query({
       query: (id) => `${id}`,
     }),
+    getPostsState: builder.mutation({
+      query: () => ({
+        url:"",
+        method: "GET",
+      }),
+    }),
+    getPostState: builder.mutation({
+      query: (id) => `${id}`,
+    }),
 
     createPost: builder.mutation({
       query: (post) => ({
@@ -46,14 +55,20 @@ export const postApi = createApi({
         method: "DELETE",
       }),
     }),
+    getPostByUser: builder.query({
+      query: (id) => `userPosts/${id}`,
+    }),
   }),
 });
 
 export const {
   useGetPostsQuery,
   useGetPostQuery,
+  useGetPostsStateMutation,
+  useGetPostStateMutation,
   useCreatePostMutation,
   useUpdatePostMutation,
   useDeletePostMutation,
   useUpdatePostLikesMutation,
+  useGetPostByUserQuery,
 } = postApi;

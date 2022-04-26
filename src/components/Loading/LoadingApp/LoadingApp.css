@@ -1,0 +1,15 @@
+.loadingApp{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.logoApp{
+    width: min(10vw, 4.2rem);
+    animation: spin 1.5s linear infinite;
+    margin: auto;
+}
+

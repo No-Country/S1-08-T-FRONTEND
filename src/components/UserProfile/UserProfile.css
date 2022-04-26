@@ -1,0 +1,113 @@
+.containerProfile {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.backgroundImage {
+  width: 100vw;
+  height: 350px;
+}
+.userInfo {
+  width: 100%;
+}
+.userInfo h1 {
+  font-size: 20px;
+}
+.imagePortrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border:1px solid #b1b1b5;
+}
+.mainContainer {
+  width: 1024px;
+  bottom: 100px;
+  background-color: #fff;
+  position: relative;
+  bottom: 100px;
+}
+.banner {
+  margin: 20px;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+}
+.profilePhoto {
+  display: flex;
+}
+.profileImg {
+  width: 160px;
+  border-radius: 50%;
+  height: 160px;
+}
+.userInfo {
+  align-self: center;
+}
+.userOptions {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.buttonOption {
+  padding: 5px;
+}
+.menuProfile {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  justify-content: space-around;
+  border: 2px solid transparent;
+}
+.menuProfile li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menuProfile li:hover {
+  cursor: pointer;
+  border-bottom: 2px solid rgb(186, 141, 141);
+}
+.content {
+  width: 100%;
+  height: 2000px;
+}
+@media (max-width: 1024px) {
+  .mainContainer {
+    max-width: 100%;
+  }
+}
+@media (max-width: 445px) {
+  .containerProfile {
+    height: auto;
+  }
+  .profileImg {
+    width: 120px;
+    height: 120px;
+  }
+  .userInfo {
+    font-size: 0.8rem;
+  }
+  .buttonOption {
+    font-size: 0.8rem;
+  }
+  .backgroundImage {
+    height: 250px;
+  }
+
+  .containerProfile .menuProfile {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 70px;
+    height: auto;
+    background-color: antiquewhite;
+  }
+}

@@ -1,0 +1,50 @@
+.follow-title {
+  color: #EC5853;
+  color: #6c6a6a;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 6.5rem;
+}
+
+.follow-container {
+  width: 70%;
+  margin: auto;
+  border-radius: 1rem;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.follow-profile {
+  border: 1px solid #f9afaf;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 8px 19px;
+  background: #f6eded;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.follow-profile img {
+  border-radius: 50%
+}
+
+@media screen and (max-width: 974px) {
+  .follow-title {
+    margin-top: 4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .follow-container {
+    width: 90%;
+  }
+
+  .follow-profile {
+    width: 90%;
+  }
+}

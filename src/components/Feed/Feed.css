@@ -1,15 +1,88 @@
-.feedContainer{
-    display: flex;
-    justify-content: space-between;
+.feedCard a {
+  color: #212020;
+  text-decoration: none;
 }
 
-.containerPosts{
-    display: flex;
-    flex-direction: column !important;
-    max-width: 50rem;
-    justify-content: center;
-    align-items: center;
-    margin-left: 8rem !important;
-   
-    margin-top: 4.2rem !important;
+
+@media (max-width:640px){
+    .feedContainer{
+        display: flex;
+        margin-top: 0rem;
+    }
+
+    .containerPosts{
+        display: flex;
+        flex-direction: column !important;
+        max-width: 22.5rem;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0rem !important;
+        margin-top: 1.2rem !important;
+    }
+
+}
+
+@media (min-width:640px){
+    .containerPosts{
+        display: flex;
+        flex-direction: column !important;
+        max-width: 30rem;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0rem !important;
+        margin-top: 2.2rem !important;
+    }
+
+    .feedCardContainer{
+        margin-top: 0rem;
+    }
+}
+
+@media (min-width:768px){
+    .feedContainer{
+        display: flex;
+    }
+
+    .containerPosts{
+        display: flex;
+        flex-direction: column !important;
+        max-width: 32.5rem;
+        justify-content: center;
+        align-items: center;
+        margin-left: 4rem !important;
+        margin-top: 0.2rem !important;
+    }
+
+    .feedCardContainer{
+        margin-top: 4rem;
+    }
+}
+
+@media (min-width:840px){
+    .feedContainer{
+        display: flex;
+    }
+
+    .containerPosts{
+        display: flex;
+        flex-direction: column !important;
+        max-width: 33rem;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2rem !important;
+
+    }
+}
+
+@media (min-width:1024px){
+    .containerPosts{
+        max-width: 33rem;
+    }
+
+}
+
+@media (min-width:1200px){
+    .containerPosts{
+        max-width: 45rem;
+    }
 }
