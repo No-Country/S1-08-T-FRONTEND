@@ -9,6 +9,7 @@ export default function OtherUsersLoading() {
 
     return (
         dataSuggestedUser.map(user => (
+            
             <div key={user} className="otherUsers">
                 <div className="profile">
                     <Avatar
@@ -16,10 +17,13 @@ export default function OtherUsersLoading() {
                         src={<Skeleton />}
                         aria-label="recipe" />
 
-                        <div className="textContainer">
-                            <span className={`nickName nickName-small`}><Skeleton /></span>
-                            <span  className={`caption caption-small`}><Skeleton /></span>
-                        </div>
+                    <div className="textContainer">
+                        <span className={`nickName nickName-small`}><Skeleton /></span>
+                        <span className={`caption caption-small`}><Skeleton /></span>
+                    </div>
+                </div>
+                <div className="otherUsers__folloButton">
+                    <Skeleton />
                 </div>
             </div>
         )

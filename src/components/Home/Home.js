@@ -15,7 +15,7 @@ export default function Home () {
       </div>
       <div className='rightSection'>
         <Profile />
-        <OtherUsers />
+        <OtherUsers quantity={6} />
         <CategoryList />
         <Footer />
         </div>

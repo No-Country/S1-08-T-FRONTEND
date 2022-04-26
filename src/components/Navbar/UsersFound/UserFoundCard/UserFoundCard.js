@@ -11,7 +11,7 @@ export default function UserFoundCard({ user, captionSize, nickNameSize, AvatarS
     return (
         <div className="profile">
             <Avatar
-                sx={{ width: AvatarSize, height: AvatarSize ,border: '1px solid #b1b1b5'}}
+                sx={{ width: AvatarSize, height: AvatarSize ,border: '1px solid #6c6a6a'}}
                 src={avatar ? avatar : avatarDefault}
                 aria-label="recipe" />
 

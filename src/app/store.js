@@ -11,6 +11,7 @@ import authUsers from "./slices/users/authUsersSlice";
 import searcher from "./slices/searcher/searcherSlice";
 import posts from "./slices/posts/postsSlice";
 import users from "./slices/users/usersSlice";
+import followers from "./slices/followers/followersSlice";
 
 export const store = configureStore({
   reducer: {
@@ -24,7 +25,8 @@ export const store = configureStore({
     authUsers,
     searcher,
     users,
-    posts
+    posts,
+    followers,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

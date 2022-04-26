@@ -11,7 +11,7 @@
   width: 70%;
   margin: auto;
   border-radius: 1rem;
-  padding: 0.5rem 0; 
+  padding: 0.5rem 0;
   margin-top: 1rem;
   display: flex;
   flex-flow: row wrap;
@@ -19,21 +19,21 @@
 }
 
 .follow-profile {
- width: 45%;
- border: 1px solid #f9afaf;
- border-radius: 1rem;
- margin: 1rem;
- background: #f6eded;
- display: flex;
- flex-direction: row;
- align-items: center;
- justify-content: space-between;
+  border: 1px solid #f9afaf;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 8px 19px;
+  background: #f6eded;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .follow-profile img {
   border-radius: 50%
 }
- 
+
 @media screen and (max-width: 974px) {
   .follow-title {
     margin-top: 4rem;
@@ -44,7 +44,7 @@
     width: 90%;
   }
 
-  .follow-profile{
+  .follow-profile {
     width: 90%;
   }
 }

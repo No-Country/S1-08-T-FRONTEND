@@ -1,3 +1,9 @@
+.feedCard a {
+  color: #212020;
+  text-decoration: none;
+}
+
+
 @media (max-width:640px){
     .feedContainer{
         display: flex;

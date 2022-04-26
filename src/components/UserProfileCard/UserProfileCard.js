@@ -19,7 +19,7 @@ export default function UserProfileCard({ user, captionSize, nickNameSize, Avata
         <div className="profile">
             <Avatar
                 onClick={() => navigate(`/profile/${user.id}`)}
-                sx={{ width: AvatarSize, height: AvatarSize, border: '1px solid #b1b1b5' }}
+                sx={{ width: AvatarSize, height: AvatarSize, border: '1px solid #6c6a6a' }}
                 src={avatar ? avatar : avatarDefault}
                 aria-label="recipe" />
 
