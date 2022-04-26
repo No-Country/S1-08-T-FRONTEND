@@ -11,7 +11,7 @@ export const postsSlice = createSlice({
     },
   },
   reducers: {
-    getPosts: (state, action) => {
+    getPostsState: (state, action) => {
       state.posts.data = action.payload;
     },
     setLoading: (state, action) => {
@@ -23,20 +23,20 @@ export const postsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addMatcher(postApi.endpoints.getPosts.matchPending, (state, actions) => {
-        state.loading = true;
+      .addMatcher(postApi.endpoints.getPostsState.matchPending, (state, actions) => {
+        state.posts.loading = true;
       })
-      .addMatcher(postApi.endpoints.getPosts.matchFulfilled, (state, action) => {
-        const response = action.payload.data;
-        state.data = response;
-        state.loading = false;
+      .addMatcher(postApi.endpoints.getPostsState.matchFulfilled, (state, action) => {
+        const response = action.payload;
+        state.posts.data = response;
+        state.posts.loading = false;
       })
-      .addMatcher(postApi.endpoints.getPosts.matchRejected, (state, action) => {
-        state.error = action;
+      .addMatcher(postApi.endpoints.getPostsState.matchRejected, (state, action) => {
+        state.posts.error = action;
       });
   },
 });
 
-export const { getPosts } = postsSlice.actions;
+export const { getPostsState } = postsSlice.actions;
 
 export default postsSlice.reducer;

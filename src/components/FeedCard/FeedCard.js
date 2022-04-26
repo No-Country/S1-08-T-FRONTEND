@@ -15,60 +15,61 @@ import avatarDefault from '../../Assets/images/avatar-chef.jpg';
 export default function FeedCard({ post }) {
   const {
     userid,
+    title,
     username,
     description,
     avatar,
     image,
     created_at,
-    category,
-    likes,
-  } = post;  
+  } = post;
 
   /*const showTime = `${current.getDate()}/${current.getMonth()+1}` + ' - ' + current.getHours() 
         + ':' + current.getMinutes();*/
 
-        function TimeElapsed() {
-          function CreatedTime(){
-            const unixTime = new Date(created_at);
-            const date = new Date(unixTime);
-            return( date.getDate()+
-            "/"+(date.getMonth()+1)+
-            "/"+date.getFullYear()+
-            " a las "+date.getHours()+
-            ":"+date.getMinutes()
-            );
-          }
-          return (CreatedTime());
+  function TimeElapsed() {
+    function CreatedTime() {
+      const unixTime = new Date(created_at);
+      const date = new Date(unixTime);
+      return (date.getDate() +
+        "/" + (date.getMonth() + 1) +
+        "/" + date.getFullYear() +
+        " a las " + date.getHours() +
+        ":" + date.getMinutes()
+      );
+    }
+    return (CreatedTime());
 
-        /* function CurrentTime(){
-            const current = new Date();
-            const date = new Date(current);
-            return( date.getdate()+
-            "/"+(date.getMonth()+1)+
-            "/"+date.getFullYear()+
-            " "+date.getHours()+
-            ":"+date.getMinutes()
-            );
-          }
-          return (CurrentTime());*/
+    /* function CurrentTime(){
+        const current = new Date();
+        const date = new Date(current);
+        return( date.getdate()+
+        "/"+(date.getMonth()+1)+
+        "/"+date.getFullYear()+
+        " "+date.getHours()+
+        ":"+date.getMinutes()
+        );
+      }
+      return (CurrentTime());*/
 
-          //return (CurrentTime() - CreatedTime());*/
-        };
- 
+    //return (CurrentTime() - CreatedTime());*/
+  };
+
 
   return (
     <div className="feedCard">
       <Card sx={{ maxHeight: 620, marginLeft: 2, marginRight: 2, width: 645 }}>
+        <Link to={`/profile/${userid}`}>
         <CardHeader
           className="userIntro"
           avatar={
-            <Avatar sx={{ border: '1px solid #b1b1b5'}} src={avatar ? avatar: avatarDefault } aria-label="recipe" alt={description}/>
-        }
+            <Avatar sx={{ border: '1px solid #b1b1b5' }} src={avatar ? avatar : avatarDefault} aria-label="recipe" alt={description} />
+          }
           titleTypographyProps={{ variant: "h6", marginBottom: -1, fontWeight: "bold", textTransform: "capitalize" }}
           title={username}
           subheaderTypographyProps={{ variant: "subtitle2" }}
           subheader={`Publicado el ${TimeElapsed()} `}
         />
+        </Link>
         <CardMedia
           component="img"
           image={image}
@@ -119,7 +120,7 @@ export default function FeedCard({ post }) {
                 <path d="M232 464h-40.01v-117.3c68.52-15.88 118-79.86 111.4-154.1L287.5 14.5C286.8 6.25 279.9 0 271.8 0H48.23C40.1 0 33.22 6.25 32.47 14.5L16.6 192.6c-6.625 74.25 42.88 138.2 111.4 154.2V464H87.98c-22.13 0-40.01 17.88-40.01 40c0 4.375 3.625 8 8.002 8h208c4.377 0 8.002-3.625 8.002-8C272 481.9 254.1 464 232 464zM180.4 300.2c-13.64 3.16-27.84 3.148-41.48-.0371C91.88 289.2 60.09 245.2 64.38 197.1L77.7 48h164.6L255.6 197.2c4.279 48.01-27.5 91.93-74.46 102.8L180.4 300.2z" />
               </svg>
             </button>
-              <Share /> 
+            <Share />
             <Link className="socialIcon" to={`/post/${post.id}`}>
               <svg
                 width="17"
@@ -149,10 +150,10 @@ export default function FeedCard({ post }) {
           }}
         >
           <Typography
-            sx={{ fontSize: "1.3rem" , color: "#000", }}
+            sx={{ fontSize: "1.3rem", color: "#000", }}
             variant="body2"
           >
-            {description}
+            {title}
           </Typography>
         </CardContent>
       </Card>

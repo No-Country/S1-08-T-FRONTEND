@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {useGetFollowersQuery} from "../../app/services/followers";
-import {useParams} from "react-router-dom";
+import { useGetFollowersQuery } from "../../app/services/followers";
+import { useParams } from "react-router-dom";
 import UserProfileCard from "../UserProfileCard/UserProfileCard";
 import Loading from "../Loading/Loading";
 import "./Follow.css";
+import FollowButton from "./FollowButton/FollowButton";
 
 const FollowersScreen = () => {
   const { userId } = useParams();
@@ -19,17 +20,17 @@ const FollowersScreen = () => {
 
   useEffect(() => {
     refetch();
-  }, []);
+  }, [refetch]);
 
   return (
     <>
       <p className="follow-title">Seguidores</p>
       <div className="follow-container">
-      {isLoading && <Loading />}
-      {isError && error.message}
-      {isSuccess &&
-        followers &&
-        followers.map((follower) => (        
+        {isLoading && <Loading />}
+        {isError && error.message}
+        {isSuccess &&
+          followers &&
+          followers.map((follower) => (
             <div className="follow-profile">
               <UserProfileCard
                 AvatarSize={80}
@@ -37,11 +38,14 @@ const FollowersScreen = () => {
                 user={follower}
                 linkId={follower.userid}
                 captionSize="medium"
-                nickNameSize="medium"            
+                nickNameSize="medium"
               />
-            </div>      
-        ))} 
-        </div>       
+              <div className="otherUsers__folloButton">
+                {< FollowButton id={follower.id} disableIcon={true} fontSize={16} bg1={"#fff"} bg2={"#EC5853"} color1={"#000"} color2={"#fff"} />}
+              </div>
+            </div>
+          ))}
+      </div>
     </>
   );
 };

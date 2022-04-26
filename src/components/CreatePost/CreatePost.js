@@ -10,7 +10,7 @@ import toast from 'react-hot-toast'
 import { useSelector } from 'react-redux'
 
 //services
-import { useCreatePostMutation } from '../../app/services/posts'
+import { useCreatePostMutation, useGetPostsStateMutation } from '../../app/services/posts'
 import { uploadImage, uploadVideo } from '../../app/services/images'
 import { useGetAllCategoriesQuery } from '../../app/services/categories'
 
@@ -59,6 +59,7 @@ export default function CreatePost() {
     refetch
   } = useGetAllCategoriesQuery()
   const [createPost] = useCreatePostMutation()
+  const [getGetPostsState] = useGetPostsStateMutation();
 
   //states categories
   const [categories, setcategories] = useState([])
@@ -101,6 +102,10 @@ export default function CreatePost() {
     } else if (name === 'category') {
       setCategory(value)
     }
+  }
+
+  const handleRefreshPosts = () => {
+    getGetPostsState()
   }
 
   const handleRefreshfields = () => {
@@ -148,12 +153,10 @@ export default function CreatePost() {
           toast.success(data.msg)
 
           console.log(data.msg)
-          window.location.reload(false);
-          navigate("/")
           setOpen(false)
           //refesh state posts
+          handleRefreshPosts()
           handleRefreshfields()
-          window.location.reload(false);
           navigate("/")
         } else {
           toast.error(data.msg)

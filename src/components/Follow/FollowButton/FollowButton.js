@@ -1,122 +1,151 @@
 import React, { useEffect, useState } from "react";
 import './FollowButton.css'
-// import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useSelector } from "react-redux";
-import { useCreateFollowerMutation, useDeleteFollowerMutation, useGetFollowingQuery, } from "../../../app/services/followers";
 import Spinner from "../../Spinner/Spinner";
 import toast from 'react-hot-toast'
+// import Follow from "./Follow";
+// import Unfollow from "./UnFollow";
+import { useCreateFollowerMutation, useDeleteFollowerMutation, useGetFollowingStateMutation } from '../../../app/services/followers';
 
 const FollowButton = (props) => {
-    const { id, sizeWidth, sizeHeight, disableIcon, fontSize } = props;
+    const { id, sizeWidth, sizeHeight, disableIcon, fontSize, bg1, bg2, color1, color2 } = props;
     const { user, isAuthenticated } = useSelector((state) => state.authUsers);
+    const { data: followData, loading: isLoading } = useSelector((state) => state.followers.usersFollowing);
+    const [getFollowersState] = useGetFollowingStateMutation()
+    const [createFollower] = useCreateFollowerMutation();
+    const [deleteFollower] = useDeleteFollowerMutation();
+
 
     const actualUserId = user ? user.id : 0;
-    console.log(actualUserId)
-    console.log(id)
+    console.log("actualUserId", actualUserId)
+    console.log("id", id)
+    console.log("followData", followData)
+    console.log("isLoading: ", isLoading)
+
+
 
 
     const [idVinculo, setIdVinculo] = useState(null)
     const [isFollowing, setIsFollowing] = useState(false)
     const [loadingButtom, setLoadingButtom] = useState(false)
-    const [follow, setFollow] = useState("seguir")
+    const [follow, setFollow] = useState(null)
+    console.log("isFollowing: ", isFollowing)
+    console.log("idVinculo: ", idVinculo)
 
-    const { data: followData, isLoading } = useGetFollowingQuery(actualUserId);
 
-    console.log(isLoading)
-    console.log(followData)
-
-    const [createFollower] = useCreateFollowerMutation();
-    const [deleteFollower] = useDeleteFollowerMutation();
+    useEffect(() => {
+        getFollowersState(actualUserId)
+    }, [actualUserId, getFollowersState]);
 
 
 
     useEffect(() => {
-        if (followData) {
-            const vinculo = followData.filter((user) => user.followerId === parseInt(id))
-            console.log(vinculo)
+        const searchIdVinculo = () => {
+            if (!isLoading && followData) {
+                const vinculo = followData.filter((user) => user.followerId === parseInt(id))
+                console.log(vinculo)
 
-            if (vinculo.length > 0) {
-                setIdVinculo(vinculo[0].id)
+                if (vinculo.length > 0) {
+                    setIdVinculo(vinculo[0].id)
+                    setIsFollowing(true)
+                }
+
             }
-
-            setIsFollowing(followData.some((user) => user.followerId === parseInt(id)))
         }
 
-    }, [followData, id, isLoading])
+        searchIdVinculo()
 
-    console.log(idVinculo)
+    }, [isLoading, followData, id])
+
 
     useEffect(() => {
         if (isFollowing) {
-            setFollow("siguiendo")
+            setFollow("Siguiendo")
+        } else {
+            setFollow("Seguir")
         }
     }, [isFollowing])
-    // const display = disableIcon === true ? "none" : ""
 
     const handleFollow = async (e) => {
         e.preventDefault();
         if (isAuthenticated) {
 
-            const confirm = window.confirm("Deseas dejar de seguir a este usuario?")
-
+            setFollow("Siguiendo")
             setLoadingButtom(true)
 
+            const res = await createFollower({
+                userid: actualUserId,
+                followerId: id,
+            });
 
-            if (confirm) {
-                const res = await createFollower({
-                    userid: actualUserId,
-                    followerId: id,
-                });
+            console.log(res)
 
-
-                setLoadingButtom(false)
-                console.log(res)
-
-                if (res.ok === true) {
-                    console.log("create follower");
-                    console.log(res.msg)
-                } else {
-                    console.log(res.msg)
-                }
+            if (res.ok === true) {
+                console.log("create follower");
+                console.log(res.msg)
+                getFollowersState(actualUserId)
+            } else {
+                console.log(res.msg)
             }
+            setIdVinculo(res.id)
+            getFollowersState(actualUserId)
+            setLoadingButtom(false)
 
         } else {
             toast.error("Debes iniciar sesión para seguir a otros usuarios")
         }
     };
-
-
     const handleUnfollow = async (e) => {
         e.preventDefault();
         if (isAuthenticated) {
-            setLoadingButtom(true)
 
-            const res = await deleteFollower(idVinculo);
-            setLoadingButtom(false)
-            console.log(res)
+            const confirm = window.confirm("Deseas dejar de seguir a este usuario?")
 
-            if (res.ok === true) {
-                console.log("unfollower done");
-                console.log(res.msg)
-            } else {
-                console.log(res.msg)
+            if (confirm) {
+                setFollow("Seguir")
+                setLoadingButtom(true)
+
+                const res = await deleteFollower(idVinculo);
+                console.log(res)
+
+                if (res.ok === true) {
+                    console.log("unfollower done");
+                    setIsFollowing(false)
+                    console.log(res.msg)
+                    getFollowersState(actualUserId)
+
+                } else {
+                    console.log(res.msg)
+                }
+                setIdVinculo(null)
+                setIsFollowing(false)
+                getFollowersState(actualUserId)
+                setLoadingButtom(false)
             }
+
         } else {
             toast.error("Debes iniciar sesión")
         }
     };
+    const display = disableIcon === true ? "none" : ""
 
 
     return (
         <button
             className="followButton"
-            style={{ width: `${sizeWidth}px`, fontSize: `${fontSize}px`, height: `${sizeHeight}px` }}
+            style={{ width: `${sizeWidth}px`, fontSize: `${fontSize}px`, height: `${sizeHeight}px`, backgroundColor: `${isFollowing ? bg1 : bg2}`, color: `${isFollowing ? color1 || "#000" : color2 || "#fff"}`, border: `${isFollowing ? "1px solid #c2c2c6" : "none"}` }}
             type="button"
             onClick={
-                idVinculo > 0 ? handleUnfollow : handleFollow
+                idVinculo ? handleUnfollow : handleFollow
             }>
             {loadingButtom && <Spinner />}
-            {!loadingButtom && follow}
+            {!loadingButtom && (
+                <>
+                    {follow || <Spinner />}
+                    {isFollowing ? <AiOutlineHeart style={{ marginRight: "0.5rem", display: `${display}` }} /> : <AiFillHeart style={{ marginRight: "0.5rem", color: "red", display: `${display}` }} />}
+                </>
+            )}
         </button>
     );
 };
