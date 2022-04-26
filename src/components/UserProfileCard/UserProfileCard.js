@@ -12,7 +12,7 @@ props:
     AvatarSize: number // example AvatarSize={50}
 */
 
-export default function UserProfileCard({ user, captionSize, nickNameSize, AvatarSize, linkId }) {
+export default function UserProfileCard({ user, captionSize, nickNameSize, AvatarSize }) {
     const navigate = useNavigate();
     const { username, nickname, avatar } = user;
     return (

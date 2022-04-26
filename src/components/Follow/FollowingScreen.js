@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {useGetFollowingQuery} from "../../app/services/followers";
-import {useParams} from "react-router-dom";
+import { useGetFollowingQuery } from "../../app/services/followers";
+import { useParams } from "react-router-dom";
 import UserProfileCard from "../UserProfileCard/UserProfileCard";
 import Loading from "../Loading/Loading";
 import "./Follow.css";
+import FollowButton from "./FollowButton/FollowButton";
 
 const FollowingScreen = () => {
   const { userId } = useParams();
@@ -19,7 +20,7 @@ const FollowingScreen = () => {
 
   useEffect(() => {
     refetch();
-  }, []);
+  }, [refetch]);
 
   return (
     <>
@@ -27,6 +28,7 @@ const FollowingScreen = () => {
       <div className="follow-container">
         {isLoading && <Loading />}
         {isError && error.message}
+        {followers.length === 0 ? <h2 style={{textAlign: "center"}}>No se encontraron seguidos</h2> : " "}
         {isSuccess &&
           followers &&
           followers.map((follower) => (
@@ -39,9 +41,12 @@ const FollowingScreen = () => {
                 captionSize="medium"
                 nickNameSize="medium"
               />
+              <div className="otherUsers__folloButton">
+                {< FollowButton id={follower.userid} disableIcon={true} fontSize={16} bg1={"#fff"} bg2={"#EC5853"} color1={"#000"} color2={"#fff"} />}
+              </div>
             </div>
           ))}
-      </div>   
+      </div>
     </>
   );
 };
