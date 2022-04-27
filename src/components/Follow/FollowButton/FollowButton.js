@@ -17,7 +17,7 @@ const FollowButton = (props) => {
     const [deleteFollower] = useDeleteFollowerMutation();
 
 
-    const actualUserId = user.id;
+    const actualUserId = user.id ? user.id : 0;
     // console.log("actualUserId", actualUserId)
     console.log("id", id)
     console.log("followData", followData)
