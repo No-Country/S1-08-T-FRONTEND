@@ -8,7 +8,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 const Register = () => {
-  const [registerexitoso, setRegisterexitoso] = useState(false)
   const [register] = useRegisterMutation()
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
@@ -27,14 +26,30 @@ const Register = () => {
           const errors = {}
           if (!valores.username) {
             errors.username = 'Nombre requerido'
-          } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.username)) {
+          }
+          if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.username)) {
             errors.username = 'Nombre solo puede contener letras y espacios'
+          }
+          if (valores.username.length < 3) {
+            errors.username = 'Nombre debe contener al menos 3 caracteres'
+          }
+          if (valores.username.length > 13) {
+            errors.username = 'Nombre debe contener menos de 13 caracteres'
           }
           if (!valores.nickname) {
             errors.nickname = 'Nombre de cuenta requerido'
-          } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nickname)) {
+          }
+          if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nickname)) {
             errors.nickname =
               'Nombre de cuenta solo puede contener letras y espacios'
+          }
+          if (valores.nickname.length < 3) {
+            errors.nickname =
+              'Nombre de cuenta debe contener al menos 3 caracteres'
+          }
+          if (valores.nickname.length > 13) {
+            errors.nickname =
+              'Nombre de cuenta debe contener menos de 13 caracteres'
           }
           if (!valores.repassword) {
             errors.repassword = 'Confirmar contraseña'
@@ -55,31 +70,32 @@ const Register = () => {
           if (!valores.password) {
             errors.password = 'Contraseña requerida'
           }
+          if (
+            !valores.username ||
+            !valores.nickname ||
+            !valores.repassword ||
+            !valores.email ||
+            !valores.password
+          ) {
+            errors.general = 'Todos los campos son requeridos'
+          }
+          if (valores.password.length < 6) {
+            errors.password = 'Contraseña debe tener al menos 6 caracteres'
+          }
           return errors
         }}
-        onSubmit={(valores, { resetForm }) => {
-          //resetForm()
-          console.log(valores)
+        onSubmit={(values, { resetForm }) => {
+          resetForm()
           const registerToast = toast.loading('Registrando...')
           setLoading(true)
 
-          const response = register({
-            email: valores.email,
-            password: valores.password,
-            repassword: valores.repassword,
-            username: valores.username,
-            nickname: valores.nickname
-          }).then(res => res)
+          const response = register(values)
 
           setLoading(false)
           toast.dismiss(registerToast)
           if (response.error) {
             toast.error(response.error.data.msg)
           } else {
-            setRegisterexitoso(true)
-            setTimeout(() => {
-              setRegisterexitoso(false)
-            }, 3000)
             toast.success('Registro exitoso')
             navigate('/login')
           }
@@ -158,9 +174,7 @@ const Register = () => {
                   >
                     Registrarse
                   </button>
-                  {registerexitoso && (
-                    <p className='registerExitoso'>Registro Exitoso</p>
-                  )}
+                  {<p className='registerExitoso'>Registro Exitoso</p>}
                 </div>
 
                 <div className='register-form-control'>
