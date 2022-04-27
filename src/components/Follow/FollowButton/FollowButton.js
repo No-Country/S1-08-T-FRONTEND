@@ -6,19 +6,19 @@ import Spinner from "../../Spinner/Spinner";
 import toast from 'react-hot-toast'
 // import Follow from "./Follow";
 // import Unfollow from "./UnFollow";
-import { useCreateFollowerMutation, useDeleteFollowerMutation, useGetAllFollowersStateMutation } from '../../../app/services/followers';
+import { useCreateFollowerMutation, useDeleteFollowerMutation, useGetFollowingStateMutation } from '../../../app/services/followers';
 
 const FollowButton = (props) => {
     const { id, sizeWidth, sizeHeight, disableIcon, fontSize, bg1, bg2, color1, color2 } = props;
     const { user, isAuthenticated } = useSelector((state) => state.authUsers);
-    const { data: followData, loading: isLoading } = useSelector((state) => state.followers.usersAllFollowers);
-    const [getAllFollowersState] = useGetAllFollowersStateMutation()
+    const { data: followData, loading: isLoading } = useSelector((state) => state.followers.usersFollowing);
+    const [getFollowingState] = useGetFollowingStateMutation()
     const [createFollower] = useCreateFollowerMutation();
     const [deleteFollower] = useDeleteFollowerMutation();
 
 
     const actualUserId = user.id ? user.id : 0;
-    // console.log("actualUserId", actualUserId)
+    console.log("actualUserId", actualUserId)
     console.log("id", id)
     console.log("followData", followData)
     // console.log("isLoading: ", isLoading)
@@ -35,8 +35,8 @@ const FollowButton = (props) => {
 
 
     useEffect(() => {
-        getAllFollowersState()
-    }, [getAllFollowersState]);
+        getFollowingState(actualUserId)
+    }, [getFollowingState, actualUserId]);
 
 
 
@@ -84,12 +84,12 @@ const FollowButton = (props) => {
                 console.log("create follower");
                 console.log(res.msg)
                 setFollow("Siguiendo")
-                getAllFollowersState()
+                getFollowingState()
             } else {
                 console.log(res.msg)
             }
             setIdVinculo(res.id)
-            getAllFollowersState()
+            getFollowingState(actualUserId)
             setLoadingButtom(false)
 
         } else {
@@ -113,14 +113,14 @@ const FollowButton = (props) => {
                     setIsFollowing(false)
                     console.log(res.msg)
                     setFollow("Seguir")
-                    getAllFollowersState()
+                    getFollowingState(actualUserId)
 
                 } else {
                     console.log(res.msg)
                 }
                 setIdVinculo(null)
                 setIsFollowing(false)
-                getAllFollowersState()
+                getFollowingState()
                 setLoadingButtom(false)
             }
 

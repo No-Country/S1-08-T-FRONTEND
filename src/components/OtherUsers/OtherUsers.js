@@ -6,7 +6,7 @@ import FollowButton from "../Follow/FollowButton/FollowButton";
 import UserProfileCard from "../UserProfileCard/UserProfileCard";
 import './OtherUsers.css';
 import OtherUsersLoading from "./OtherUsersLoading/OtherUsersLoading";
-import { useGetAllFollowersQuery } from "../../app/services/followers";
+import { useGetFollowingQuery } from "../../app/services/followers";
 
 export default function OtherUsers({ quantity }) {
   let location = useLocation();
@@ -16,7 +16,7 @@ export default function OtherUsers({ quantity }) {
   const [suggestedUser, setSuggestedUser] = useState([]);
   const { user: userIdLogin } = useSelector((state) => state.authUsers);
   const { data:followData,  isLoading:followLoading } =
-  useGetAllFollowersQuery();
+  useGetFollowingQuery(userIdLogin);
 
   const randomUsers = (array) => {
     let m = array.length,
