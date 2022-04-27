@@ -6,6 +6,7 @@ import FollowButton from "../Follow/FollowButton/FollowButton";
 import UserProfileCard from "../UserProfileCard/UserProfileCard";
 import './OtherUsers.css';
 import OtherUsersLoading from "./OtherUsersLoading/OtherUsersLoading";
+import { useGetAllFollowersQuery } from "../../app/services/followers";
 
 export default function OtherUsers({ quantity }) {
   let location = useLocation();
@@ -14,7 +15,8 @@ export default function OtherUsers({ quantity }) {
   const { data, error, isLoading, isSuccess, isError } = useGetUsersQuery()
   const [suggestedUser, setSuggestedUser] = useState([]);
   const { user: userIdLogin } = useSelector((state) => state.authUsers);
-
+  const { data:followData,  isLoading:followLoading } =
+  useGetAllFollowersQuery();
 
   const randomUsers = (array) => {
     let m = array.length,
@@ -38,12 +40,12 @@ export default function OtherUsers({ quantity }) {
 
   console.log(suggestedUser)
   useEffect(() => {
-    if (data) {
-      const users = data.slice(0, quantity || data.length).filter(user => user.id !== userIdLogin)
+    if (data && followData && !followLoading) {
+      const users = data.filter(user => user.id !== userIdLogin || user.id !== followData.some(user => user.followerId === userIdLogin)).slice(0, quantity || data.length);
       const randomUsersArray = randomUsers(users)
       setSuggestedUser(randomUsersArray)
     }
-  }, [data, userIdLogin, quantity]);
+  }, [data, userIdLogin, quantity, followLoading, followData]);
 
   return (
     <div className="sugestedUsers">
@@ -54,7 +56,7 @@ export default function OtherUsers({ quantity }) {
 
       <div>
         {isLoading && <OtherUsersLoading />}
-        {isError && <p>{error}</p>}
+        {isError &&  <p>{error}</p>}
         {
           isSuccess && suggestedUser && suggestedUser.map(user => (
             <div className="otherUsers">

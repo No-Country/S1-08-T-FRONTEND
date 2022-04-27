@@ -11,7 +11,12 @@ const initialState = {
         data: null,
         loading: false,
         error: null,
-    }
+    },
+    usersAllFollowers: {
+        data: null,
+        loading: false,
+        error: null,
+    },
 };
 
 const followerSlice = createSlice({
@@ -58,6 +63,19 @@ const followerSlice = createSlice({
             .addMatcher(followersApi.endpoints.getFollowersState.matchRejected, (state, action) => {
                 state.usersFollowers.error = action;
             });
+        builder
+            .addMatcher(followersApi.endpoints.getAllFollowersState.matchPending, (state, actions) => {
+                state.usersAllFollowers.loading = true;
+            })
+            .addMatcher(followersApi.endpoints.getAllFollowersState.matchFulfilled, (state, action) => {
+                const response = action.payload;
+                state.usersAllFollowers.data = response;
+                state.usersAllFollowers.loading = false;
+            }) 
+            .addMatcher(followersApi.endpoints.getAllFollowersState.matchRejected, (state, action) => {
+                state.usersAllFollowers.error = action;
+            });
+
     },
 
 });

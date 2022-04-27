@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import Post from "../Post/Post";
 import { TabContext } from "./TabContext";
-import { Follower } from "../Follower/Follower";
 import { Save } from "../Save/Save";
 import FollowersScreen from "../Follow/FollowersScreen";
 import AboutMe from "../AboutMe/AboutMe";

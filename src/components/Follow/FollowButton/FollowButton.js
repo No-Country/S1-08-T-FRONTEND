@@ -6,22 +6,22 @@ import Spinner from "../../Spinner/Spinner";
 import toast from 'react-hot-toast'
 // import Follow from "./Follow";
 // import Unfollow from "./UnFollow";
-import { useCreateFollowerMutation, useDeleteFollowerMutation, useGetFollowingStateMutation } from '../../../app/services/followers';
+import { useCreateFollowerMutation, useDeleteFollowerMutation, useGetAllFollowersStateMutation } from '../../../app/services/followers';
 
 const FollowButton = (props) => {
     const { id, sizeWidth, sizeHeight, disableIcon, fontSize, bg1, bg2, color1, color2 } = props;
     const { user, isAuthenticated } = useSelector((state) => state.authUsers);
-    const { data: followData, loading: isLoading } = useSelector((state) => state.followers.usersFollowing);
-    const [getFollowersState] = useGetFollowingStateMutation()
+    const { data: followData, loading: isLoading } = useSelector((state) => state.followers.usersAllFollowers);
+    const [getAllFollowersState] = useGetAllFollowersStateMutation()
     const [createFollower] = useCreateFollowerMutation();
     const [deleteFollower] = useDeleteFollowerMutation();
 
 
-    const actualUserId = user ? user.id : 0;
-    console.log("actualUserId", actualUserId)
+    const actualUserId = user.id;
+    // console.log("actualUserId", actualUserId)
     console.log("id", id)
     console.log("followData", followData)
-    console.log("isLoading: ", isLoading)
+    // console.log("isLoading: ", isLoading)
 
 
 
@@ -35,15 +35,15 @@ const FollowButton = (props) => {
 
 
     useEffect(() => {
-        getFollowersState(actualUserId)
-    }, [actualUserId, getFollowersState]);
+        getAllFollowersState()
+    }, [getAllFollowersState]);
 
 
 
     useEffect(() => {
         const searchIdVinculo = () => {
             if (!isLoading && followData) {
-                const vinculo = followData.filter((user) => user.followerId === parseInt(id))
+                const vinculo = followData.filter((user) => user.userid === id)
                 console.log(vinculo)
 
                 if (vinculo.length > 0) {
@@ -71,12 +71,11 @@ const FollowButton = (props) => {
         e.preventDefault();
         if (isAuthenticated) {
 
-            setFollow("Siguiendo")
             setLoadingButtom(true)
 
             const res = await createFollower({
-                userid: actualUserId,
-                followerId: id,
+                userid: id,
+                followerId: actualUserId,
             });
 
             console.log(res)
@@ -84,12 +83,13 @@ const FollowButton = (props) => {
             if (res.ok === true) {
                 console.log("create follower");
                 console.log(res.msg)
-                getFollowersState(actualUserId)
+                setFollow("Siguiendo")
+                getAllFollowersState()
             } else {
                 console.log(res.msg)
             }
             setIdVinculo(res.id)
-            getFollowersState(actualUserId)
+            getAllFollowersState()
             setLoadingButtom(false)
 
         } else {
@@ -103,9 +103,8 @@ const FollowButton = (props) => {
             const confirm = window.confirm("Deseas dejar de seguir a este usuario?")
 
             if (confirm) {
-                setFollow("Seguir")
                 setLoadingButtom(true)
-
+                
                 const res = await deleteFollower(idVinculo);
                 console.log(res)
 
@@ -113,14 +112,15 @@ const FollowButton = (props) => {
                     console.log("unfollower done");
                     setIsFollowing(false)
                     console.log(res.msg)
-                    getFollowersState(actualUserId)
+                    setFollow("Seguir")
+                    getAllFollowersState()
 
                 } else {
                     console.log(res.msg)
                 }
                 setIdVinculo(null)
                 setIsFollowing(false)
-                getFollowersState(actualUserId)
+                getAllFollowersState()
                 setLoadingButtom(false)
             }
 
