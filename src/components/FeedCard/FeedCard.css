@@ -1,4 +1,4 @@
-.socialIcon , .socialButton ,  .socialRatingB, .socialRatingA{
+.socialIcon , .socialButton ,  .socialRatingB{
     font-size: 0.6rem !important;
     font-weight: 800 !important;
     padding: 5px !important;
@@ -101,40 +101,24 @@ border: #b1b1b5 solid 1px   !important;
         height: 0.8rem;
     }
 
-    .socialRatingA{
-        display: flex;
-        height: 1.2rem;
-        background-color: #fbf9f7;
-        width: 2.4rem;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        border-right: rgba(0, 0, 0, 0.25) 1px solid;
-    }
-
-    .socialRatingA svg{
-        background-color: #FBF9F7;
-        height: 0.8rem;
-    }
-
     .socialRatingB{
         display: flex;
         height: 1.2rem;
         background-color: #fbf9f7;
-        width: 2.4rem;
+        width: 3rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-radius: 5px;
+        margin-left: 0.4rem;
+        justify-items: center;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
         padding: 0 0rem;
-        border-left: rgba(0, 0, 0, 0.25) 1px solid;
+        cursor: pointer;
+        font-size: 0.5rem;
+        font-family: 'karma';
+        color: black;
     }
-
+    
     .socialRatingB svg{
         background-color: #FBF9F7;
         height: 0.8rem;
@@ -155,7 +139,7 @@ border: #b1b1b5 solid 1px   !important;
         font-size: 0.8rem !important;
     }
 
-    .socialIcon , .socialButton ,  .socialRatingB, .socialRatingA{
+    .socialIcon , .socialButton,  .socialRatingB{
         font-size: 0.5rem !important;
         font-weight: 700 !important;
         padding: 5px !important;
@@ -245,36 +229,21 @@ border: #b1b1b5 solid 1px   !important;
         height: 0.8rem;
     }
 
-    .socialRatingA{
+      .socialRatingB{
         display: flex;
         height: 1.2rem;
         background-color: #fbf9f7;
-        width: 2.5rem;
+        width: 4rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-radius: 5px;
+        margin-left: 0.6rem;
+        justify-items: center;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
-    }
-
-    .socialRatingA svg{
-        background-color: #FBF9F7;
-        height: 0.8rem;
-    }
-
-    .socialRatingB{
-        display: flex;
-        height: 1.2rem;
-        background-color: #fbf9f7;
-        width: 2.5rem;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
         padding: 0 0.1rem;
+        cursor: pointer;
+        font-size: 0.6rem;
+        color: black;
         
     }
 
@@ -297,7 +266,7 @@ border: #b1b1b5 solid 1px   !important;
     .css-1lf7cpy-MuiTypography-root{
         font-size: 0.8rem !important;
     }
-    .socialIcon , .socialButton ,  .socialRatingB, .socialRatingA{
+    .socialIcon , .socialButton ,  .socialRatingB{
         font-size: 0.5rem !important;
         font-weight: 700 !important;
         padding: 5px !important;
@@ -367,39 +336,21 @@ border: #b1b1b5 solid 1px   !important;
         height: 1rem;
     }
 
-    .socialRatingA{
-        display: flex;
-        height: 2rem;
-        background-color: #fbf9f7;
-        width: 2.8rem;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        border-right: rgba(0, 0, 0, 0.25) 1px solid;
-    }
-
-    .socialRatingA svg{
-        background-color: #FBF9F7;
-        height: 1rem;
-    }
-
     .socialRatingB{
         display: flex;
         height: 2rem;
         background-color: #fbf9f7;
-        width: 2.8rem;
+        width: 4rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-radius: 5px;
+        margin-left: 0.5rem;
+        justify-items: center;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
         padding: 0 0.1rem;
-        border-left: rgba(0, 0, 0, 0.25) 1px solid;
-        
+        cursor: pointer;
+        font-size: 0.7rem;
+        color: black;
     }
 
     .socialRatingB svg{
@@ -422,7 +373,7 @@ border: #b1b1b5 solid 1px   !important;
         font-size: 1rem !important;
     }
 
-    .socialIcon , .socialButton ,  .socialRatingB, .socialRatingA{
+    .socialIcon , .socialButton, .socialRatingB{
         font-size: 0.5rem !important;
         font-weight: 800 !important;
         padding: 5px !important;
@@ -479,37 +430,20 @@ border: #b1b1b5 solid 1px   !important;
         height: 1rem;
     }
 
-    .socialRatingA{
-        display: flex;
-        height: 1.8rem;
-        background-color: #fbf9f7;
-        width: 3.2rem;
-        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .socialRatingA svg{
-        background-color: #FBF9F7;
-        height: 1rem;
-    }
-
     .socialRatingB{
         display: flex;
         height: 1.8rem;
         background-color: #fbf9f7;
-        width: 3rem;
+        width: 4rem;
         box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-radius: 5px;
+        margin-left: 0.4rem;
+        justify-items: center;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
         padding: 0 0.1rem;
-        
+        cursor: pointer;
+        font-size: 0.7rem;
     }
 
     .socialRatingB svg{
@@ -572,7 +506,7 @@ border: #b1b1b5 solid 1px   !important;
         font-size: 0.8rem;
     }
 
-    .socialRatingA, .socialRatingB {
+    .socialRatingB {
         height: 2rem;
         width: 3.5rem;
     }
