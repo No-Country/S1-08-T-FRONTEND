@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useLoginMutation } from "../../app/services/users";
 import fontbg from "../../Assets/images/font-bg.jpg";
 import toast from 'react-hot-toast';
-// import { LoginGoogleButton } from './LoginGoogleButton';
+import { LoginGoogleButton } from './LoginGoogleButton';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -68,7 +68,7 @@ const Login = () => {
             </div>   
             <div className='login-button-container'>
             <button className="login-button" type="submit" onClick={handleSubmit} disabled={loading}>Entrar</button>
-            {/* <LoginGoogleButton  /> */}
+            <LoginGoogleButton  />
             </div>
             <div className='login-form-control'>
               <h6>
