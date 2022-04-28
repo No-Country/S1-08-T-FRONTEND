@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetPostQuery } from "../../app/services/posts";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deletePost } from "../../app/slices/posts/postsSlice";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -14,6 +15,7 @@ import {
 } from "../../app/services/comments";
 import { CommentCard } from "../CommentCard/CommentCard";
 const Detail = () => {
+  //const dispatch = useDispatch();
   const ref = useRef("");
   const navigate = useNavigate();
   const { id } = useParams();
@@ -28,7 +30,7 @@ const Detail = () => {
     refetch,
   } = useGetCommentsQuery(id);
   const [createComment] = useCreateCommentMutation();
-
+  
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     const comment = {
@@ -39,8 +41,6 @@ const Detail = () => {
     await createComment(comment);
     ref.current.value = "";
   };
-
-  //const handleDelete = async (evt)
 
   useEffect(() => {
     if (!token) {
@@ -57,8 +57,16 @@ const Detail = () => {
           <ArrowBackIosIcon /> <span>Volver</span></Link>
         </button>
         <div className="editAndDelete">
-          <button className="editButton"><EditIcon/>Editar post</button>
-          <button className="deleteButton"><DeleteIcon/>Borrar post</button>
+          <button className="editButton"
+          /* onClick={() => {
+            dispatch(updatePost({ id, description, category, image, video }))
+          }}*/
+          ><EditIcon/>Editar post</button>
+          <button className="deleteButton" 
+            /*onClick={() => {
+              dispatch(deletePost({ id: post.id }))
+            }}*/
+          ><DeleteIcon/>Borrar post</button>
         </div>
       </div>
       <div className="main_container">
