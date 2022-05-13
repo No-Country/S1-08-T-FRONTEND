@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import EditPost from "./Edit/EditPost";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useGetPostQuery } from "../../app/services/posts";
+import { useDeletePostMutation, useGetPostQuery } from "../../app/services/posts";
 import { useSelector, useDispatch } from "react-redux";
-import { deletePost } from "../../app/slices/posts/postsSlice";
-import EditIcon from '@mui/icons-material/Edit';
+import { deletePost, updatePost } from "../../app/slices/posts/postsSlice";
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import FormatDate from "../../utils/formatDate";
@@ -14,8 +14,11 @@ import {
   useGetCommentsQuery,
 } from "../../app/services/comments";
 import { CommentCard } from "../CommentCard/CommentCard";
+import toast from "react-hot-toast";
+
+
 const Detail = () => {
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const ref = useRef("");
   const navigate = useNavigate();
   const { id } = useParams();
@@ -30,7 +33,8 @@ const Detail = () => {
     refetch,
   } = useGetCommentsQuery(id);
   const [createComment] = useCreateCommentMutation();
-  
+  const [deletePost] = useDeletePostMutation();
+
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     const comment = {
@@ -40,6 +44,18 @@ const Detail = () => {
     };
     await createComment(comment);
     ref.current.value = "";
+  };
+
+  const handleDelete = async () => {
+    const confirmed = window.confirm(
+      "¿Estás seguro de querer eliminar esta publicación?"
+    );
+    if (!confirmed) return;
+    const { data } = await deletePost(id);
+    if (data) {
+      toast.success("Post deleted successfully");
+      navigate("/");
+    }
   };
 
   useEffect(() => {
@@ -56,19 +72,15 @@ const Detail = () => {
         <button className="backButton"><Link to="/" className="btn">
           <ArrowBackIosIcon /> <span>Volver</span></Link>
         </button>
+       
         <div className="editAndDelete">
-          <button className="editButton"
-          /* onClick={() => {
-            dispatch(updatePost({ id, description, category, image, video }))
-          }}*/
-          ><EditIcon/>Editar post</button>
+          <EditPost/>
           <button className="deleteButton" 
-            /*onClick={() => {
-              dispatch(deletePost({ id: post.id }))
-            }}*/
+            onClick={handleDelete}
           ><DeleteIcon/>Borrar post</button>
         </div>
       </div>
+
       <div className="main_container">
         <div className="content">
           <img src={data?.image} alt={data?.id} className="main_image" />

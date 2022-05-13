@@ -1,0 +1,44 @@
+.editButton{
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem !important;
+    font-weight: 600;
+    color: #000 !important;
+    background-color: transparent !important;
+    transition: all 0.3s;  
+    padding: 0;
+  }
+  
+  .editButton:hover {
+    cursor: pointer;
+    color: #EC5853 !important;
+  }
+
+  .updateButtons{
+      display: flex;
+      gap: 1rem;
+  }
+
+  .updatePostButton, .cancelPostButton{
+    padding: 0.8rem;
+    width: 10.5rem;
+    height: 2.5rem;
+    margin: 2.5rem 0 1rem 0;
+    font-size: 1.125rem;
+    background: #EC5853;
+    color: #fbf9f7;
+    border: none;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .updatePostButton:hover, .cancelPostButton:hover{
+    color: #fff;
+  }
+
+  .updateButtons svg{
+    margin-left: 0.5rem;
+  }
