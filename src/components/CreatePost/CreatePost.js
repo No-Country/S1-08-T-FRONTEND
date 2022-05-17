@@ -164,7 +164,7 @@ export default function CreatePost() {
         }
       } else {
         toast.error(
-          'Para publicar  debes subir por lo menos una imagen y un titulo'
+          'Para publicar debes subir por lo menos una imagen y un titulo'
         )
         setLoading(false)
       }

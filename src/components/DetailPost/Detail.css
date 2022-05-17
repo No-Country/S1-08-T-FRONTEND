@@ -8,12 +8,54 @@
   color: black;
 }
 
+.topButton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4.5rem 0 1.5rem 0;
+  padding: 0 3rem;
+  color: black !important;
+}
+
+.topButton svg{
+  margin-right: 0.2rem;
+}
+
 .btn {
   display: flex;
-  margin-top: 98px;
-  margin-left: 60px;
   align-items: center;
+  color: black;
 }
+
+.btn:hover{
+  color: #EC5853;
+}
+
+.btn span{
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.editAndDelete{
+  display: flex;
+}
+
+.deleteButton{
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: 1.5rem;
+}
+
+.editButton{
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+}
+
 .wrapContainer {
   width: 450px;
 }
@@ -86,7 +128,7 @@ hr {
   gap: 10px;
 }
 .actions button :hover {
-  border-bottom: 2px solid #f15c57;
+  border-bottom: 2px solid #EC5853;
   justify-self: center;
 }
 .likes {
@@ -107,8 +149,9 @@ button {
 }
 button:hover {
   cursor: pointer;
-  color: brown;
+  color: #EC5853;
 }
+
 .inputComment {
   border: none;
   border-bottom: 1px solid;

@@ -20,6 +20,12 @@ export const postsSlice = createSlice({
     setError: (state, action) => {
       state.posts.error = action.payload;
     },
+    deletePost: (state, action) => {
+      state.posts.data = state.value.filter((data) => data.id !== action.payload.id);
+    },
+    updatePost: (state, action) => {
+            
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -37,6 +43,6 @@ export const postsSlice = createSlice({
   },
 });
 
-export const { getPostsState } = postsSlice.actions;
+export const { getPostsState, deletePost, updatePost } = postsSlice.actions;
 
 export default postsSlice.reducer;
